@@ -7,11 +7,12 @@ public class characterController : MonoBehaviour
     [SerializeField] FixedJoystick joystick;
 
     public CharacterController controller;
+    public Animator playerAnimator;
     public float movementSpeed, rotationSpeed;
 
     void Start()
     {
-
+        playerAnimator = controller.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -20,10 +21,11 @@ public class characterController : MonoBehaviour
         var movementDirection = new Vector3(joystick.Direction.x, 0.0f, joystick.Direction.y);
         controller.SimpleMove(movementDirection * movementSpeed);
 
-        if (movementDirection.sqrMagnitude <= 0) { return; }
+        playerAnimator.SetFloat("vertical", movementDirection.sqrMagnitude);
 
+        Debug.Log(movementDirection.sqrMagnitude);
         var targetDirection = Vector3.RotateTowards(controller.transform.forward, movementDirection
-            , rotationSpeed * Time.deltaTime, 0.0f);
+        , rotationSpeed * Time.deltaTime, 0.0f);
 
         controller.transform.rotation = Quaternion.LookRotation(targetDirection);
     }
