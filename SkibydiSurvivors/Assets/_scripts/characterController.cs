@@ -15,7 +15,6 @@ public class characterController : MonoBehaviour
         playerAnimator = controller.GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         var movementDirection = new Vector3(joystick.Direction.x, 0.0f, joystick.Direction.y);
@@ -23,7 +22,6 @@ public class characterController : MonoBehaviour
 
         playerAnimator.SetFloat("vertical", movementDirection.sqrMagnitude);
 
-        Debug.Log(movementDirection.sqrMagnitude);
         var targetDirection = Vector3.RotateTowards(controller.transform.forward, movementDirection
         , rotationSpeed * Time.deltaTime, 0.0f);
 
