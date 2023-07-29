@@ -7,6 +7,7 @@ public class characterController : MonoBehaviour
     [SerializeField] FixedJoystick joystick;
 
     public CharacterController controller;
+    public GameObject R_hand, L_hand;
     public Animator playerAnimator;
     public float movementSpeed, rotationSpeed;
 
