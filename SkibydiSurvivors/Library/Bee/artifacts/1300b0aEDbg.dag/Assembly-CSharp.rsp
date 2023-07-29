@@ -382,7 +382,10 @@
 "Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
 "Assets/_scripts/characterController.cs"
 "Assets/_scripts/EnemyController.cs"
+"Assets/_scripts/FieldOfView.cs"
+"Assets/_scripts/FieldOfViewEditor.cs"
 "Assets/_scripts/gameController.cs"
+"Assets/_scripts/gunAimController.cs"
 -langversion:9.0
 
 /deterministic
