@@ -108,7 +108,6 @@ public class gunAimController : MonoBehaviour
 
     bool EnemyInFieldOfView(GameObject looker)
     {
-
         Vector3 targetDir = enemy.transform.position - looker.transform.position;
         // gets the direction to the enemy.
 

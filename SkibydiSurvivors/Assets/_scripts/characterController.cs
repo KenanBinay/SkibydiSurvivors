@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -8,10 +9,11 @@ public class characterController : MonoBehaviour
     [SerializeField] FixedJoystick joystick;
 
     public CharacterController controller;
-    public GameObject R_hand, L_hand, enemy, fovStartPoint;
+    public GameObject fovStartPoint;
     public Animator playerAnimator;
 
-    public float movementSpeed, rotationSpeed, maxAngle = 90;
+    public float movementSpeed, rotationSpeed, idleRotationSpeed, maxAngle = 90;
+    public static bool idle;
 
     void Start()
     {
@@ -22,14 +24,32 @@ public class characterController : MonoBehaviour
     {
         var movementDirection = new Vector3(joystick.Direction.x, 0.0f, joystick.Direction.y);
 
-        controller.SimpleMove(movementDirection * movementSpeed);
-
         playerAnimator.SetFloat("vertical", movementDirection.sqrMagnitude);
 
-        var targetDirection = Vector3.RotateTowards(controller.transform.forward, movementDirection
-  , rotationSpeed * Time.deltaTime, 0.0f);
+        if (movementDirection.sqrMagnitude > 0)
+        {
+            controller.SimpleMove(movementDirection * movementSpeed);
 
-        controller.transform.rotation = Quaternion.LookRotation(targetDirection);
+            var targetDirection = Vector3.RotateTowards(controller.transform.forward, movementDirection
+      , rotationSpeed * Time.deltaTime, 0.0f);
 
+            controller.transform.rotation = Quaternion.LookRotation(targetDirection);
+
+            idle = false;
+        }
+        else if (FieldOfView.nearestTarget != null && movementDirection.sqrMagnitude <= 0)
+        {
+            Vector3 direction = FieldOfView.nearestTarget.position - controller.transform.position;
+
+            direction = new Vector3(direction.x, 0, direction.z);
+
+            // Rotate the current transform to look at the enemy
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            Quaternion lookAt = Quaternion.RotateTowards(
+            controller.transform.rotation, targetRotation, Time.deltaTime * idleRotationSpeed);
+            controller.transform.rotation = lookAt;
+
+            idle = true;
+        }
     }
 }
