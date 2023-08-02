@@ -5,8 +5,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638265237428940981
-    m_Hash: 2955881680
+      ticks: 638265681417580059
+    m_Hash: 1373590173
   m_LockFileStatus:
     m_FilePath: C:/Users/kenan/Documents/SkibydiSurvivors/SkibydiSurvivors/Packages/packages-lock.json
     m_PathExists: 1
@@ -3033,9 +3033,11 @@ m_ResolvedPackages:
     - 2.0.16
     - 2.0.17
     - 2.0.18
+    - 2.0.20
     compatible:
     - 2.0.18
-    recommended: 2.0.18
+    - 2.0.20
+    recommended: 2.0.20
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
