@@ -421,6 +421,7 @@
 "Assets/_scripts/fps.cs"
 "Assets/_scripts/gameController.cs"
 "Assets/_scripts/gunAimController.cs"
+"Assets/_scripts/GunShootController.cs"
 "Assets/_scripts/SkibidiSpawnManager.cs"
 -langversion:9.0
 

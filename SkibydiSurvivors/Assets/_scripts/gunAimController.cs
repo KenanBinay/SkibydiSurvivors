@@ -25,7 +25,7 @@ public class gunAimController : MonoBehaviour
     public bool leftArm = false;
     public bool rightArm = false;
 
-    public static bool canShoot = false;
+    public static bool canShoot = false, readyShoot = false;
 
     private bool canShootLeft = false;
     private bool canShootRight = false;
@@ -72,6 +72,7 @@ public class gunAimController : MonoBehaviour
                 canShootRight = true;
             }
 
+            if (!readyShoot) readyShoot = true; //ready for shoot the projectile
         }
         else if (enemy != null && EnemyInFieldOfViewNoResetPoint(fovStartPoint))
         {
@@ -102,6 +103,8 @@ public class gunAimController : MonoBehaviour
                 Quaternion targetRotation = Quaternion.Euler(0, 0, 0);
                 transform.localRotation = Quaternion.RotateTowards(
                 transform.localRotation, targetRotation, Time.deltaTime * lookSpeed);
+
+                if (readyShoot) readyShoot = false; 
             }
         }
     }
