@@ -37,6 +37,7 @@ public class gunAimController : MonoBehaviour
     void Update()
     {
         enemy = FieldOfView.nearestTarget;
+
         if (leftArm || rightArm)
         {
             if (canShootLeft == true || canShootRight == true)
