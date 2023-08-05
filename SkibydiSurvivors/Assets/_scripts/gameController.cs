@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class gameController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static int eliminations;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

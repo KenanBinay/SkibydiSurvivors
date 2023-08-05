@@ -1782,6 +1782,7 @@ MonoBehaviour:
   muzzleFlash_L: {fileID: 449813381}
   muzzleFlash_R: {fileID: 1442539665}
   rayLenght: 10
+  HealthScriptOfEnemy: {fileID: 0}
 --- !u!1001 &1085411300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3766,7 +3767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5847438662495146369, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: skibidi_0
       objectReference: {fileID: 0}
     - target: {fileID: 5898594777679750595, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
       propertyPath: m_RootOrder

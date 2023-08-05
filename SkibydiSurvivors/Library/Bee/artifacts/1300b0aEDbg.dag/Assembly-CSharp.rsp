@@ -415,6 +415,7 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
 "Assets/_scripts/characterController.cs"
+"Assets/_scripts/enemyController.cs"
 "Assets/_scripts/FieldOfView.cs"
 "Assets/_scripts/FieldOfViewEditor.cs"
 "Assets/_scripts/fps.cs"

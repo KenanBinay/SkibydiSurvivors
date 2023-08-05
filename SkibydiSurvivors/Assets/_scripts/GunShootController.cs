@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GunShootController : MonoBehaviour
@@ -11,7 +9,9 @@ public class GunShootController : MonoBehaviour
     RaycastHit hit;
     Ray rayAim;
     public float rayLenght;
-    private int LayerEnemy;
+    private int LayerEnemy, hitCount;
+
+    public enemyController HealthScriptOfEnemy;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class GunShootController : MonoBehaviour
 
     void Update()
     {
-        if (gunAimController.readyShoot)
+        if (gunAimController.enemy_gameObject != null && gunAimController.readyShoot)
         {
             Shoot();
         }
@@ -36,6 +36,11 @@ public class GunShootController : MonoBehaviour
 
     void Shoot()
     {
+        Debug.Log("shooting");
+        //getting locked enemy script from enemy_gameObject
+        HealthScriptOfEnemy = gunAimController.enemy_gameObject.GetComponent<enemyController>();
+        int remainingHealth = HealthScriptOfEnemy.enemyHealths[HealthScriptOfEnemy.enemyHealth_ElementNumber];
+      
         //creates a ray directly to nearest target
         Vector3 targetDir = FieldOfView.nearestTarget.position;
         Vector3 myPosition = aimTransform.position;
@@ -47,7 +52,18 @@ public class GunShootController : MonoBehaviour
         {
             if (hit.transform.gameObject.layer == LayerEnemy)
             {
-                Debug.Log("enemy hit");
+                if (remainingHealth == 0)
+                {
+                    if (gunAimController.enemy_gameObject != null) Destroy(gunAimController.enemy_gameObject);                 
+                    gameController.eliminations++;
+                    Debug.Log("target destroyed");
+                }
+                else
+                {
+                    remainingHealth--;
+                    HealthScriptOfEnemy.enemyHealths[HealthScriptOfEnemy.enemyHealth_ElementNumber] = remainingHealth;
+                    Debug.Log("health: " + remainingHealth);
+                }
             }
         }
 

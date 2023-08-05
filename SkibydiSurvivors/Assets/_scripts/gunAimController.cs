@@ -5,6 +5,7 @@ using UnityEngine;
 public class gunAimController : MonoBehaviour
 {
     public Transform enemy;
+    public static GameObject enemy_gameObject;
     // This is what the player is looking at. In this example it is the dinosaur's head.
 
     public GameObject fovStartPoint;
@@ -36,7 +37,11 @@ public class gunAimController : MonoBehaviour
 
     void Update()
     {
-        enemy = FieldOfView.nearestTarget;
+        if (FieldOfView.nearestTarget != null)
+        {
+            enemy = FieldOfView.nearestTarget;
+            enemy_gameObject = enemy.gameObject;
+        }
 
         if (leftArm || rightArm)
         {
@@ -52,6 +57,8 @@ public class gunAimController : MonoBehaviour
 
         if (enemy != null && EnemyInFieldOfView(fovStartPoint))
         {
+            if (!readyShoot) readyShoot = true; //ready for shoot the projectile
+
             Vector3 direction = enemy.transform.position - transform.position;
 
             if (!canLean)
@@ -72,8 +79,6 @@ public class gunAimController : MonoBehaviour
             {
                 canShootRight = true;
             }
-
-            if (!readyShoot) readyShoot = true; //ready for shoot the projectile
         }
         else if (enemy != null && EnemyInFieldOfViewNoResetPoint(fovStartPoint))
         {
@@ -81,6 +86,8 @@ public class gunAimController : MonoBehaviour
         }
         else
         {
+            if (readyShoot) readyShoot = false;
+
             if (leftArm || rightArm)
             {
                 // make arms point at the ground
@@ -105,7 +112,6 @@ public class gunAimController : MonoBehaviour
                 transform.localRotation = Quaternion.RotateTowards(
                 transform.localRotation, targetRotation, Time.deltaTime * lookSpeed);
 
-                if (readyShoot) readyShoot = false; 
             }
         }
     }
