@@ -50,8 +50,7 @@ public class GunShootController : MonoBehaviour
     {
         // Shoot.
 
-        Vector3 targetDir = new Vector3(FieldOfView.nearestTarget.position.x, 1
-          , FieldOfView.nearestTarget.position.z);
+        Vector3 targetDir = FieldOfView.nearestTarget.position;
         Vector3 myPosition = aimTransform.position;
 
         Debug.DrawLine(myPosition, targetDir, Color.yellow);
