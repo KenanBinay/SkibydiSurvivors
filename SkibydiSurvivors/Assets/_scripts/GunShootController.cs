@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GunShootController : MonoBehaviour
@@ -8,10 +9,11 @@ public class GunShootController : MonoBehaviour
 
     RaycastHit hit;
     Ray rayAim;
-    public float rayLenght;
-    private int LayerEnemy, hitCount;
+    private int LayerEnemy, damage = 1;
 
     public enemyController HealthScriptOfEnemy;
+
+    Coroutine currentCoroutine;
 
     void Start()
     {
@@ -36,40 +38,43 @@ public class GunShootController : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("shooting");
-        //getting locked enemy script from enemy_gameObject
-        HealthScriptOfEnemy = gunAimController.enemy_gameObject.GetComponent<enemyController>();
-        int remainingHealth = HealthScriptOfEnemy.enemyHealths[HealthScriptOfEnemy.enemyHealth_ElementNumber];
-      
-        //creates a ray directly to nearest target
-        Vector3 targetDir = FieldOfView.nearestTarget.position;
+        if (!gunAnimator.enabled) gunAnimator.enabled = true;
+        if (!muzzleFlash_L.activeSelf) muzzleFlash_L.SetActive(true);
+        if (!muzzleFlash_R.activeSelf) muzzleFlash_R.SetActive(true);
+
+        if (currentCoroutine == null)
+            currentCoroutine = StartCoroutine(DoShoot());
+    }
+
+    IEnumerator DoShoot()
+    {
+        // Shoot.
+
+        Vector3 targetDir = new Vector3(FieldOfView.nearestTarget.position.x, 1
+          , FieldOfView.nearestTarget.position.z);
         Vector3 myPosition = aimTransform.position;
 
         Debug.DrawLine(myPosition, targetDir, Color.yellow);
         rayAim = new Ray(aimTransform.position, Vector3.forward);
 
-        if (Physics.Raycast(rayAim, out hit))
+        if (Physics.Raycast(myPosition, targetDir, out hit))
         {
+            Debug.Log("ray hit");
             if (hit.transform.gameObject.layer == LayerEnemy)
             {
-                if (remainingHealth == 0)
+                Debug.Log("enemy layer ray hit");
+                HealthScriptOfEnemy = gunAimController.enemy_gameObject
+                    .transform.GetComponent<enemyController>();
+
+                if (HealthScriptOfEnemy != null)
                 {
-                    if (gunAimController.enemy_gameObject != null) Destroy(gunAimController.enemy_gameObject);                 
-                    gameController.eliminations++;
-                    Debug.Log("target destroyed");
-                }
-                else
-                {
-                    remainingHealth--;
-                    HealthScriptOfEnemy.enemyHealths[HealthScriptOfEnemy.enemyHealth_ElementNumber] = remainingHealth;
-                    Debug.Log("health: " + remainingHealth);
+                    Debug.Log("damage given");
+                    HealthScriptOfEnemy.TakeDamage(damage);
                 }
             }
         }
 
-        if (!gunAnimator.enabled) gunAnimator.enabled = true;
-
-        if (!muzzleFlash_L.activeSelf) muzzleFlash_L.SetActive(true);
-        if (!muzzleFlash_R.activeSelf) muzzleFlash_R.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+        currentCoroutine = null;
     }
 }

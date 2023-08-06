@@ -102,7 +102,6 @@ public class gunAimController : MonoBehaviour
                 {
                     canShootRight = false;
                 }
-
             }
 
             else
@@ -111,7 +110,6 @@ public class gunAimController : MonoBehaviour
                 Quaternion targetRotation = Quaternion.Euler(0, 0, 0);
                 transform.localRotation = Quaternion.RotateTowards(
                 transform.localRotation, targetRotation, Time.deltaTime * lookSpeed);
-
             }
         }
     }

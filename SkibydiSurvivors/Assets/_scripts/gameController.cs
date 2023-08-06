@@ -5,6 +5,7 @@ using UnityEngine;
 public class gameController : MonoBehaviour
 {
     public static int eliminations;
+    int level;
 
     void Start()
     {

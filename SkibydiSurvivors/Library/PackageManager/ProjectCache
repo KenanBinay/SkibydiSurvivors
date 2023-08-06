@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638265681417580059
-    m_Hash: 1373590173
+      ticks: 638269407637054824
+    m_Hash: 2268026314
   m_LockFileStatus:
     m_FilePath: C:/Users/kenan/Documents/SkibydiSurvivors/SkibydiSurvivors/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638265237446135174
-    m_Hash: 2056184269
+      ticks: 638269407637118909
+    m_Hash: 1910710905
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -582,6 +582,118 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
+- packageId: com.unity.memoryprofiler@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 1
+  resolvedPath: C:\Users\kenan\Documents\SkibydiSurvivors\SkibydiSurvivors\Library\PackageCache\com.unity.memoryprofiler@1.0.0
+  assetPath: Packages/com.unity.memoryprofiler
+  name: com.unity.memoryprofiler
+  displayName: Memory Profiler
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: The Memory Profiler offers a unified solution allowing you to profile
+    both small projects on mobile devices and big AAA projects on high end machines.
+    It provides actionable information about allocations in the engine to allow developers
+    to manage and reduce memory usage.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 0.1.0-preview.1
+    - 0.1.0-preview.2
+    - 0.1.0-preview.3
+    - 0.1.0-preview.4
+    - 0.1.0-preview.5
+    - 0.1.0-preview.6
+    - 0.1.0-preview.7
+    - 0.1.0-preview.8
+    - 0.1.0-preview.9
+    - 0.2.0-preview.1
+    - 0.2.1-preview.1
+    - 0.2.1-preview.2
+    - 0.2.2-preview.1
+    - 0.2.3-preview.1
+    - 0.2.3-preview.2
+    - 0.2.4-preview.1
+    - 0.2.5-preview.1
+    - 0.2.6-preview.1
+    - 0.2.7-preview.1
+    - 0.2.8-preview.1
+    - 0.2.8-preview.2
+    - 0.2.9-preview.1
+    - 0.2.9-preview.3
+    - 0.2.10-preview.1
+    - 0.4.0-preview.1
+    - 0.4.0-preview.2
+    - 0.4.1-preview.1
+    - 0.4.2-preview.1
+    - 0.4.3-preview.1
+    - 0.4.4-preview.2
+    - 0.5.0-preview.1
+    - 0.5.1-preview.1
+    - 0.6.0-preview.1
+    - 0.7.0-preview.1
+    - 0.7.0-preview.2
+    - 0.7.1-preview.1
+    - 1.0.0-pre.1
+    - 1.0.0-pre.2
+    - 1.0.0-pre.3
+    - 1.0.0
+    - 1.1.0-exp.1
+    - 1.1.0-exp.2
+    - 1.1.0-pre.1
+    compatible:
+    - 1.0.0
+    - 1.1.0-exp.1
+    - 1.1.0-exp.2
+    - 1.1.0-pre.1
+    recommended: 1.0.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.editorcoroutines
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.editorcoroutines
+    version: 1.0.0
+  keywords:
+  - profiler
+  - memory
+  - memoryprofiler
+  - snapshot
+  - profiling
+  - tool
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637977144360000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.memoryprofiler.git
+    revision: abbd964f85ded6b5cd5296c4a2d4d3f393950ac1
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
 - packageId: com.unity.textmeshpro@3.0.6
   testable: 0
   isDirectDependency: 1
@@ -1043,8 +1155,10 @@ m_ResolvedPackages:
     - 1.7.8
     - 1.8.0-pre.1
     - 1.8.0
+    - 1.9.0
     compatible:
     - 1.8.0
+    - 1.9.0
     recommended: 1.8.0
     deprecated:
     - 1.8.0-pre.1
@@ -2990,6 +3104,71 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
+- packageId: com.unity.editorcoroutines@1.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.0
+  source: 1
+  resolvedPath: C:\Users\kenan\Documents\SkibydiSurvivors\SkibydiSurvivors\Library\PackageCache\com.unity.editorcoroutines@1.0.0
+  assetPath: Packages/com.unity.editorcoroutines
+  name: com.unity.editorcoroutines
+  displayName: Editor Coroutines
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: 'The editor coroutines package allows developers to start constructs
+    similar to Unity''s monobehaviour based coroutines within the editor using abitrary
+    objects. '
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 0.0.1-preview.3
+    - 0.0.1-preview.4
+    - 0.0.1-preview.5
+    - 0.0.2-preview.1
+    - 0.1.0-preview.1
+    - 0.1.0-preview.2
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - coroutine
+  - coroutines
+  - editor
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637232611380000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.editorcoroutines.git
+    revision: f67fc9992bbc7a553b17375de53a8b2db136528e
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
 - packageId: com.unity.ide.visualstudio@2.0.18
   testable: 0
   isDirectDependency: 0
@@ -3239,71 +3418,6 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.2.5
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-  isDeprecated: 0
-  deprecationMessage: 
-- packageId: com.unity.editorcoroutines@1.0.0
-  testable: 0
-  isDirectDependency: 0
-  version: 1.0.0
-  source: 1
-  resolvedPath: C:\Users\kenan\Documents\SkibydiSurvivors\SkibydiSurvivors\Library\PackageCache\com.unity.editorcoroutines@1.0.0
-  assetPath: Packages/com.unity.editorcoroutines
-  name: com.unity.editorcoroutines
-  displayName: Editor Coroutines
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: asset
-  description: 'The editor coroutines package allows developers to start constructs
-    similar to Unity''s monobehaviour based coroutines within the editor using abitrary
-    objects. '
-  status: 0
-  errors: []
-  versions:
-    all:
-    - 0.0.1-preview.3
-    - 0.0.1-preview.4
-    - 0.0.1-preview.5
-    - 0.0.2-preview.1
-    - 0.1.0-preview.1
-    - 0.1.0-preview.2
-    - 1.0.0
-    compatible:
-    - 1.0.0
-    recommended: 1.0.0
-    deprecated: []
-  dependencies: []
-  resolvedDependencies: []
-  keywords:
-  - coroutine
-  - coroutines
-  - editor
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-  hideInEditor: 0
-  isAssetStorePackage: 0
-  datePublishedTicks: 637232611380000000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.editorcoroutines.git
-    revision: f67fc9992bbc7a553b17375de53a8b2db136528e
-    path: 
-  unityLifecycle:
-    version: 1.0.0
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -3963,8 +4077,10 @@ m_ResolvedPackages:
     - 1.2.4
     - 1.2.5
     - 1.2.6
+    - 1.3.1
     compatible:
     - 1.2.6
+    - 1.3.1
     recommended: 1.2.6
     deprecated: []
   dependencies: []

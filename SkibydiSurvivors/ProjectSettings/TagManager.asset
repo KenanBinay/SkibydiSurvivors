@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - skibidi_0
+  tags: []
   layers:
   - Default
   - TransparentFX

@@ -520,12 +520,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5898594777679750595}
   - component: {fileID: 1634002383353096135}
-  - component: {fileID: 7343596940508209628}
+  - component: {fileID: 4642126240082268227}
   - component: {fileID: 8439788736498133919}
   - component: {fileID: 1984972811661509688}
   m_Layer: 3
   m_Name: SkibidiToilet_1
-  m_TagString: skibidi_0
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,12 +565,12 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.61
+  m_Height: 1.5
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &7343596940508209628
-BoxCollider:
+--- !u!136 &4642126240082268227
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -584,12 +584,14 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.7, y: 1.5945523, z: 1}
-  m_Center: {x: 0, y: 0.8172761, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Height: 2.1138504
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.058364, z: 0}
 --- !u!95 &8439788736498133919
 Animator:
   serializedVersion: 5
@@ -623,8 +625,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440707a3288fdea4b89790477e80922d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealths: 96000000
-  enemyHealthNumber: 0
+  enemyHealths: 0a000000
+  enemyHealth_ElementNumber: 0
+  xpAmount: 3
 --- !u!1 &8086983329896872235
 GameObject:
   m_ObjectHideFlags: 0
