@@ -8,7 +8,7 @@ public class enemyController : MonoBehaviour
     public int[] enemyHealths;
     public int enemyHealth_ElementNumber, xpAmount;
 
-    GameObject target;
+    GameObject target, trajectory;
     NavMeshAgent agent;
 
     private void Start()

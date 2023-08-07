@@ -237,7 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 25392694}
   m_Layer: 0
-  m_Name: rayPos
+  m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,7 +251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25392693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.76}
+  m_LocalPosition: {x: 0.153, y: 0.5233, z: 0.7206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -915,6 +915,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &665669570 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+  m_PrefabInstance: {fileID: 1995009542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1258,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+--- !u!1001 &795429103
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1869665203}
+    m_Modifications:
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082550692670096518, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_Name
+      value: SkibidiToilet_1 (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
 --- !u!1 &844357175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,10 +1810,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunAnimator: {fileID: 300565486}
-  aimTransform: {fileID: 25392694}
+  firePoint: {fileID: 25392694}
   muzzleFlash_L: {fileID: 449813381}
   muzzleFlash_R: {fileID: 1442539665}
-  HealthScriptOfEnemy: {fileID: 0}
+  projectilePrefab: {fileID: 3943065697132808121, guid: 19850c5da14717146ab9d9c350f39a0e, type: 3}
+  ShootDelay: 0.25
+  spawnCount: 0
+  BulletTrail: {fileID: 0}
+  HealthScriptOfEnemy: {fileID: 2509979051108419713, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+  projectileList: []
+--- !u!4 &1193018095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+  m_PrefabInstance: {fileID: 795429103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1315536096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1814,6 +1890,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
   m_PrefabInstance: {fileID: 1315536096}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1351950924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1869665203}
+    m_Modifications:
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082550692670096518, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_Name
+      value: SkibidiToilet_1 (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
 --- !u!1 &1394172731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,6 +2766,10 @@ Transform:
   m_Children:
   - {fileID: 5898594777288118993}
   - {fileID: 1315536097}
+  - {fileID: 665669570}
+  - {fileID: 1907686686}
+  - {fileID: 1994442260}
+  - {fileID: 1193018095}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2796,6 +2937,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892616048}
   m_CullTransparentMesh: 1
+--- !u!4 &1907686686 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+  m_PrefabInstance: {fileID: 1351950924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1958559675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,6 +2978,67 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1965934089
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1869665203}
+    m_Modifications:
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082550692670096518, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_Name
+      value: SkibidiToilet_1 (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
 --- !u!1 &1993580543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,6 +3144,72 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993580543}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1994442260 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+  m_PrefabInstance: {fileID: 1965934089}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1995009542
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1869665203}
+    m_Modifications:
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247873836106946656, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082550692670096518, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      propertyPath: m_Name
+      value: SkibidiToilet_1 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
 --- !u!1001 &2021150444
 PrefabInstance:
   m_ObjectHideFlags: 0
