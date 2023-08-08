@@ -35,6 +35,11 @@ public class gunAimController : MonoBehaviour
     private Quaternion lookAt;
     private Quaternion targetRotation;
 
+    private void Start()
+    {
+        fovStartPoint = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void Update()
     {
         if (FieldOfView.nearestTarget != null)

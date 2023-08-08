@@ -8,9 +8,7 @@ public class GunShootController : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject muzzleFlash_L, muzzleFlash_R, projectilePrefab;
 
-    RaycastHit hit;
-
-    private int LayerEnemy, damage = 1;
+    private int damage = 1;
 
     [SerializeField] private float ShootDelay = 0.5f;
     [SerializeField] private int spawnCount;
@@ -25,7 +23,6 @@ public class GunShootController : MonoBehaviour
     void Start()
     {
         gunAnimator.enabled = false;
-        LayerEnemy = LayerMask.NameToLayer("Enemy");
 
         for(int i = 0; i < spawnCount; i++)
         {
