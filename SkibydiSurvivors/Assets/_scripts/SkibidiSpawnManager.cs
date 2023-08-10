@@ -2,56 +2,150 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using static SkibidiSpawnManager;
 
 public class SkibidiSpawnManager : MonoBehaviour
 {
-    public List<GameObject> skibidies = new List<GameObject>();
-
-    [SerializeField] Vector3 spawnArea;
-    [SerializeField] float spawnTimer;
-    [SerializeField] GameObject player;
-
-    float timer;
-
-    void Update()
+    [System.Serializable]
+    public class Wave
     {
-        timer -= Time.deltaTime;
-        if(timer < 0)
+        public string waveName;
+        public List<EnemyGroup> enemyGroups;
+        public int waveQuota;
+        public float spawnInterval;
+        public int spawnCount;
+    }
+
+    [System.Serializable]
+    public class EnemyGroup
+    {
+        public string enemyName;
+        public int enemyCount;
+        public int spawnCount;
+        public GameObject enemyPrefab;
+    }
+
+    public List<Wave> waves;
+    public int currentWaveCount;
+
+    [Header("Spawner Attributes")]
+    float spawnTimer;
+    int currentWaveQuota;
+    public float waveInterval;
+    public int enemiesAlive;
+    public int maxEnemiesAllowed;
+    public bool maxEnemiesReached = false;
+    private bool waveStarted = false;
+
+    [Header("Spawn Positions")]
+    public List<Transform> relativeSpawnPoints;
+
+    Transform player;
+    [SerializeField] Transform SpawnPointContainer;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        CalculateWaveQuota();
+    }
+
+    private void Update()
+    {
+        SpawnPointContainer.position = new Vector3(player.position.x, 0, player.position.z);
+
+        if (!waveStarted && currentWaveCount < waves.Count 
+            && waves[currentWaveCount].waveQuota == currentWaveQuota)
         {
-            SpawnEnemy();
-            timer = spawnTimer;
+            StartCoroutine(BeginNextWave());
+            waveStarted = true; // set waveStarted to true to prevent the coroutine from starting multiple times
+        }
+
+        /* if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0)
+         {
+             StartCoroutine(BeginNextWave());
+         }*/
+
+        spawnTimer += Time.deltaTime;
+
+        if (spawnTimer >= waves[currentWaveCount].spawnInterval)
+        {
+            spawnTimer = 0f;
+            SpawnEnemies();
+        }    
+    }
+
+    IEnumerator BeginNextWave()
+    {
+        yield return new WaitForSeconds(waveInterval);
+
+        if (currentWaveCount < waves.Count - 1)
+        {
+            currentWaveCount++;
+            CalculateWaveQuota();
+            waveStarted = false;
         }
     }
 
-    void SpawnEnemy()
+    void CalculateWaveQuota()
     {
-        Vector3 position = GenerateRandomPosition();
+        currentWaveQuota = 0;
+        foreach (var enemyGroup in waves[currentWaveCount].enemyGroups)
+        {
+            currentWaveQuota += enemyGroup.enemyCount;
+        }
 
-        position += player.transform.position;
-
-        GameObject newEnemy = Instantiate(skibidies[0]);
-        newEnemy.transform.position = position;
-        newEnemy.GetComponent<enemyController>().SetTarget(player);
-        newEnemy.transform.parent = transform;
+        waves[currentWaveCount].waveQuota = currentWaveQuota;
+        Debug.LogWarning(currentWaveQuota);
     }
 
-   Vector3 GenerateRandomPosition()
+    void SpawnEnemies()
     {
-        Vector3 position = new Vector3();
-
-        float f = UnityEngine.Random.value > 0.5f ? -1f : 1f;
-        if (UnityEngine.Random.value > 0.5f)
+        if (waves[currentWaveCount].spawnCount < waves[currentWaveCount].waveQuota && !maxEnemiesReached)
         {
-            position.x = UnityEngine.Random.Range(-spawnArea.x, spawnArea.x);
-            position.z = spawnArea.z * f;
+            foreach (var enemyGroup in waves[currentWaveCount].enemyGroups)
+            {
+                if (enemyGroup.spawnCount < enemyGroup.enemyCount)
+                {
+                    if (enemiesAlive >= maxEnemiesAllowed)
+                    {
+                        maxEnemiesReached = true;
+                        return;
+                    }     
+                    
+                    GameObject enemy = Instantiate(enemyGroup.enemyPrefab, player.position
+                        + relativeSpawnPoints[Random.Range(0,relativeSpawnPoints.Count)].position
+                        , Quaternion.identity);
+
+                    enemy.transform.parent = transform;
+                    enemyController ec = enemy.GetComponent<enemyController>();
+                    ec.SetTarget(player);
+
+                    enemyGroup.spawnCount++;
+                    waves[currentWaveCount].spawnCount++;
+                    enemiesAlive++;
+                }
+            }
         }
-        else
+
+        if (enemiesAlive < maxEnemiesAllowed)
         {
-            position.z = UnityEngine.Random.Range(-spawnArea.z, spawnArea.z);
+            maxEnemiesReached = false;
+        }
+    }
+
+    public void OnEnemyKilled()
+    {
+        enemiesAlive--;
+    }
+
+    void firstWave()
+    {
+        if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0)
+        {
+            StartCoroutine(BeginNextWave());
         }
 
-        position.y = 0;
-
-        return position;
+        spawnTimer = 0f;
+        SpawnEnemies();
     }
 }

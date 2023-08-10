@@ -432,6 +432,7 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
+"Assets/_scripts/AttackContainerController.cs"
 "Assets/_scripts/characterController.cs"
 "Assets/_scripts/enemyController.cs"
 "Assets/_scripts/FieldOfView.cs"

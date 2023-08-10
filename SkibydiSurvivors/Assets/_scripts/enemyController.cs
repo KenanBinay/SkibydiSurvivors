@@ -8,15 +8,17 @@ public class enemyController : MonoBehaviour
     public int[] enemyHealths;
     public int enemyHealth_ElementNumber, xpAmount;
 
-    GameObject target;
+    Transform target;
     NavMeshAgent agent;
+
+    public float despawnDistance = 20f;
 
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();      
     }
 
-    public void SetTarget(GameObject player)
+    public void SetTarget(Transform player)
     {
         target = player;
     }
@@ -31,7 +33,12 @@ public class enemyController : MonoBehaviour
     }
     private void Update()
     {
-        Move();    
+        Move();
+
+        if (target != null && Vector3.Distance(transform.position, target.position) >= despawnDistance)
+        {
+            ReturnEnemy();
+        }
     }
 
     void Move()
@@ -41,6 +48,16 @@ public class enemyController : MonoBehaviour
 
     void Die()
     {
+        SkibidiSpawnManager es = FindObjectOfType<SkibidiSpawnManager>();
+        es.OnEnemyKilled();
+
         Destroy(gameObject);
+    }
+
+    void ReturnEnemy()
+    {
+        SkibidiSpawnManager es = FindObjectOfType<SkibidiSpawnManager>();
+        transform.position = target.position + es.relativeSpawnPoints[Random.Range(0
+            , es.relativeSpawnPoints.Count)].position;
     }
 }

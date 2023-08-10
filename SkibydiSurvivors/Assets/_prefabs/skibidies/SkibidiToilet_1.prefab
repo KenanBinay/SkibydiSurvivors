@@ -330,6 +330,7 @@ MonoBehaviour:
   enemyHealths: 05000000
   enemyHealth_ElementNumber: 0
   xpAmount: 3
+  despawnDistance: 21
 --- !u!1 &6819632239915465917
 GameObject:
   m_ObjectHideFlags: 0
