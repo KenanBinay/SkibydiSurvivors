@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440707a3288fdea4b89790477e80922d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealths: 0a000000
+  enemyHealths: 05000000
   enemyHealth_ElementNumber: 0
   xpAmount: 3
 --- !u!1 &6819632239915465917

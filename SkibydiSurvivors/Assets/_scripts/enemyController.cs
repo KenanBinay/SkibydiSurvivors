@@ -8,13 +8,17 @@ public class enemyController : MonoBehaviour
     public int[] enemyHealths;
     public int enemyHealth_ElementNumber, xpAmount;
 
-    GameObject target, trajectory;
+    GameObject target;
     NavMeshAgent agent;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindWithTag("Player").gameObject;
+    }
+
+    public void SetTarget(GameObject player)
+    {
+        target = player;
     }
 
     public void TakeDamage(int amount)
