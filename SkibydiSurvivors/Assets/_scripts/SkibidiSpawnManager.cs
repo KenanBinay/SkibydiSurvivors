@@ -41,7 +41,6 @@ public class SkibidiSpawnManager : MonoBehaviour
     public List<Transform> relativeSpawnPoints;
 
     Transform player;
-    [SerializeField] Transform SpawnPointContainer;
 
     private void Start()
     {
@@ -51,8 +50,6 @@ public class SkibidiSpawnManager : MonoBehaviour
 
     private void Update()
     {
-        SpawnPointContainer.position = new Vector3(player.position.x, 0, player.position.z);
-
         if (!waveStarted && currentWaveCount < waves.Count 
             && waves[currentWaveCount].waveQuota == currentWaveQuota)
         {
@@ -110,13 +107,12 @@ public class SkibidiSpawnManager : MonoBehaviour
                     {
                         maxEnemiesReached = true;
                         return;
-                    }     
-                    
-                    GameObject enemy = Instantiate(enemyGroup.enemyPrefab, player.position
-                        + relativeSpawnPoints[Random.Range(0,relativeSpawnPoints.Count)].position
-                        , Quaternion.identity);
+                    }
 
-                    enemy.transform.parent = transform;
+                    GameObject enemy = Instantiate(enemyGroup.enemyPrefab, player.position +
+                        relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position
+                        , Quaternion.identity, transform);
+             
                     enemyController ec = enemy.GetComponent<enemyController>();
                     ec.SetTarget(player);
 

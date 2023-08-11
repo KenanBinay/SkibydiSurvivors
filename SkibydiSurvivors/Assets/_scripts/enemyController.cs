@@ -10,11 +10,15 @@ public class enemyController : MonoBehaviour
 
     Transform target;
     NavMeshAgent agent;
+    SkibidiSpawnManager es;
 
     public float despawnDistance = 20f;
 
+    public bool returning = false;
+
     private void Start()
     {
+        es = FindObjectOfType<SkibidiSpawnManager>();
         agent = GetComponent<NavMeshAgent>();      
     }
 
@@ -33,12 +37,14 @@ public class enemyController : MonoBehaviour
     }
     private void Update()
     {
-        Move();
+        if (!returning) Move(); 
 
-        if (target != null && Vector3.Distance(transform.position, target.position) >= despawnDistance)
+        if (!returning && target != null && Vector3.Distance(transform.position, target.position) >= despawnDistance)
         {
+            returning = true;
             ReturnEnemy();
         }
+        else returning = false; 
     }
 
     void Move()
@@ -56,7 +62,6 @@ public class enemyController : MonoBehaviour
 
     void ReturnEnemy()
     {
-        SkibidiSpawnManager es = FindObjectOfType<SkibidiSpawnManager>();
         transform.position = target.position + es.relativeSpawnPoints[Random.Range(0
             , es.relativeSpawnPoints.Count)].position;
     }
