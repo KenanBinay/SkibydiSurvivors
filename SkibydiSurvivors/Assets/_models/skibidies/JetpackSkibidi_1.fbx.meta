@@ -3,12 +3,7 @@ guid: 7c455497c6ef9ea4ebee95c5210fb80c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WEP_Bazooka_D
-    second: {fileID: 2100000, guid: 63e659073c31ea4499946ab3aa1d7e80, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

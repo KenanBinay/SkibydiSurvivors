@@ -2980,7 +2980,7 @@ MonoBehaviour:
   currentWaveCount: 0
   waveInterval: 60
   enemiesAlive: 0
-  maxEnemiesAllowed: 100
+  maxEnemiesAllowed: 150
   maxEnemiesReached: 0
   relativeSpawnPoints:
   - {fileID: 1028754099}

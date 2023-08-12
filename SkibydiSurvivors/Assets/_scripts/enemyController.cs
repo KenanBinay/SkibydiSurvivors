@@ -15,7 +15,12 @@ public class enemyController : MonoBehaviour
     NavMeshAgent agent;
     SkibidiSpawnManager es;
 
+   public SkinnedMeshRenderer skinnedMeshRenderer;
+
     public float despawnDistance = 20f;
+    public float blinkIntesity;
+    public float blinkDuration;
+    float blinkTimer;
 
     public bool returning = false;
 
@@ -24,6 +29,8 @@ public class enemyController : MonoBehaviour
         enemyHealth = enemyScriptableObject.health;
         xpAmount = enemyScriptableObject.xp;
         damage = enemyScriptableObject.attackDamage;
+
+        skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
 
         es = FindObjectOfType<SkibidiSpawnManager>();
         agent = GetComponent<NavMeshAgent>();
@@ -41,6 +48,8 @@ public class enemyController : MonoBehaviour
         {
             Die();
         }
+
+        blinkTimer = blinkDuration;
     }
 
     private void Update()
@@ -53,6 +62,14 @@ public class enemyController : MonoBehaviour
             ReturnEnemy();
         }
         else returning = false;
+
+        blinkTimer -= Time.deltaTime;
+        float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
+        float intensity = (lerp * blinkIntesity) + 1f;
+        foreach (var materials in skinnedMeshRenderer.materials)
+        {
+            materials.color = Color.white * intensity;
+        }
     }
 
     void Move()

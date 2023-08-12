@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9af6eaf7a1f891245939b89dbdad8dd6
+guid: 412021aae9dab6e4a9be9170f6469cce
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: eyeball_l
-    second: {fileID: 2100000, guid: 755627c83f19d1c4197e582137d48fac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: eyeball_r
-    second: {fileID: 2100000, guid: e7863c5e905049144b59eda1e72ef965, type: 2}
+      name: Metal
+    second: {fileID: 2100000, guid: 2f2e96736ca0cd547af3da6a9a191ec5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
