@@ -5,7 +5,6 @@ using UnityEngine;
 public class GunShootController : MonoBehaviour
 {
     [SerializeField] Animator gunAnimator;
-    [SerializeField] Transform firePoint;
     [SerializeField] GameObject muzzleFlash_L, muzzleFlash_R, projectilePrefab;
 
     private int damage = 1;
@@ -16,20 +15,13 @@ public class GunShootController : MonoBehaviour
 
     public enemyController HealthScriptOfEnemy;
 
-    Coroutine currentCoroutine;
+    public static Coroutine currentCoroutine;
 
     public List<GameObject> projectileList;
 
     void Start()
     {
         gunAnimator.enabled = false;
-
-        for(int i = 0; i < spawnCount; i++)
-        {
-            GameObject projectile = Instantiate(projectilePrefab) as GameObject;
-            projectileList.Add(projectile);
-            projectile.transform.parent = this.firePoint;
-        }
     }
 
     void Update()
@@ -59,10 +51,6 @@ public class GunShootController : MonoBehaviour
 
     IEnumerator DoShoot()
     {
-        Vector3 targetDir = new Vector3(FieldOfView.nearestTarget.position.x, 1
-            , FieldOfView.nearestTarget.position.z);
-        Vector3 myPosition = firePoint.position;
-
         HealthScriptOfEnemy = gunAimController.enemy_gameObject
             .transform.GetComponent<enemyController>();
 
