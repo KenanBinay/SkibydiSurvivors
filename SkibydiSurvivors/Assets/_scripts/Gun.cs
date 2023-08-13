@@ -110,7 +110,7 @@ public class Gun : MonoBehaviour
             yield return null;
         }
         Animator.SetBool("IsShooting", false);
-        Trail.transform.position = HitPoint;
+        if (Trail != null) Trail.transform.position = HitPoint;
         if (MadeImpact)
         {
             Instantiate(ImpactParticleSystem, HitPoint, Quaternion.LookRotation(HitNormal));
