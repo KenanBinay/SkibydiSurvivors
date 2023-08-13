@@ -11,11 +11,11 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private ParticleSystem ShootingSystem;
     [SerializeField]
-    private Transform BulletSpawnPoint_L, BulletSpawnPoint_R;
+    private Transform firePoint;
     [SerializeField]
     private ParticleSystem ImpactParticleSystem;
     [SerializeField]
-    private TrailRenderer BulletTrail;
+    private GameObject BulletTrail;
     [SerializeField]
     private float ShootDelay = 0.5f;
     [SerializeField]
@@ -51,9 +51,9 @@ public class Gun : MonoBehaviour
 
             Vector3 direction = GetDirection();
 
-            if (Physics.Raycast(BulletSpawnPoint_L.position, direction, out RaycastHit hit, float.MaxValue, Mask))
+            if (Physics.Raycast(firePoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
             {
-                TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint_L.position, Quaternion.identity);
+                GameObject trail = Instantiate(BulletTrail, firePoint.position, Quaternion.identity);
 
                 StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true));
 
@@ -62,27 +62,9 @@ public class Gun : MonoBehaviour
             // this has been updated to fix a commonly reported problem that you cannot fire if you would not hit anything
             else
             {
-                TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint_L.position, Quaternion.identity);
+                GameObject trail = Instantiate(BulletTrail, firePoint.position, Quaternion.identity);
 
-                StartCoroutine(SpawnTrail(trail, BulletSpawnPoint_L.position + GetDirection() * 100, Vector3.zero, false));
-
-                LastShootTime = Time.time;
-            }
-
-            if (Physics.Raycast(BulletSpawnPoint_R.position, direction, out RaycastHit hitR, float.MaxValue, Mask))
-            {
-                TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint_R.position, Quaternion.identity);
-
-                StartCoroutine(SpawnTrail(trail, hitR.point, hitR.normal, true));
-
-                LastShootTime = Time.time;
-            }
-            // this has been updated to fix a commonly reported problem that you cannot fire if you would not hit anything
-            else
-            {
-                TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint_R.position, Quaternion.identity);
-
-                StartCoroutine(SpawnTrail(trail, BulletSpawnPoint_R.position + GetDirection() * 100, Vector3.zero, false));
+                StartCoroutine(SpawnTrail(trail, firePoint.position + GetDirection() * 100, Vector3.zero, false));
 
                 LastShootTime = Time.time;
             }
@@ -107,7 +89,7 @@ public class Gun : MonoBehaviour
         return direction;
     }
 
-    private IEnumerator SpawnTrail(TrailRenderer Trail, Vector3 HitPoint, Vector3 HitNormal, bool MadeImpact)
+    private IEnumerator SpawnTrail(GameObject Trail, Vector3 HitPoint, Vector3 HitNormal, bool MadeImpact)
     {
         // This has been updated from the video implementation to fix a commonly raised issue about the bullet trails
         // moving slowly when hitting something close, and not
@@ -117,7 +99,11 @@ public class Gun : MonoBehaviour
 
         while (remainingDistance > 0)
         {
-            Trail.transform.position = Vector3.Lerp(startPosition, HitPoint, 1 - (remainingDistance / distance));
+            if (Trail != null)
+            {
+                Trail.transform.position = Vector3.Lerp(startPosition, HitPoint, 1
+                    - (remainingDistance / distance));
+            }
 
             remainingDistance -= BulletSpeed * Time.deltaTime;
 
@@ -130,6 +116,6 @@ public class Gun : MonoBehaviour
             Instantiate(ImpactParticleSystem, HitPoint, Quaternion.LookRotation(HitNormal));
         }
 
-        Destroy(Trail.gameObject, Trail.time);
+        Destroy(Trail.gameObject);
     }
 }
