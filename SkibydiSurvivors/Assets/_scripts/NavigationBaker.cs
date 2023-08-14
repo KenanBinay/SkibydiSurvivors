@@ -6,19 +6,20 @@ using UnityEngine.AI;
 
 public class NavigationBaker : MonoBehaviour
 {
-    public NavMeshSurface[] surfaces;
+    public NavMeshSurface surface;
 
-    void Update()
-    {
-
-    }
-
+    bool navmeshBuilding;
     public void BakeSurface()
     {
         Debug.Log("Navmesh Surface Baking");
-        for (int i = 0; i < surfaces.Length; i++)
+
+        try
         {
-            surfaces[i].BuildNavMesh();
+            surface.BuildNavMesh();
+        }
+        catch
+        {
+            Debug.Log("NavMesh Catch");
         }
     }
 }

@@ -379,6 +379,7 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.0f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.0f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/gridManager.cs"
 "Assets/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_AutoStopLoopedEffect.cs"
 "Assets/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo.cs"
 "Assets/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_New.cs"
@@ -443,11 +444,13 @@
 "Assets/_scripts/FieldOfViewEditor.cs"
 "Assets/_scripts/fps.cs"
 "Assets/_scripts/gameController.cs"
+"Assets/_scripts/GenerateMeshSimple.cs"
 "Assets/_scripts/Gun.cs"
 "Assets/_scripts/gunAimController.cs"
 "Assets/_scripts/GunShootController.cs"
 "Assets/_scripts/NavigationBaker.cs"
 "Assets/_scripts/SkibidiSpawnManager.cs"
+"Assets/_scripts/TerrainControllerSimple.cs"
 -langversion:9.0
 
 /deterministic
