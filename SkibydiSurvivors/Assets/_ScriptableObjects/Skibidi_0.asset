@@ -15,4 +15,4 @@ MonoBehaviour:
   health: 5
   attackDamage: 2
   xp: 3
-  speed: 0
+  speed: 2

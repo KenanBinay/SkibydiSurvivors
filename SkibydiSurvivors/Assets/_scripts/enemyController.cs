@@ -10,17 +10,17 @@ public class enemyController : MonoBehaviour
     EnemyScriptableObject enemyScriptableObject;
 
     int enemyHealth, xpAmount, damage;
+    float blinkTimer, speed;
 
     Transform target;
     NavMeshAgent agent;
     SkibidiSpawnManager es;
 
-   public SkinnedMeshRenderer skinnedMeshRenderer;
+    public SkinnedMeshRenderer skinnedMeshRenderer;
 
     public float despawnDistance = 20f;
     public float blinkIntesity;
     public float blinkDuration;
-    float blinkTimer;
 
     public bool returning = false;
 
@@ -29,11 +29,14 @@ public class enemyController : MonoBehaviour
         enemyHealth = enemyScriptableObject.health;
         xpAmount = enemyScriptableObject.xp;
         damage = enemyScriptableObject.attackDamage;
+        speed = enemyScriptableObject.speed;
 
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
 
         es = FindObjectOfType<SkibidiSpawnManager>();
         agent = GetComponent<NavMeshAgent>();
+
+        agent.speed = speed;
     }
 
     public void SetTarget(Transform player)

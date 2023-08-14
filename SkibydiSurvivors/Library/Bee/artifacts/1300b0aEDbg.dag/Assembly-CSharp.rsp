@@ -342,6 +342,8 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Editor.ConversionSystem.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Samples.Initialization.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Samples.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Updater.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Animation.Rigging.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Animation.Rigging.ref.dll"
@@ -444,6 +446,7 @@
 "Assets/_scripts/Gun.cs"
 "Assets/_scripts/gunAimController.cs"
 "Assets/_scripts/GunShootController.cs"
+"Assets/_scripts/NavigationBaker.cs"
 "Assets/_scripts/SkibidiSpawnManager.cs"
 -langversion:9.0
 

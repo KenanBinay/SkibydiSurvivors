@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GunShootController : MonoBehaviour
 {
-    [SerializeField] Animator gunAnimator;
     [SerializeField] GameObject muzzleFlash_L, muzzleFlash_R, projectilePrefab;
 
     private int damage = 1;
@@ -21,7 +20,6 @@ public class GunShootController : MonoBehaviour
 
     void Start()
     {
-        gunAnimator.enabled = false;
     }
 
     void Update()
@@ -32,8 +30,6 @@ public class GunShootController : MonoBehaviour
         }
         else
         {
-            if (gunAnimator.enabled) gunAnimator.enabled = false;
-
             if (muzzleFlash_L.activeSelf) muzzleFlash_L.SetActive(false);
             if (muzzleFlash_R.activeSelf) muzzleFlash_R.SetActive(false);
         }
@@ -41,7 +37,6 @@ public class GunShootController : MonoBehaviour
 
     void Shoot()
     {
-        if (!gunAnimator.enabled) gunAnimator.enabled = true;
         if (!muzzleFlash_L.activeSelf) muzzleFlash_L.SetActive(true);
         if (!muzzleFlash_R.activeSelf) muzzleFlash_R.SetActive(true);
 
