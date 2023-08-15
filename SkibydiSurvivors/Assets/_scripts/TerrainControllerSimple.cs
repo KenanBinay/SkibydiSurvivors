@@ -29,6 +29,8 @@ public class TerrainControllerSimple : MonoBehaviour {
     private Vector2[] previousCenterTiles;
     private List<GameObject> previousTileObjects = new List<GameObject>();
 
+    bool navmeshBaked;
+
     private void Start() {
         navSurface = GetComponent<NavigationBaker>();
         InitialLoad();
@@ -86,8 +88,6 @@ public class TerrainControllerSimple : MonoBehaviour {
             if (!t.activeSelf)
                 t.SetActive(true);
         }
-
-        navSurface.BakeSurface();
     }
 
     private GameObject CreateTile(int xIndex, int yIndex) {
@@ -106,6 +106,8 @@ public class TerrainControllerSimple : MonoBehaviour {
         gm.CellSize = cellSize;
         gm.NoiseOffset = NoiseOffset(xIndex, yIndex);
         gm.Generate();
+
+        navSurface.BakeSurface();
 
         return terrain;
     }

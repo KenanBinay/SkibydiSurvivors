@@ -8,13 +8,12 @@ public class NavigationBaker : MonoBehaviour
 {
     public NavMeshSurface surface;
 
-    bool navmeshBuilding;
     public void BakeSurface()
     {
-        Debug.Log("Navmesh Surface Baking");
-
         try
         {
+            Debug.Log("Navmesh Surface Baking");
+
             surface.BuildNavMesh();
         }
         catch

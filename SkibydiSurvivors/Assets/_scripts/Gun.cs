@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private ParticleSystem ShootingSystem;
     [SerializeField]
-    private Transform firePoint;
+    private Transform firePoint, bulletStack;
     [SerializeField]
     private ParticleSystem ImpactParticleSystem;
     [SerializeField]
@@ -28,6 +28,7 @@ public class Gun : MonoBehaviour
 
     private void Awake()
     {
+        bulletStack = GameObject.Find("_BulletContainer").transform;
         Animator = GetComponent<Animator>();
     }
 
@@ -53,7 +54,7 @@ public class Gun : MonoBehaviour
 
             if (Physics.Raycast(firePoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
             {
-                GameObject trail = Instantiate(BulletTrail, firePoint.position, Quaternion.identity);
+                GameObject trail = Instantiate(BulletTrail, firePoint.position, Quaternion.identity, bulletStack);
 
                 StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true));
 
@@ -62,7 +63,7 @@ public class Gun : MonoBehaviour
             // this has been updated to fix a commonly reported problem that you cannot fire if you would not hit anything
             else
             {
-                GameObject trail = Instantiate(BulletTrail, firePoint.position, Quaternion.identity);
+                GameObject trail = Instantiate(BulletTrail, firePoint.position, Quaternion.identity, bulletStack);
 
                 StartCoroutine(SpawnTrail(trail, firePoint.position + GetDirection() * 100, Vector3.zero, false));
 

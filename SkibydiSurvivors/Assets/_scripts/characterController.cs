@@ -14,6 +14,7 @@ public class characterController : MonoBehaviour
 
     public float movementSpeed, rotationSpeed, idleRotationSpeed, maxAngle = 90;
     public static bool idle;
+    public bool useAutoShooting;
 
     void Start()
     {
@@ -26,30 +27,65 @@ public class characterController : MonoBehaviour
 
         playerAnimator.SetFloat("vertical", movementDirection.sqrMagnitude);
 
-        if (movementDirection.sqrMagnitude > 0)
+        if (!useAutoShooting)
+        {
+            if (movementDirection.sqrMagnitude > 0)
+            {
+                controller.SimpleMove(movementDirection * movementSpeed);
+
+                var targetDirection = Vector3.RotateTowards(controller.transform.forward, movementDirection
+          , rotationSpeed * Time.deltaTime, 0.0f);
+
+                controller.transform.rotation = Quaternion.LookRotation(targetDirection);
+
+                idle = false;
+            }
+            else if (FieldOfView.nearestTarget != null && movementDirection.sqrMagnitude <= 0)
+            {
+                Vector3 direction = FieldOfView.nearestTarget.position - controller.transform.position;
+
+                direction = new Vector3(direction.x, 0, direction.z);
+
+                // Rotate the current transform to look at the enemy
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                Quaternion lookAt = Quaternion.RotateTowards(
+                controller.transform.rotation, targetRotation, Time.deltaTime * idleRotationSpeed);
+                controller.transform.rotation = lookAt;
+
+                idle = true;
+            }
+        }
+        else
         {
             controller.SimpleMove(movementDirection * movementSpeed);
 
-            var targetDirection = Vector3.RotateTowards(controller.transform.forward, movementDirection
-      , rotationSpeed * Time.deltaTime, 0.0f);
+            if (FieldOfView.nearestTarget == null && movementDirection.sqrMagnitude <= 0)
+            {
+                idle = true;
+            }
+            else if (FieldOfView.nearestTarget == null && movementDirection.sqrMagnitude > 0)
+            {
+                var targetDirection = Vector3.RotateTowards(controller.transform.forward, movementDirection
+          , rotationSpeed * Time.deltaTime, 0.0f);
 
-            controller.transform.rotation = Quaternion.LookRotation(targetDirection);
+                controller.transform.rotation = Quaternion.LookRotation(targetDirection);
 
-            idle = false;
-        }
-        else if (FieldOfView.nearestTarget != null && movementDirection.sqrMagnitude <= 0)
-        {
-            Vector3 direction = FieldOfView.nearestTarget.position - controller.transform.position;
+                idle = false;
+            }
+            else if (FieldOfView.nearestTarget != null)
+            {
+                Vector3 direction = FieldOfView.nearestTarget.position - controller.transform.position;
 
-            direction = new Vector3(direction.x, 0, direction.z);
+                direction = new Vector3(direction.x, 0, direction.z);
 
-            // Rotate the current transform to look at the enemy
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            Quaternion lookAt = Quaternion.RotateTowards(
-            controller.transform.rotation, targetRotation, Time.deltaTime * idleRotationSpeed);
-            controller.transform.rotation = lookAt;
+                // Rotate the current transform to look at the enemy
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                Quaternion lookAt = Quaternion.RotateTowards(
+                controller.transform.rotation, targetRotation, Time.deltaTime * idleRotationSpeed);
+                controller.transform.rotation = lookAt;
 
-            idle = true;
+                idle = false;
+            }
         }
     }
 }

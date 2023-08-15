@@ -644,7 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
   fovStartPoint: {fileID: 0}
-  lookSpeed: 200
+  lookSpeed: 400
   maxAngle: 90
   maxAngleReset: 90
   canLean: 1
@@ -1124,7 +1124,7 @@ Transform:
   - {fileID: 8297267827762798192}
   - {fileID: 1136403975935995260}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6388416567635779132
 Animator:
@@ -1993,9 +1993,8 @@ MonoBehaviour:
   AddBulletSpread: 0
   BulletSpreadVariance: {x: 0.1, y: 0.1, z: 0.1}
   ShootingSystem: {fileID: 0}
-  BulletSpawnPoint_L: {fileID: 0}
-  BulletSpawnPoint_R: {fileID: 0}
   firePoint: {fileID: 2162880978068360180}
+  bulletStack: {fileID: 0}
   ImpactParticleSystem: {fileID: 0}
   BulletTrail: {fileID: 7025409121406925198, guid: fd850754b5591394c858c4630fd6a0d5, type: 3}
   ShootDelay: 0.25
@@ -2287,8 +2286,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6399396821327313281}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.1, z: 0.683}
+  m_LocalRotation: {x: -0.000000167638, y: 0.00000007450565, z: 0.000000029803534, w: 1}
+  m_LocalPosition: {x: 0, y: 0.10000017, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
