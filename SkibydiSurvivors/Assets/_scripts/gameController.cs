@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class gameController : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class gameController : MonoBehaviour
     public static int eliminations;
     int level;
 
+    [Header("Stopwatch")]
+    public float timeLimit; // in seconds
+    float stopwatchtime;
+    public TextMeshProUGUI stopwatchDisplay;
+
     public bool isGameOver = false;
 
     [Header("UI")]
@@ -34,6 +40,7 @@ public class gameController : MonoBehaviour
         {
             case GameState.Gameplay:
                 CheckForPauseAndResume();
+                UpdateStopwatch();
                 break;
 
             case GameState.Paused:
@@ -82,6 +89,11 @@ public class gameController : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        ChangeState(GameState.GameOver);
+    }
+
     void CheckForPauseAndResume()
     {
 
@@ -90,5 +102,25 @@ public class gameController : MonoBehaviour
     void DisableScreens()
     {
         pauseScreen.SetActive(false);
+    }
+
+    void UpdateStopwatch()
+    {
+        stopwatchtime += Time.deltaTime;
+
+        UpdateStopwatchDisplay();
+
+        if (stopwatchtime >= timeLimit)
+        {
+            GameOver();
+        }
+    }
+
+    void UpdateStopwatchDisplay()
+    {
+        int minutes = Mathf.FloorToInt(stopwatchtime / 60);
+        int seconds = Mathf.FloorToInt(stopwatchtime % 60);
+
+        stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

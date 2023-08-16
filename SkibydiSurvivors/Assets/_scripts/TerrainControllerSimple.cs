@@ -107,7 +107,7 @@ public class TerrainControllerSimple : MonoBehaviour {
         gm.NoiseOffset = NoiseOffset(xIndex, yIndex);
         gm.Generate();
 
-        navSurface.BakeSurface();
+     //   navSurface.BakeSurface();
 
         return terrain;
     }

@@ -6,13 +6,13 @@ public class GunShootController : MonoBehaviour
 {
     [SerializeField] GameObject muzzleFlash_L, muzzleFlash_R, projectilePrefab;
 
-    private int damage = 1;
+    float damage = 1f;
 
     [SerializeField] private float ShootDelay = 0.5f;
     [SerializeField] private int spawnCount;
     [SerializeField] private TrailRenderer BulletTrail;
 
-    public enemyController HealthScriptOfEnemy;
+    public enemyController enemyController;
 
     public static Coroutine currentCoroutine;
 
@@ -20,6 +20,7 @@ public class GunShootController : MonoBehaviour
 
     void Start()
     {
+
     }
 
     void Update()
@@ -46,13 +47,12 @@ public class GunShootController : MonoBehaviour
 
     IEnumerator DoShoot()
     {
-        HealthScriptOfEnemy = gunAimController.enemy_gameObject
+        enemyController = gunAimController.enemy_gameObject
             .transform.GetComponent<enemyController>();
 
-        if (HealthScriptOfEnemy != null)
+        if (enemyController != null)
         {
-            Debug.Log("damage given");
-            HealthScriptOfEnemy.TakeDamage(damage);
+            enemyController.TakeDamage(damage);
         }
 
         yield return new WaitForSeconds(ShootDelay);

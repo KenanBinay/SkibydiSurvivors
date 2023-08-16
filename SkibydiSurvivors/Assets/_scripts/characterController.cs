@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class characterController : MonoBehaviour
 {
     [SerializeField] FixedJoystick joystick;
 
     public CharacterController controller;
-    public GameObject fovStartPoint;
+    public GameObject character;
     public Animator playerAnimator;
+
+    Vector3 _moveVector, movementDirection;
 
     public float movementSpeed, rotationSpeed, idleRotationSpeed, maxAngle = 90;
     public static bool idle;
@@ -23,15 +26,23 @@ public class characterController : MonoBehaviour
 
     void Update()
     {
-        var movementDirection = new Vector3(joystick.Direction.x, 0.0f, joystick.Direction.y);
+         movementDirection = new Vector3(joystick.Horizontal, 0.0f, joystick.Vertical);
+        _moveVector = Vector3.zero;
+        _moveVector.x = joystick.Horizontal * movementSpeed * Time.deltaTime;
+        _moveVector.z = joystick.Vertical * movementSpeed * Time.deltaTime;
 
         playerAnimator.SetFloat("vertical", movementDirection.sqrMagnitude);
 
+        Move();
+    }
+
+    void Move()
+    {
         if (!useAutoShooting)
         {
             if (movementDirection.sqrMagnitude > 0)
             {
-                controller.SimpleMove(movementDirection * movementSpeed);
+                controller.Move(_moveVector); // moving the chracter by using chracterController
 
                 var targetDirection = Vector3.RotateTowards(controller.transform.forward, movementDirection
           , rotationSpeed * Time.deltaTime, 0.0f);
@@ -57,7 +68,7 @@ public class characterController : MonoBehaviour
         }
         else
         {
-            controller.SimpleMove(movementDirection * movementSpeed);
+            controller.Move(_moveVector); // moving the chracter by using chracterController
 
             if (FieldOfView.nearestTarget == null && movementDirection.sqrMagnitude <= 0)
             {

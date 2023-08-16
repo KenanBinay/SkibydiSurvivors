@@ -9,8 +9,7 @@ public class enemyController : MonoBehaviour
     [SerializeField]
     EnemyScriptableObject enemyScriptableObject;
 
-    int enemyHealth, xpAmount, damage;
-    float blinkTimer, speed;
+    float blinkTimer, speed, damage, xpAmount, enemyHealth;
 
     Transform target;
     NavMeshAgent agent;
@@ -34,9 +33,8 @@ public class enemyController : MonoBehaviour
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
 
         es = FindObjectOfType<SkibidiSpawnManager>();
-        agent = GetComponent<NavMeshAgent>();
-
-        agent.speed = speed;
+     //   agent = GetComponent<NavMeshAgent>();
+     //   agent.speed = speed;
     }
 
     public void SetTarget(Transform player)
@@ -44,7 +42,7 @@ public class enemyController : MonoBehaviour
         target = player;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         enemyHealth -= amount;
         if (enemyHealth <= 0)
@@ -77,7 +75,22 @@ public class enemyController : MonoBehaviour
 
     void Move()
     {
-        agent.SetDestination(target.transform.position);
+        //   agent.SetDestination(target.transform.position);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position
+            , speed * Time.deltaTime);
+
+        Vector3 direction = target.position - transform.position;
+
+        direction = new Vector3(direction.x, 0, direction.z);
+
+        // Rotate the current transform to look at the enemy
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            Quaternion lookAt = Quaternion.RotateTowards(
+            transform.rotation, targetRotation, Time.deltaTime * 800);
+            transform.rotation = lookAt;
+        }
     }
 
     void Die()

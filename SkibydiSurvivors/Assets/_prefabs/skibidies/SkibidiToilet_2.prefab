@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594081231506095457}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.2999997, z: 0.29999965}
+  m_LocalPosition: {x: 0, y: 0, z: 0.29999965}
   m_LocalScale: {x: 279.99997, y: 280, z: 280}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -334,11 +334,12 @@ GameObject:
   - component: {fileID: 5802262159627739028}
   - component: {fileID: 1712148544040499334}
   - component: {fileID: 4367763264128591055}
+  - component: {fileID: 1371693700636120664}
   - component: {fileID: 8806215572565916742}
   - component: {fileID: 8170044573111777083}
   m_Layer: 3
   m_Name: SkibidiToilet_2
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,7 +359,7 @@ Transform:
   - {fileID: 7427118735952443813}
   - {fileID: 860026702075446479}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1712148544040499334
 NavMeshAgent:
@@ -367,7 +368,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3379849815978344734}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 2
@@ -405,6 +406,33 @@ CapsuleCollider:
   m_Height: 2.1138504
   m_Direction: 1
   m_Center: {x: 0, y: 1.058364, z: 0}
+--- !u!54 &1371693700636120664
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3379849815978344734}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!114 &8806215572565916742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440707a3288fdea4b89790477e80922d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyScriptableObject: {fileID: 11400000, guid: b69bb2e941a7edc489fe9e6e442df821, type: 2}
+  enemyScriptableObject: {fileID: 11400000, guid: 2ad066419bef19b458254d5f324b3357, type: 2}
   skinnedMeshRenderer: {fileID: 0}
   despawnDistance: 16
   blinkIntesity: 10
