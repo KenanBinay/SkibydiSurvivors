@@ -7,6 +7,9 @@ using UnityEngine.TextCore.Text;
 
 public class characterController : MonoBehaviour
 {
+    [SerializeField]
+    private CharacterScriptableObject CharacterData;
+
     [SerializeField] FixedJoystick joystick;
 
     public CharacterController controller;
@@ -15,13 +18,19 @@ public class characterController : MonoBehaviour
 
     Vector3 _moveVector, movementDirection;
 
-    public float movementSpeed, rotationSpeed, idleRotationSpeed, maxAngle = 90;
+    public float rotationSpeed, idleRotationSpeed, maxAngle = 90;
     public static bool idle;
     public bool useAutoShooting;
+
+    float movementSpeed, health;
 
     void Start()
     {
         playerAnimator = controller.GetComponentInChildren<Animator>();
+
+        movementSpeed = CharacterData.MoveSpeed;
+        health = CharacterData.MaxHealth;
+
     }
 
     void Update()

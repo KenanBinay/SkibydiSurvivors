@@ -17,7 +17,6 @@ public class gameController : MonoBehaviour
     public GameState previosState;
 
     public static int eliminations;
-    int level;
 
     [Header("Stopwatch")]
     public float timeLimit; // in seconds
