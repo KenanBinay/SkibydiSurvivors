@@ -428,10 +428,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &8806215572565916742
 MonoBehaviour:
@@ -448,9 +448,12 @@ MonoBehaviour:
   enemyScriptableObject: {fileID: 11400000, guid: 2ad066419bef19b458254d5f324b3357, type: 2}
   skinnedMeshRenderer: {fileID: 0}
   despawnDistance: 16
+  rotationSpeed: 150
   blinkIntesity: 10
   blinkDuration: 0.05
   returning: 0
+  minDist: 0.7
+  maxDist: 45
 --- !u!95 &8170044573111777083
 Animator:
   serializedVersion: 5

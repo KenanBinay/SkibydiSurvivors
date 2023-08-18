@@ -16,13 +16,6 @@ public class GunShootController : MonoBehaviour
 
     public static Coroutine currentCoroutine;
 
-    public List<GameObject> projectileList;
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (gunAimController.enemy_gameObject != null && gunAimController.readyShoot)

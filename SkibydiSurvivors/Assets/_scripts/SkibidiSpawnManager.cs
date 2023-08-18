@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityMovementAI;
 using static SkibidiSpawnManager;
 
 public class SkibidiSpawnManager : MonoBehaviour

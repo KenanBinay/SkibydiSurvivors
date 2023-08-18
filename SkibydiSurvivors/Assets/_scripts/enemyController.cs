@@ -1,8 +1,11 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class enemyController : MonoBehaviour
 {
@@ -11,17 +14,24 @@ public class enemyController : MonoBehaviour
 
     float blinkTimer, speed, damage, xpAmount, enemyHealth;
 
-    Transform target;
-    NavMeshAgent agent;
-    SkibidiSpawnManager es;
+    public static Transform target;
+    SkibidiSpawnManager enemySpawner;
 
     public SkinnedMeshRenderer skinnedMeshRenderer;
 
-    public float despawnDistance = 20f;
+    public float despawnDistance = 20f, rotationSpeed;
     public float blinkIntesity;
     public float blinkDuration;
 
     public bool returning = false;
+
+    public float minDist = 4.0f;
+    public float maxDist = 45.0f;
+
+    private float minSqrDist;
+    private float sqrDist;
+
+    private Vector3 desiredVelocity, _moveVector;
 
     private void Start()
     {
@@ -32,9 +42,9 @@ public class enemyController : MonoBehaviour
 
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
 
-        es = FindObjectOfType<SkibidiSpawnManager>();
-     //   agent = GetComponent<NavMeshAgent>();
-     //   agent.speed = speed;
+        enemySpawner = FindObjectOfType<SkibidiSpawnManager>();
+
+        minSqrDist = minDist * minDist;
     }
 
     public void SetTarget(Transform player)
@@ -55,7 +65,7 @@ public class enemyController : MonoBehaviour
 
     private void Update()
     {
-        if (!returning) Move();
+      //  if (!returning) Move();
 
         if (!returning && target != null && Vector3.Distance(transform.position, target.position) >= despawnDistance)
         {
@@ -75,21 +85,36 @@ public class enemyController : MonoBehaviour
 
     void Move()
     {
-        //   agent.SetDestination(target.transform.position);
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position
-            , speed * Time.deltaTime);
+        /*   transform.position = Vector3.MoveTowards(transform.position, target.transform.position
+               , speed * Time.deltaTime);
 
+           Vector3 direction = target.position - transform.position;
+
+           direction = new Vector3(direction.x, 0, direction.z);
+
+           // Rotate the current transform to look at the enemy
+           if (direction != Vector3.zero)
+           {
+               Quaternion targetRotation = Quaternion.LookRotation(direction);
+               Quaternion lookAt = Quaternion.RotateTowards(
+               transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+               transform.rotation = lookAt;
+           } */
+
+        sqrDist = Vector3.Distance(transform.position, target.position);
         Vector3 direction = target.position - transform.position;
-
         direction = new Vector3(direction.x, 0, direction.z);
 
-        // Rotate the current transform to look at the enemy
-        if (direction != Vector3.zero)
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        Quaternion lookAt = Quaternion.RotateTowards(
+        transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        transform.rotation = lookAt;
+
+        // modify desiredVelocity if within range
+        if (sqrDist > minSqrDist)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            Quaternion lookAt = Quaternion.RotateTowards(
-            transform.rotation, targetRotation, Time.deltaTime * 800);
-            transform.rotation = lookAt;
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position
+              , speed * Time.deltaTime);
         }
     }
 
@@ -103,7 +128,7 @@ public class enemyController : MonoBehaviour
 
     void ReturnEnemy()
     {
-        transform.position = target.position + es.relativeSpawnPoints[Random.Range(0
-            , es.relativeSpawnPoints.Count)].position;
+        transform.position = target.position + enemySpawner.relativeSpawnPoints[Random.Range(0
+            , enemySpawner.relativeSpawnPoints.Count)].position;
     }
 }
