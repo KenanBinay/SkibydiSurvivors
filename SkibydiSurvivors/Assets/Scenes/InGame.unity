@@ -2720,8 +2720,6 @@ GameObject:
   - component: {fileID: 1041882306}
   - component: {fileID: 1041882304}
   - component: {fileID: 1041882305}
-  - component: {fileID: 1041882310}
-  - component: {fileID: 1041882309}
   m_Layer: 0
   m_Name: _Character
   m_TagString: Player
@@ -2861,45 +2859,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1041882309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041882301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f58141e9f357e448fd2fa6f1afc1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVelocity: 3.5
-  maxAcceleration: 10
-  turnSpeed: 20
-  targetRadius: 0.005
-  slowRadius: 1
-  timeToTarget: 0.1
-  smoothing: 1
-  numSamplesForSmoothing: 5
---- !u!114 &1041882310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041882301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7857a346b86a4e4ea2b03e8db88b9b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canFly: 0
-  stayGrounded: 1
-  groundFollowDistance: 0.1
-  groundCheckMask:
-    serializedVersion: 2
-    m_Bits: 251
-  slopeLimit: 80
 --- !u!1 &1045137847
 GameObject:
   m_ObjectHideFlags: 0
@@ -4494,11 +4453,11 @@ MonoBehaviour:
     - enemyName: skibidi_1
       enemyCount: 120
       spawnCount: 0
-      enemyPrefab: {fileID: 6082550692670096518, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     - enemyName: skibidi_2
       enemyCount: 50
       spawnCount: 1
-      enemyPrefab: {fileID: 3379849815978344734, guid: b85da6f7d8cc5744ab2fca2df1906c83, type: 3}
+      enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
@@ -4507,15 +4466,15 @@ MonoBehaviour:
     - enemyName: skibidi_0
       enemyCount: 100
       spawnCount: 0
-      enemyPrefab: {fileID: 6082550692670096518, guid: 06e7e5190d4b9a04bb11ad79ff52a5bb, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     - enemyName: skibidi_1
       enemyCount: 50
       spawnCount: 1
-      enemyPrefab: {fileID: 3379849815978344734, guid: b85da6f7d8cc5744ab2fca2df1906c83, type: 3}
+      enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     - enemyName: bossSkibidi_0
       enemyCount: 1
       spawnCount: 2
-      enemyPrefab: {fileID: 4832115301130732686, guid: c58d04145f5fae34c8bff584cff3c85d, type: 3}
+      enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
