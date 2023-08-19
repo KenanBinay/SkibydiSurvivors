@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class StaticWeaponBehaviour : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
-    public enemyController enemyController;
     public LayerMask targetMask;
 
     float damage;
@@ -16,22 +17,44 @@ public class StaticWeaponBehaviour : MonoBehaviour
         damage = weaponData.Damage;
     }
 
-    void giveDamage()
+    private void Update()
     {
-        enemyController = gunAimController.enemy_gameObject
-           .transform.GetComponent<enemyController>();
-
-        if (enemyController != null)
-        {
-            enemyController.TakeDamage(damage);
-        }
+        Explode(transform.position, 1.5f);
     }
 
-    private void OnTriggerStay(Collider other)
+    public void Explode(Vector3 explosion_position, float BlastRadius)
     {
-        if (other.CompareTag("enemy"))
+        Collider[] hitColliders;
+        hitColliders = Physics.OverlapSphere(explosion_position, BlastRadius);
+        foreach (Collider hitcol in hitColliders)
         {
-            giveDamage();
+            if (hitcol.GetComponent<Rigidbody>() != null || hitcol.GetComponent<enemyController>() != null)
+            {
+                //Gucken, das nix im Weg
+                RaycastHit hit;
+                bool wallhit = false;
+                if (Physics.Raycast(explosion_position, hitcol.transform.position - explosion_position, out hit, BlastRadius))
+                {
+                    if (hit.transform.GetComponent<Rigidbody>() == null && hit.collider != hitcol && hit.transform.tag != "Player")
+                    {
+                        wallhit = true;
+                    }
+                }
+
+                if (wallhit == false)
+                {
+                    if (hitcol.GetComponent<Rigidbody>() != null)
+                    {
+                        //  hitcol.GetComponent<Rigidbody>().AddExplosionForce(ExplosionPower, explosion_position, BlastRadius, 1, ForceMode.Impulse);
+                    }
+
+                    if (hitcol.GetComponent<enemyController>() != null)
+                    {
+                        Vector3 closespoint = hitcol.ClosestPoint(explosion_position);
+                        hitcol.GetComponent<enemyController>().TakeDamage(damage);
+                    }
+                }
+            }
         }
     }
 }

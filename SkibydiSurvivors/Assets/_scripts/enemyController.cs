@@ -85,22 +85,6 @@ public class enemyController : MonoBehaviour
 
     void Move()
     {
-        /*   transform.position = Vector3.MoveTowards(transform.position, target.transform.position
-               , speed * Time.deltaTime);
-
-           Vector3 direction = target.position - transform.position;
-
-           direction = new Vector3(direction.x, 0, direction.z);
-
-           // Rotate the current transform to look at the enemy
-           if (direction != Vector3.zero)
-           {
-               Quaternion targetRotation = Quaternion.LookRotation(direction);
-               Quaternion lookAt = Quaternion.RotateTowards(
-               transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-               transform.rotation = lookAt;
-           } */
-
         sqrDist = Vector3.Distance(transform.position, target.position);
         Vector3 direction = target.position - transform.position;
         direction = new Vector3(direction.x, 0, direction.z);
