@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class RotatingWeaponBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private Transform rotTransform;
+    [SerializeField]
+    private float rotSpeed;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        rotTransform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
     }
 }

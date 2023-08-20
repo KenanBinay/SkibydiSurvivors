@@ -9,8 +9,13 @@ public class StaticWeaponBehaviour : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
     public LayerMask targetMask;
+    public GameObject weapon;
+
+    public float viewRadius, delayTime;
+    public bool hasDelay;
 
     float damage;
+    bool CoroutineCall;
 
     void Start()
     {
@@ -19,7 +24,15 @@ public class StaticWeaponBehaviour : MonoBehaviour
 
     private void Update()
     {
-        Explode(transform.position, 1.5f);
+        if (hasDelay)
+        {
+            if(!CoroutineCall)
+            StartCoroutine(delayedExplode(delayTime));
+        }
+        else
+        {
+            Explode(transform.position, viewRadius);
+        }
     }
 
     public void Explode(Vector3 explosion_position, float BlastRadius)
@@ -56,5 +69,17 @@ public class StaticWeaponBehaviour : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator delayedExplode(float seconds)
+    {
+        weapon.SetActive(true);
+        Explode(transform.position, viewRadius);
+        CoroutineCall = true;
+
+        yield return new WaitForSeconds(seconds);
+
+        CoroutineCall = false;
+        weapon.SetActive(false);
     }
 }

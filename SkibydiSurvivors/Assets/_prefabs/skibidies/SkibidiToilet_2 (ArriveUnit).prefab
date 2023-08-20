@@ -703,7 +703,7 @@ MonoBehaviour:
   slowRadius: 1
   timeToTarget: 0.1
   smoothing: 1
-  numSamplesForSmoothing: 20
+  numSamplesForSmoothing: 5
 --- !u!114 &1511049840389695820
 MonoBehaviour:
   m_ObjectHideFlags: 0
