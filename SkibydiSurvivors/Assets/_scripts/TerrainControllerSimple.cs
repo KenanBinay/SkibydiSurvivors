@@ -8,6 +8,8 @@ public class TerrainControllerSimple : MonoBehaviour {
     [SerializeField]
     private GameObject terrainTilePrefab = null;
     [SerializeField]
+    private GameObject[] terrainPrefabs;
+    [SerializeField]
     private Vector3 terrainSize = new Vector3(20, 1, 20);
     [SerializeField]
     private Gradient gradient;
@@ -91,8 +93,12 @@ public class TerrainControllerSimple : MonoBehaviour {
     }
 
     private GameObject CreateTile(int xIndex, int yIndex) {
+
+        var index = Random.Range(0, terrainPrefabs.Length);
+        GameObject randomPrefab = terrainPrefabs[index];
+
         GameObject terrain = Instantiate(
-            terrainTilePrefab,
+            randomPrefab,
             new Vector3(terrainSize.x * xIndex, terrainSize.y, terrainSize.z * yIndex),
             Quaternion.identity, Enviroment);
         terrain.name = TrimEnd(terrain.name, "(Clone)") + " [" + xIndex + " , " + yIndex + "]";
