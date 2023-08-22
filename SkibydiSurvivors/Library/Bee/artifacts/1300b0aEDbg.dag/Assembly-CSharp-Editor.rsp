@@ -356,6 +356,7 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/CFXRRuntime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Cinemachine.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/com.unity.cinemachine.editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Editor.ConversionSystem.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.ref.dll"

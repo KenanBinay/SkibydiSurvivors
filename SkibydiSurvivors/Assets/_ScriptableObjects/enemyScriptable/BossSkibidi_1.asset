@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BossSkibidi_1
   m_EditorClassIdentifier: 
   health: 50
-  attackDamage: 5
+  attackDamage: 30
   xp: 8
   speed: 2

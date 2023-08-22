@@ -11,6 +11,8 @@ public class enemyController : MonoBehaviour
 {
     [SerializeField]
     EnemyScriptableObject enemyScriptableObject;
+    [SerializeField]
+    DropRateManager dropRateManager;
 
     float blinkTimer, speed, damage, xpAmount, enemyHealth;
 
@@ -41,6 +43,7 @@ public class enemyController : MonoBehaviour
         speed = enemyScriptableObject.speed;
 
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        dropRateManager = GetComponent<DropRateManager>();
 
         enemySpawner = FindObjectOfType<SkibidiSpawnManager>();
 
@@ -106,6 +109,7 @@ public class enemyController : MonoBehaviour
     {
         SkibidiSpawnManager es = FindObjectOfType<SkibidiSpawnManager>();
         es.OnEnemyKilled();
+        dropRateManager.dropGem();
 
         Destroy(gameObject);
     }
@@ -114,5 +118,14 @@ public class enemyController : MonoBehaviour
     {
         transform.position = target.position + enemySpawner.relativeSpawnPoints[Random.Range(0
             , enemySpawner.relativeSpawnPoints.Count)].position;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PlayerStats player = other.gameObject.GetComponent<PlayerStats>();
+            player.TakeDamage(damage);
+        }
     }
 }

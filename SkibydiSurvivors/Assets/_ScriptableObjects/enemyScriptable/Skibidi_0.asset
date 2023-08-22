@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Skibidi_0
   m_EditorClassIdentifier: 
   health: 15
-  attackDamage: 2
+  attackDamage: 10
   xp: 3
   speed: 2
