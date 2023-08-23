@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
 
-    float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
+    [HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentRecovery;
+    [HideInInspector]
+    public float currentMagnet;
 
     [Header("Experience/Level")]
     public int experience = 0;
@@ -20,8 +24,7 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
-        currentMoveSpeed = characterData.MoveSpeed;
-
+        currentMagnet = characterData.Magnet;
     }
 
     [System.Serializable]
@@ -55,6 +58,8 @@ public class PlayerStats : MonoBehaviour
         {
             isInvincible = false;
         }
+
+        Recover();
     }
 
     public void IncreaseExperience(int amount)
@@ -103,5 +108,31 @@ public class PlayerStats : MonoBehaviour
     public void Kill()
     {
         Debug.Log("player is dead");
+    }
+
+    public void RestoreHealth(float amount)
+    {
+        if (currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += amount;
+
+            if (currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
+    }
+
+    void Recover()
+    {
+        if (currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
+
+            if (currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
     }
 }

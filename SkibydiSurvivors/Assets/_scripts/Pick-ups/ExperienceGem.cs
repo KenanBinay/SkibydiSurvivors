@@ -5,10 +5,18 @@ using UnityEngine;
 public class ExperienceGem : MonoBehaviour, ICollectable
 {
     public int experienceGranted;
-   public void Collect()
+    public void Collect()
     {
+        Debug.Log("Called");
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseExperience(experienceGranted);
-        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

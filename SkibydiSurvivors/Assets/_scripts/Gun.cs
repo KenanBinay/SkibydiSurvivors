@@ -114,7 +114,7 @@ public class Gun : MonoBehaviour
         if (Trail != null) Trail.transform.position = HitPoint;
         if (MadeImpact)
         {
-            Instantiate(ImpactParticleSystem, HitPoint, Quaternion.LookRotation(HitNormal));
+          //  Instantiate(ImpactParticleSystem, HitPoint, Quaternion.LookRotation(HitNormal));
         }
 
         Destroy(Trail.gameObject);
