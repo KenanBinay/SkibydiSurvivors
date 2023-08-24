@@ -14,8 +14,13 @@ public class DropRateManager : MonoBehaviour
 
     public List<Drops> drops;
 
-    public void dropGem()
+    public void OnDestroy()
     {
+        if(!gameObject.scene.isLoaded) // Stops spawning error
+        {
+            return;
+        }
+
         float randomNumber = UnityEngine.Random.Range(0f, 100f);
         List<Drops> possibleDrops = new List<Drops>();
 
