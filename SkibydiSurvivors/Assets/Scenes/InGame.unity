@@ -1240,6 +1240,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6541772719289271578, guid: 1600d4fd7fb58604bad45dbda82399f8, type: 3}
   m_PrefabInstance: {fileID: 3147529328407076035}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &477973555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477973556}
+  - component: {fileID: 477973557}
+  m_Layer: 0
+  m_Name: Wings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &477973556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477973555}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1041882303}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &477973557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477973555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e9fe3248a01c94289cb8e20b7de664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passiveItemData: {fileID: 11400000, guid: 0806dff7d25bbb143a845b5e93b14a64, type: 2}
 --- !u!1001 &490675059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2947,6 +2992,8 @@ Transform:
   m_Children:
   - {fileID: 930032335}
   - {fileID: 1889714674}
+  - {fileID: 477973556}
+  - {fileID: 1612882609}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2983,6 +3030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ea55ca477aa0b4f9bb9956963530b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterData: {fileID: 0}
   muzzleFlash_L: {fileID: 449813381}
   muzzleFlash_R: {fileID: 1442539665}
   projectilePrefab: {fileID: 3943065697132808121, guid: 19850c5da14717146ab9d9c350f39a0e, type: 3}
@@ -3056,6 +3104,8 @@ MonoBehaviour:
   currentHealth: 0
   currentRecovery: 0
   currentMagnet: 0
+  currentMoveSpeed: 0
+  currentMight: 0
   spawnedWeapons: []
   experience: 0
   level: 1
@@ -4003,6 +4053,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1612882608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612882609}
+  - component: {fileID: 1612882610}
+  m_Layer: 0
+  m_Name: Spinach
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1612882609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612882608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1041882303}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1612882610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612882608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90bc4f01e87e8eb41a4d552bf3c2f073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passiveItemData: {fileID: 11400000, guid: 5ffa3ffac7107f5459db6d1afe34f3ca, type: 2}
 --- !u!1 &1623217744
 GameObject:
   m_ObjectHideFlags: 0

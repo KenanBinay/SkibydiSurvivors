@@ -8,12 +8,11 @@ public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
 
-    [HideInInspector]
     public float currentHealth;
-    [HideInInspector]
     public float currentRecovery;
-    [HideInInspector]
     public float currentMagnet;
+    public float currentMoveSpeed;
+    public float currentMight;
 
     //Spawned Weapon
     public List<GameObject> spawnedWeapons;
@@ -31,6 +30,8 @@ public class PlayerStats : MonoBehaviour
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMagnet = characterData.Magnet;
+        currentMoveSpeed = characterData.MoveSpeed;
+        currentMight = characterData.Might;
 
         if (characterData.StartingWeapon != null) SpawnWeapon(characterData.StartingWeapon);
     }

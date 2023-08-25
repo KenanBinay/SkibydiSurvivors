@@ -30,7 +30,6 @@ public class characterController : MonoBehaviour
 
         movementSpeed = CharacterData.MoveSpeed;
         health = CharacterData.MaxHealth;
-
     }
 
     void Update()

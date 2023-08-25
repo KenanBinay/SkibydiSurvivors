@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GunShootController : MonoBehaviour
 {
+    [SerializeField]
+    public WeaponScriptableObject CharacterData;
+
     [SerializeField] GameObject muzzleFlash_L, muzzleFlash_R, projectilePrefab;
 
     float damage = 1f;
@@ -15,6 +18,11 @@ public class GunShootController : MonoBehaviour
     public enemyController enemyController;
 
     public static Coroutine currentCoroutine;
+
+    private void Awake()
+    {
+        damage = CharacterData.Damage;
+    }
 
     void Update()
     {
@@ -38,6 +46,11 @@ public class GunShootController : MonoBehaviour
             currentCoroutine = StartCoroutine(DoShoot());
     }
 
+    public float GetCurrentDamage()
+    {
+        return damage *= FindObjectOfType<PlayerStats>().currentMight;
+    }
+
     IEnumerator DoShoot()
     {
         enemyController = gunAimController.enemy_gameObject
@@ -45,7 +58,7 @@ public class GunShootController : MonoBehaviour
 
         if (enemyController != null)
         {
-            enemyController.TakeDamage(damage);
+            enemyController.TakeDamage(GetCurrentDamage());
         }
 
         yield return new WaitForSeconds(ShootDelay);

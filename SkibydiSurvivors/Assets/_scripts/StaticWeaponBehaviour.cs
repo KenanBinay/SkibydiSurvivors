@@ -34,6 +34,10 @@ public class StaticWeaponBehaviour : MonoBehaviour
             Explode(transform.position, viewRadius);
         }
     }
+    public float GetCurrentDamage()
+    {
+        return damage *= FindObjectOfType<PlayerStats>().currentMight;
+    }
 
     public void Explode(Vector3 explosion_position, float BlastRadius)
     {
@@ -64,7 +68,7 @@ public class StaticWeaponBehaviour : MonoBehaviour
                     if (hitcol.GetComponent<enemyController>() != null)
                     {
                         Vector3 closespoint = hitcol.ClosestPoint(explosion_position);
-                        hitcol.GetComponent<enemyController>().TakeDamage(damage);
+                        hitcol.GetComponent<enemyController>().TakeDamage(GetCurrentDamage());
                     }
                 }
             }
