@@ -493,6 +493,7 @@
 "Assets/_scripts/gunAimController.cs"
 "Assets/_scripts/GunShootController.cs"
 "Assets/_scripts/Interfaces/ICollectable.cs"
+"Assets/_scripts/InventoryManager.cs"
 "Assets/_scripts/NavigationBaker.cs"
 "Assets/_scripts/Passive Items/PassiveItem.cs"
 "Assets/_scripts/Passive Items/PassiveItemScriptableObject.cs"
@@ -509,6 +510,7 @@
 "Assets/_scripts/SpriteBillborad.cs"
 "Assets/_scripts/StaticWeaponBehaviour.cs"
 "Assets/_scripts/TerrainControllerSimple.cs"
+"Assets/_scripts/WeaponController.cs"
 "Assets/_scripts/WeaponScriptableObject.cs"
 -langversion:9.0
 

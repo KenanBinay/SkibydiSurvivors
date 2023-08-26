@@ -15,17 +15,26 @@ public class PlayerStats : MonoBehaviour
     public float currentMight;
 
     //Spawned Weapon
-    public List<GameObject> spawnedWeapons;
+  //  public List<GameObject> spawnedWeapons;
 
     [Header("Experience/Level")]
     public int experience = 0;
     public int level = 1;
     public int experienceCap;
 
+    InventoryManager inventory;
+    public int weaponIndex;
+    public int passiveItemIndex;
+
+    public Transform attackContainer;
+    public GameObject testWeapon;
+
     private void Awake()
     {
         characterData = CharacterSelector.GetData(); // getting data from selected character 
         CharacterSelector.instance.DestroySingleton();
+
+        inventory = GetComponent<InventoryManager>();
 
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
@@ -34,6 +43,8 @@ public class PlayerStats : MonoBehaviour
         currentMight = characterData.Might;
 
         if (characterData.StartingWeapon != null) SpawnWeapon(characterData.StartingWeapon);
+
+        SpawnWeapon(testWeapon);
     }
 
     [System.Serializable]
@@ -147,9 +158,18 @@ public class PlayerStats : MonoBehaviour
 
     public void SpawnWeapon(GameObject weapon)
     {
+        if (weaponIndex >= inventory.weaponSlots.Count - 1)
+        {
+            Debug.LogError("Inventory slots already full");
+            return;
+        }
+
         //spawn the starting weapon
         GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
-        spawnedWeapon.transform.SetParent(transform);
-        spawnedWeapons.Add(spawnedWeapon);
+        spawnedWeapon.transform.SetParent(attackContainer);
+        // spawnedWeapons.Add(spawnedWeapon);
+        inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<WeaponController>());
+
+        weaponIndex++;
     }
 }
