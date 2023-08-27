@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8475802492603869254}
   - component: {fileID: 7534841724582991294}
   m_Layer: 0
-  m_Name: Attack_AuraSpikes
+  m_Name: Attack_AuraSpikesLevel_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 4322484449409777776}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7534841724582991294
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e5c3c138b30514fbcc0c41e8fbf7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 94504915a559a0c428da6b8b648a6e91, type: 2}
+  weaponData: {fileID: 11400000, guid: 4463bd717ae51d24c9a66ed90c43240a, type: 2}
   targetMask:
     serializedVersion: 2
     m_Bits: 0

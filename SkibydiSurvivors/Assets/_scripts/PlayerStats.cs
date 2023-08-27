@@ -27,7 +27,8 @@ public class PlayerStats : MonoBehaviour
     public int passiveItemIndex;
 
     public Transform attackContainer;
-    public GameObject testWeapon;
+
+    public GameObject spinach, wings, testWeapon;
 
     private void Awake()
     {
@@ -43,7 +44,8 @@ public class PlayerStats : MonoBehaviour
         currentMight = characterData.Might;
 
         if (characterData.StartingWeapon != null) SpawnWeapon(characterData.StartingWeapon);
-
+        SpawnPassiveItem(spinach);
+        SpawnPassiveItem(wings);
         SpawnWeapon(testWeapon);
     }
 
@@ -171,5 +173,21 @@ public class PlayerStats : MonoBehaviour
         inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<WeaponController>());
 
         weaponIndex++;
+    }
+
+    public void SpawnPassiveItem (GameObject passiveItem)
+    {
+        if (passiveItemIndex >= inventory.passiveItemSlots.Count - 1)
+        {
+            Debug.LogError("Inventory slots already full");
+            return;
+        }
+
+        //spawn the starting passive item
+        GameObject spawnedPassiveItem = Instantiate(passiveItem, transform.position, Quaternion.identity);
+        spawnedPassiveItem.transform.SetParent(transform);
+        inventory.AddPassiveItem(passiveItemIndex, spawnedPassiveItem.GetComponent<PassiveItem>());
+
+        passiveItemIndex++;
     }
 }

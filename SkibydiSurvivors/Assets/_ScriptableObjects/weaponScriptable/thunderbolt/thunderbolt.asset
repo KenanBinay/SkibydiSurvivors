@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb7eaadb55a1c4d84b29e0268859b3, type: 3}
   m_Name: thunderbolt
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 2376571545434131263, guid: 621a3448a9598b74aa92a49e42955c85, type: 3}
   damage: 10
   speed: 0
   coolDownDuration: 0
   pierce: 0
+  level: 1
+  nextLevelPrefab: {fileID: 2376571545434131263, guid: 21dcac2a335e14741ab2336f05aedd4a, type: 3}

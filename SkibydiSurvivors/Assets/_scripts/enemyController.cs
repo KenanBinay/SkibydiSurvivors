@@ -32,6 +32,8 @@ public class enemyController : MonoBehaviour
 
     private Vector3 desiredVelocity, _moveVector;
 
+    PlayerStats player;
+
     private void Start()
     {
         enemyHealth = enemyScriptableObject.health;
@@ -41,6 +43,7 @@ public class enemyController : MonoBehaviour
 
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         enemySpawner = FindObjectOfType<SkibidiSpawnManager>();
+        player = GameObject.Find("_Inventory").GetComponent<PlayerStats>();
 
         minSqrDist = minDist * minDist;
     }
@@ -118,7 +121,6 @@ public class enemyController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerStats player = other.gameObject.GetComponent<PlayerStats>();
             player.TakeDamage(damage);
         }
     }

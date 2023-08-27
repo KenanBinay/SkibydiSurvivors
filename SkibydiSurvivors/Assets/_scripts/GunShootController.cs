@@ -5,9 +5,13 @@ using UnityEngine;
 public class GunShootController : MonoBehaviour
 {
     [SerializeField]
-    public WeaponScriptableObject CharacterData;
+    private WeaponScriptableObject CharacterData;
+    [SerializeField]
+    private gunAimController aimController;
 
-    [SerializeField] GameObject muzzleFlash_L, muzzleFlash_R, projectilePrefab;
+    [SerializeField] GameObject characterContainer;
+    Transform Character, muzzleFlash_L, muzzleFlash_R;
+    GameObject gun_L, gun_R;
 
     float damage = 1f;
 
@@ -21,6 +25,15 @@ public class GunShootController : MonoBehaviour
 
     private void Awake()
     {
+        characterContainer = GameObject.Find("CharacterContainer");
+        Character = characterContainer.transform.GetChild(0);
+        gun_L = GameObject.Find("gun_L");
+        gun_R = GameObject.Find("gun_R");
+        muzzleFlash_L = gun_L.transform.GetChild(0);
+        muzzleFlash_R = gun_R.transform.GetChild(0);
+
+        aimController = Character.GetComponentInChildren<gunAimController>();
+        
         damage = CharacterData.Damage;
     }
 
@@ -32,15 +45,15 @@ public class GunShootController : MonoBehaviour
         }
         else
         {
-            if (muzzleFlash_L.activeSelf) muzzleFlash_L.SetActive(false);
-            if (muzzleFlash_R.activeSelf) muzzleFlash_R.SetActive(false);
+            if (muzzleFlash_L.gameObject.activeSelf) muzzleFlash_L.gameObject.SetActive(false);
+            if (muzzleFlash_R.gameObject.activeSelf) muzzleFlash_R.gameObject.SetActive(false);
         }
     }
 
     void Shoot()
     {
-        if (!muzzleFlash_L.activeSelf) muzzleFlash_L.SetActive(true);
-        if (!muzzleFlash_R.activeSelf) muzzleFlash_R.SetActive(true);
+        if (!muzzleFlash_L.gameObject.activeSelf) muzzleFlash_L.gameObject.SetActive(true);
+        if (!muzzleFlash_R.gameObject.activeSelf) muzzleFlash_R.gameObject.SetActive(true);
 
         if (currentCoroutine == null)
             currentCoroutine = StartCoroutine(DoShoot());
@@ -58,7 +71,7 @@ public class GunShootController : MonoBehaviour
 
         if (enemyController != null)
         {
-            enemyController.TakeDamage(GetCurrentDamage());
+            enemyController.TakeDamage(damage);
         }
 
         yield return new WaitForSeconds(ShootDelay);

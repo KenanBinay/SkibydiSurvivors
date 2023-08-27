@@ -62,7 +62,7 @@ public class gunAimController : MonoBehaviour
 
         if (enemy != null && EnemyInFieldOfView(fovStartPoint))
         {
-            if (!readyShoot) readyShoot = true; 
+            if (!readyShoot) readyShoot = true;
 
             Vector3 direction = enemy.transform.position - transform.position;
 

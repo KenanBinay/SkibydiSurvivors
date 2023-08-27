@@ -2099,7 +2099,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6409825706247801244}
-  - component: {fileID: 843564174252995628}
   m_Layer: 0
   m_Name: mixamorig:Spine2
   m_TagString: Untagged
@@ -2126,26 +2125,6 @@ Transform:
   m_Father: {fileID: 4854333273761284469}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 1.1281507, y: -0.19996078, z: -1.5887088}
---- !u!114 &843564174252995628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6081533108360977923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb41290195500f64899e6ee9e8debc38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  fovStartPoint: {fileID: 0}
-  lookSpeed: 200
-  maxAngle: 90
-  maxAngleReset: 90
-  canLean: 1
-  leftArm: 0
-  rightArm: 1
 --- !u!1 &6088034485244034758
 GameObject:
   m_ObjectHideFlags: 0
