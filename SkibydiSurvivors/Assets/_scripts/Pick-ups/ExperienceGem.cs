@@ -7,7 +7,7 @@ public class ExperienceGem : Pickup, ICollectable
     public int experienceGranted;
     public void Collect()
     {
-        Debug.Log("Called");
+        Debug.Log("gem collected");
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseExperience(experienceGranted);
     }

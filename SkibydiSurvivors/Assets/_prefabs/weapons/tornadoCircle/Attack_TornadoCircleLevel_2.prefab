@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8843837567159583063}
   - component: {fileID: 4963122872793971396}
+  - component: {fileID: 8352608181103198686}
   m_Layer: 0
   m_Name: Attack_TornadoCircleLevel_2
   m_TagString: Untagged
@@ -47,6 +48,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotTransform: {fileID: 937649329010972900}
   rotSpeed: 70
+--- !u!114 &8352608181103198686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366881222299925854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2cca2694b5bf74b9c368f718409013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 7879eeee7cade184bbbe1a819508d596, type: 2}
 --- !u!1 &4705724767587976217
 GameObject:
   m_ObjectHideFlags: 0

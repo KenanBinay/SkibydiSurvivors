@@ -26,9 +26,7 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
-    public Transform attackContainer;
-
-    public GameObject spinach, wings, testWeapon;
+    public GameObject spinach, wings, standartGun;
 
     private void Awake()
     {
@@ -46,7 +44,7 @@ public class PlayerStats : MonoBehaviour
         if (characterData.StartingWeapon != null) SpawnWeapon(characterData.StartingWeapon);
         SpawnPassiveItem(spinach);
         SpawnPassiveItem(wings);
-        SpawnWeapon(testWeapon);
+        SpawnWeapon(standartGun);
     }
 
     [System.Serializable]
@@ -168,7 +166,7 @@ public class PlayerStats : MonoBehaviour
 
         //spawn the starting weapon
         GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
-        spawnedWeapon.transform.SetParent(attackContainer);
+        spawnedWeapon.transform.SetParent(transform);
         // spawnedWeapons.Add(spawnedWeapon);
         inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<WeaponController>());
 

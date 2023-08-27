@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb7eaadb55a1c4d84b29e0268859b3, type: 3}
   m_Name: gunLevel_2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 6203698368743740466, guid: 12942135e956b064fa50e5827f389e7b, type: 3}
   damage: 2
   speed: 0
   coolDownDuration: 0

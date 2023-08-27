@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5515933907753421085}
   - component: {fileID: 7346362641235344588}
+  - component: {fileID: 630503525230967309}
   m_Layer: 0
   m_Name: Attack_ElectricCircleLevel_2
   m_TagString: Untagged
@@ -132,6 +133,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotTransform: {fileID: 1182876367237888030}
   rotSpeed: 500
+--- !u!114 &630503525230967309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4524906889682281520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2cca2694b5bf74b9c368f718409013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 621191ce4fa501d4c9391e450a0fdf2f, type: 2}
 --- !u!1 &5109100283037611046
 GameObject:
   m_ObjectHideFlags: 0

@@ -66,15 +66,6 @@ public class enemyController : MonoBehaviour
 
     private void Update()
     {
-      //  if (!returning) Move();
-
-        if (!returning && target != null && Vector3.Distance(transform.position, target.position) >= despawnDistance)
-        {
-            returning = true;
-            ReturnEnemy();
-        }
-        else returning = false;
-
         blinkTimer -= Time.deltaTime;
         float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
         float intensity = (lerp * blinkIntesity) + 1f;
@@ -82,6 +73,13 @@ public class enemyController : MonoBehaviour
         {
             materials.color = Color.white * intensity;
         }
+
+        if (!returning && target != null && Vector3.Distance(transform.position, target.position) >= despawnDistance)
+        {
+            returning = true;
+            ReturnEnemy();
+        }
+        else returning = false;
     }
 
     void Move()

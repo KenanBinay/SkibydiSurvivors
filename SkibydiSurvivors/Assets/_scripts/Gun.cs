@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         if (gunAimController.enemy_gameObject != null && gunAimController.readyShoot
-            && GunShootController.currentCoroutine == null)
+            && GunShootController.currentCoroutine == false)
         {
             Shoot();
         }
@@ -110,7 +110,9 @@ public class Gun : MonoBehaviour
 
             yield return null;
         }
+
         Animator.SetBool("IsShooting", false);
+
         if (Trail != null) Trail.transform.position = HitPoint;
         if (MadeImpact)
         {

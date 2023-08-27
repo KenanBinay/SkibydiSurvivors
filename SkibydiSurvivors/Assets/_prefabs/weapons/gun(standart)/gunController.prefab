@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1493683898443077715}
   - component: {fileID: 1176213851316273522}
+  - component: {fileID: 1391599861019306544}
   m_Layer: 0
-  m_Name: gunControllerLevel_2
+  m_Name: gunController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1176213851316273522
 MonoBehaviour:
@@ -44,10 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ea55ca477aa0b4f9bb9956963530b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterData: {fileID: 11400000, guid: 001be97f49587514cabd1db76bd3d4f0, type: 2}
+  CharacterData: {fileID: 11400000, guid: c93f716c57e686644a40e68dbd75f5ed, type: 2}
   aimController: {fileID: 0}
   characterContainer: {fileID: 0}
   ShootDelay: 0.25
   spawnCount: 0
   BulletTrail: {fileID: 0}
   enemyController: {fileID: 0}
+--- !u!114 &1391599861019306544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6203698368743740466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2cca2694b5bf74b9c368f718409013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: c93f716c57e686644a40e68dbd75f5ed, type: 2}
