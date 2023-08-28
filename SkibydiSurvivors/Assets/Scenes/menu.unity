@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 491161963}
   - component: {fileID: 491161962}
   m_Layer: 0
-  m_Name: CharacterSelection
+  m_Name: CharacterSelection_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 1621611341}
   - component: {fileID: 1621611340}
   m_Layer: 0
-  m_Name: MainMenu
+  m_Name: MainMenu_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -17,5 +17,6 @@ MonoBehaviour:
   speed: 0
   coolDownDuration: 0
   pierce: 0
-  level: 10
+  level: 2
   nextLevelPrefab: {fileID: 0}
+  icon: {fileID: 0}
