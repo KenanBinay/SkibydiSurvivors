@@ -38,12 +38,10 @@ public class gameController : MonoBehaviour
         switch (currentState)
         {
             case GameState.Gameplay:
-                CheckForPauseAndResume();
                 UpdateStopwatch();
                 break;
 
             case GameState.Paused:
-                CheckForPauseAndResume();
                 break;
 
             case GameState.GameOver:
@@ -95,11 +93,19 @@ public class gameController : MonoBehaviour
 
     void CheckForPauseAndResume()
     {
-
+        if (currentState == GameState.Paused)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            PauseGame();
+        }
     }
 
     void DisableScreens()
     {
+        Time.timeScale = 1f;
         pauseScreen.SetActive(false);
     }
 
