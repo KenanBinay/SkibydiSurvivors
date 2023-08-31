@@ -65,7 +65,7 @@ public class GunShootController : MonoBehaviour
 
     public float GetCurrentDamage()
     {
-        return damage *= FindObjectOfType<PlayerStats>().currentMight;
+        return damage *= FindObjectOfType<PlayerStats>().CurrentMight;
     }
 
     IEnumerator DoShoot()

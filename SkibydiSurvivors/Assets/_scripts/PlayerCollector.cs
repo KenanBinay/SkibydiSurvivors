@@ -15,7 +15,7 @@ public class PlayerCollector : MonoBehaviour
 
     private void Update()
     {
-        Scan(transform.position, player.currentMagnet);
+        Scan(transform.position, player.CurrentMagnet);
     }
 
     public void Scan(Vector3 scan_pos, float BlastRadius)

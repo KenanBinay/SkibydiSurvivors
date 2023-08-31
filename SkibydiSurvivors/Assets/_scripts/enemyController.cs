@@ -43,7 +43,7 @@ public class enemyController : MonoBehaviour
 
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         enemySpawner = FindObjectOfType<SkibidiSpawnManager>();
-        player = GameObject.Find("_Inventory").GetComponent<PlayerStats>();
+        player = GameObject.Find("_Inventory&PlayerStats").GetComponent<PlayerStats>();
 
         minSqrDist = minDist * minDist;
     }

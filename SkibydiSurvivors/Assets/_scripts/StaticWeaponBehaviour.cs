@@ -36,7 +36,7 @@ public class StaticWeaponBehaviour : MonoBehaviour
     }
     public float GetCurrentDamage()
     {
-        return damage *= FindObjectOfType<PlayerStats>().currentMight;
+        return damage *= FindObjectOfType<PlayerStats>().CurrentMight;
     }
 
     public void Explode(Vector3 explosion_position, float BlastRadius)
