@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57574b7a5eed7984b8b0642687f104a4, type: 3}
   m_Name: cameraman_0
   m_EditorClassIdentifier: 
-  startingWeapon: {fileID: 0}
-  maxhealth: 1000
+  startingWeapon: {fileID: 6203698368743740466, guid: 160c92f7fb0e34841bb7b8baadbc0d4e, type: 3}
+  maxhealth: 100
   recovery: 1
   moveSpeed: 3
   might: 1

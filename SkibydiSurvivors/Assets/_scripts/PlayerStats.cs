@@ -24,7 +24,10 @@ public class PlayerStats : MonoBehaviour
             if (currentHealth != value)
             {
                 currentHealth = value;
-                //Update the real time value of the stat
+                if (gameController.instance != null)
+                {
+                    gameController.instance.currentHealthDisplay.text = "Health " + currentHealth;
+                }
                 //Add any additional logic here needs to be executed when the value changes
             }
         }
@@ -39,7 +42,10 @@ public class PlayerStats : MonoBehaviour
             if (currentRecovery != value)
             {
                 currentRecovery = value;
-                //Update the real time value of the stat
+                if (gameController.instance != null)
+                {
+                    gameController.instance.currentRecoveryDisplay.text = "Recovery " + currentRecovery;
+                }
                 //Add any additional logic here needs to be executed when the value changes
             }
         }
@@ -54,7 +60,10 @@ public class PlayerStats : MonoBehaviour
             if (currentMagnet != value)
             {
                 currentMagnet = value;
-                //Update the real time value of the stat
+                if (gameController.instance != null)
+                {
+                    gameController.instance.currentMagnetDisplay.text = "Magnet " + currentMagnet;
+                }
                 //Add any additional logic here needs to be executed when the value changes
             }
         }
@@ -69,7 +78,10 @@ public class PlayerStats : MonoBehaviour
             if (currentMoveSpeed != value)
             {
                 currentMoveSpeed = value;
-                //Update the real time value of the stat
+                if (gameController.instance != null)
+                {
+                    gameController.instance.currentMoveSpeedDisplay.text = "Move Speed " + currentMoveSpeed;
+                }
                 //Add any additional logic here needs to be executed when the value changes
             }
         }
@@ -84,7 +96,10 @@ public class PlayerStats : MonoBehaviour
             if (currentMight != value)
             {
                 currentMight = value;
-                //Update the real time value of the stat
+                if (gameController.instance != null)
+                {
+                    gameController.instance.currentMightDisplay.text = "Might " + currentMight;
+                }
                 //Add any additional logic here needs to be executed when the value changes
             }
         }
@@ -100,7 +115,7 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
-    public GameObject spinach, wings, standartGun;
+    public GameObject spinach, wings;
 
     private void Awake()
     {
@@ -116,9 +131,10 @@ public class PlayerStats : MonoBehaviour
         CurrentMight = characterData.Might;
 
         if (characterData.StartingWeapon != null) SpawnWeapon(characterData.StartingWeapon);
+        else { Debug.LogWarning("NO STARTING WEAPON ADDED"); }
+
         SpawnPassiveItem(spinach);
         SpawnPassiveItem(wings);
-        SpawnWeapon(standartGun);
     }
 
     [System.Serializable]
@@ -139,7 +155,15 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        //Inýtialize the experience cap as the first experiance cap increase
         experienceCap = levelRanges[0].experienceCapIncrease;
+
+        //Set the current stats display
+        gameController.instance.currentHealthDisplay.text = "Health " + currentHealth;
+        gameController.instance.currentRecoveryDisplay.text = "Recovery " + currentRecovery;
+        gameController.instance.currentMagnetDisplay.text = "Magnet " + currentMagnet;
+        gameController.instance.currentMoveSpeedDisplay.text = "Move Speed " + currentMoveSpeed;
+        gameController.instance.currentMightDisplay.text = "Might " + currentMight;
     }
 
     void Update()

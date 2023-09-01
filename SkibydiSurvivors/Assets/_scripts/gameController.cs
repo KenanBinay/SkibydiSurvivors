@@ -6,6 +6,8 @@ using TMPro;
 
 public class gameController : MonoBehaviour
 {
+    public static gameController instance;
+
     //states of game
     public enum GameState
     {
@@ -29,8 +31,25 @@ public class gameController : MonoBehaviour
     [Header("UI")]
     public GameObject pauseScreen;
 
+    //Current stat displays
+    public TextMeshProUGUI currentHealthDisplay;
+    public TextMeshProUGUI currentRecoveryDisplay;
+    public TextMeshProUGUI currentMagnetDisplay;
+    public TextMeshProUGUI currentMoveSpeedDisplay;
+    public TextMeshProUGUI currentMightDisplay;
+
     private void Awake()
     {
+        //Warning check to see if there is another singleton of this kind in the game
+        if(instance== null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("EXTRA " + this + " DELETED");
+        }
+
         DisableScreens();
     }
 
