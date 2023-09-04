@@ -34,6 +34,11 @@ public class characterController : MonoBehaviour
 
     void Update()
     {
+        if (gameController.instance.isGameOver)
+        {
+            return;
+        }
+
          movementDirection = new Vector3(joystick.Horizontal, 0.0f, joystick.Vertical);
         _moveVector = Vector3.zero;
         _moveVector.x = joystick.Horizontal * movementSpeed * Time.deltaTime;
@@ -46,6 +51,11 @@ public class characterController : MonoBehaviour
 
     void Move()
     {
+        if (gameController.instance.isGameOver)
+        {
+            return;
+        }
+
         if (!useAutoShooting)
         {
             if (movementDirection.sqrMagnitude > 0)

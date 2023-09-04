@@ -30,6 +30,7 @@ public class gameController : MonoBehaviour
 
     [Header("UI")]
     public GameObject pauseScreen;
+    public GameObject resultsScreen;
 
     //Current stat displays
     public TextMeshProUGUI currentHealthDisplay;
@@ -68,7 +69,9 @@ public class gameController : MonoBehaviour
                 if (!isGameOver)
                 {
                     isGameOver = true;
+                    Time.timeScale = 0f;
                     Debug.Log("GAME IS OVER");
+                    DisplayResults();
                 }
                 break;
 
@@ -111,6 +114,11 @@ public class gameController : MonoBehaviour
         ChangeState(GameState.GameOver);
     }
 
+    void DisplayResults()
+    {
+        resultsScreen.SetActive(true);
+    }
+
     void CheckForPauseAndResume()
     {
         if (currentState == GameState.Paused)
@@ -127,6 +135,7 @@ public class gameController : MonoBehaviour
     {
         Time.timeScale = 1f;
         pauseScreen.SetActive(false);
+        resultsScreen.SetActive(false);
     }
 
     void UpdateStopwatch()
