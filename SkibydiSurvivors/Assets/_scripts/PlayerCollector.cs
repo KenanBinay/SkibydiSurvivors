@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerCollector : MonoBehaviour
@@ -34,6 +35,10 @@ public class PlayerCollector : MonoBehaviour
 
                     collectable.Collect();
                 }
+            }
+            if (gameController.instance.choosingUpgrade)
+            {
+                break;
             }
         }
     }

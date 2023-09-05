@@ -13,24 +13,18 @@ public class gameController : MonoBehaviour
     {
         Gameplay,
         Paused,
-        GameOver
+        GameOver,
+        LevelUp
     }
 
     public GameState currentState;
     public GameState previosState;
 
     public static int eliminations;
-
-    [Header("Stopwatch")]
-    public float timeLimit; // in seconds
-    float stopwatchtime;
-    public TextMeshProUGUI stopwatchDisplay;
-
-    public bool isGameOver = false;
-
     [Header("Screens")]
     public GameObject pauseScreen;
     public GameObject resultsScreen;
+    public GameObject levelUpScreen;
 
     [Header("Current Stat Displays")]
     public TextMeshProUGUI currentHealthDisplay;
@@ -45,6 +39,21 @@ public class gameController : MonoBehaviour
     public TextMeshProUGUI levelReachedDisplay;
     public List<Image> chosenWeaponsUI = new List<Image>(6);
     public List<Image> chosenPassiveItemsUI = new List<Image>(6);
+
+    [Header("Stopwatch")]
+    public float timeLimit; // in seconds
+    float stopwatchtime;
+    public TextMeshProUGUI stopwatchDisplay;
+
+    // Flag to check if the game is over
+    public bool isGameOver = false;
+
+    // Flag to check if the player is choosing their upgrades
+    public bool choosingUpgrade = false;
+
+    // Reference to hte player's game object
+    public GameObject playerObject;
+
 
     private void Awake()
     {
@@ -79,6 +88,15 @@ public class gameController : MonoBehaviour
                     Time.timeScale = 0f;
                     Debug.Log("GAME IS OVER");
                     DisplayResults();
+                }
+                break;
+            case GameState.LevelUp:
+                if (!choosingUpgrade)
+                {
+                    choosingUpgrade = true;
+                    Time.timeScale = 0f;
+                    Debug.Log("Upgrades shown");
+                    levelUpScreen.SetActive(true);
                 }
                 break;
 
@@ -143,6 +161,7 @@ public class gameController : MonoBehaviour
         Time.timeScale = 1f;
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
+        levelUpScreen.SetActive(false);
     }
 
     void UpdateStopwatch()
@@ -200,7 +219,7 @@ public class gameController : MonoBehaviour
             else
             {
                 // If the sprite is null, disable the corresponding element in chosenWeaponUI
-                chosenWeaponsUI[i].enabled = true;
+                chosenWeaponsUI[i].enabled = false;
             }
         }
 
@@ -218,8 +237,22 @@ public class gameController : MonoBehaviour
             else
             {
                 // If the sprite is null, disable the corresponding element in chosenPassiveItemsUI
-                chosenPassiveItemsUI[i].enabled = true;
+                chosenPassiveItemsUI[i].enabled = false;
             }
         }
+    }
+
+    public void StartLevelUp()
+    {
+        ChangeState(GameState.LevelUp);
+        playerObject.SendMessage("RemoveAndApplyUpgrades");
+    }
+
+    public void EndLevelUp()
+    {
+        choosingUpgrade = false;
+        Time.timeScale = 1f;
+        levelUpScreen.SetActive(false);
+        ChangeState(GameState.Gameplay);
     }
 }

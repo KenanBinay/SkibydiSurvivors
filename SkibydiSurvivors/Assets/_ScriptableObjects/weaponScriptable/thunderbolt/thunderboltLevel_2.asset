@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb7eaadb55a1c4d84b29e0268859b3, type: 3}
   m_Name: thunderboltLevel_2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 2376571545434131263, guid: 21dcac2a335e14741ab2336f05aedd4a, type: 3}
   damage: 20
   speed: 0
   coolDownDuration: 0
   pierce: 0
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Thunderbolt level 2
+  description: Increases damage by 20
+  icon: {fileID: 0}

@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: gunLevel_2
   m_EditorClassIdentifier: 
   prefab: {fileID: 6203698368743740466, guid: 12942135e956b064fa50e5827f389e7b, type: 3}
-  damage: 2
+  damage: 4
   speed: 0
   coolDownDuration: 0
   pierce: 0
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Gun Level 2
+  description: Increases damage by 4
   icon: {fileID: 21300000, guid: 3429969fa3bee89408686674b114c9e6, type: 3}

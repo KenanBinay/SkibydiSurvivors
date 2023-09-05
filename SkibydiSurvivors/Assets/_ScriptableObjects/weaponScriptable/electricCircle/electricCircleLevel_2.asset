@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb7eaadb55a1c4d84b29e0268859b3, type: 3}
   m_Name: electricCircleLevel_2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  damage: 0.5
+  prefab: {fileID: 4524906889682281520, guid: 133d6abd98bb1984a8a7e64cbf54d438, type: 3}
+  damage: 3
   speed: 0
   coolDownDuration: 0
   pierce: 0
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Electric Circle Level 2
+  description: Increases damage by 3
+  icon: {fileID: 0}

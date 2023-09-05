@@ -133,8 +133,8 @@ public class PlayerStats : MonoBehaviour
         if (characterData.StartingWeapon != null) SpawnWeapon(characterData.StartingWeapon);
         else { Debug.LogWarning("NO STARTING WEAPON ADDED"); }
 
-        SpawnPassiveItem(spinach);
-        SpawnPassiveItem(wings);
+     //   SpawnPassiveItem(spinach);
+     //   SpawnPassiveItem(wings);
     }
 
     [System.Serializable]
@@ -206,6 +206,8 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+
+            gameController.instance.StartLevelUp();
         }
     }
 

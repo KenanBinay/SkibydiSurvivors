@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb7eaadb55a1c4d84b29e0268859b3, type: 3}
   m_Name: tornadoLevel_2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  damage: 1
+  prefab: {fileID: 1366881222299925854, guid: b535b6e273f96ac43bfbe8d13d665eed, type: 3}
+  damage: 4
   speed: 0
   coolDownDuration: 0
   pierce: 0
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Tornado Level 2
+  description: Increases damage by 4
   icon: {fileID: 0}

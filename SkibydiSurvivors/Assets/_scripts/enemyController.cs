@@ -30,6 +30,10 @@ public class enemyController : MonoBehaviour
     private float minSqrDist;
     private float sqrDist;
 
+    float invincibilityDuration = 0.5f;
+    float invincibilityTimer;
+    bool isInvincible;
+
     private Vector3 desiredVelocity, _moveVector;
 
     PlayerStats player;
@@ -55,17 +59,33 @@ public class enemyController : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        enemyHealth -= amount;
-        if (enemyHealth <= 0)
+        if (!isInvincible)
         {
-            Die();
-        }
+            enemyHealth -= amount;
 
-        blinkTimer = blinkDuration;
+            invincibilityTimer = invincibilityDuration;
+            isInvincible = true;
+
+            if (enemyHealth <= 0)
+            {
+                Die();
+            }
+
+            blinkTimer = blinkDuration;
+        }
     }
 
     private void Update()
     {
+        if (invincibilityTimer > 0)
+        {
+            invincibilityTimer -= Time.deltaTime;
+        }
+        else if (isInvincible)
+        {
+            isInvincible = false;
+        }
+
         blinkTimer -= Time.deltaTime;
         float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
         float intensity = (lerp * blinkIntesity) + 1f;
