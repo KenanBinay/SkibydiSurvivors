@@ -28,21 +28,28 @@ public class gameController : MonoBehaviour
 
     public bool isGameOver = false;
 
-    [Header("UI")]
+    [Header("Screens")]
     public GameObject pauseScreen;
     public GameObject resultsScreen;
 
-    //Current stat displays
+    [Header("Current Stat Displays")]
     public TextMeshProUGUI currentHealthDisplay;
     public TextMeshProUGUI currentRecoveryDisplay;
     public TextMeshProUGUI currentMagnetDisplay;
     public TextMeshProUGUI currentMoveSpeedDisplay;
     public TextMeshProUGUI currentMightDisplay;
 
+    [Header("Results Screen Displays")]
+    public Image chosenCharacterImage;
+    public TextMeshProUGUI chosenCharacterName;
+    public TextMeshProUGUI levelReachedDisplay;
+    public List<Image> chosenWeaponsUI = new List<Image>(6);
+    public List<Image> chosenPassiveItemsUI = new List<Image>(6);
+
     private void Awake()
     {
         //Warning check to see if there is another singleton of this kind in the game
-        if(instance== null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -156,5 +163,63 @@ public class gameController : MonoBehaviour
         int seconds = Mathf.FloorToInt(stopwatchtime % 60);
 
         stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void AssignChosenCharacterUI(CharacterScriptableObject chosenCharacterData)
+    {
+        chosenCharacterImage.sprite = chosenCharacterData.Icon;
+        chosenCharacterName.text = chosenCharacterData.name;
+    }
+
+    public void AssignLevelReachedUI(int levelReachedData)
+    {
+        levelReachedDisplay.text = levelReachedData.ToString();
+    }
+
+    public void AssignChosenWeaponsAndPassiveItemsUI(List<Image> chosenWeaponsData
+        , List<Image> chosenPassiveItemsData)
+    {
+        if (chosenWeaponsData.Count != chosenWeaponsUI.Count || chosenPassiveItemsData.Count
+            != chosenWeaponsUI.Count)
+        {
+            Debug.Log("Chosen weapons and passive items data lists have different lenghts");
+            return;
+        }
+
+        // Assign chosen weapons data to chosenWeaponsUI
+        for (int i = 0; i < chosenWeaponsData.Count; i++)
+        {
+            // Check that the sprite of the corresponding element in chosenWeaponsData is not null
+            if (chosenWeaponsData[i].sprite)
+            {
+                // Enable the corresponding element in chosenWeaponsUI and set its sprite to the 
+                // *corresponid sprite in chosenWeaponsData
+                chosenWeaponsUI[i].enabled = true;
+                chosenWeaponsUI[i].sprite = chosenWeaponsData[i].sprite;
+            }
+            else
+            {
+                // If the sprite is null, disable the corresponding element in chosenWeaponUI
+                chosenWeaponsUI[i].enabled = true;
+            }
+        }
+
+        // Assign chosen weapons data to chosenPassiveItemsUI
+        for (int i = 0; i < chosenPassiveItemsUI.Count; i++)
+        {
+            // Check that the sprite of the corresponding element in chosenPassiveItemsData is not null
+            if (chosenPassiveItemsData[i].sprite)
+            {
+                // Enable the corresponding element in chosenPassiveItemsUI and set its sprite to the 
+                // *corresponid sprite in chosenPassiveItemsData
+                chosenPassiveItemsUI[i].enabled = true;
+                chosenPassiveItemsUI[i].sprite = chosenPassiveItemsData[i].sprite;
+            }
+            else
+            {
+                // If the sprite is null, disable the corresponding element in chosenPassiveItemsUI
+                chosenPassiveItemsUI[i].enabled = true;
+            }
+        }
     }
 }

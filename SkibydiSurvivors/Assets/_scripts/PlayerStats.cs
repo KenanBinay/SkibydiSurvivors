@@ -164,6 +164,8 @@ public class PlayerStats : MonoBehaviour
         gameController.instance.currentMagnetDisplay.text = "Magnet " + currentMagnet;
         gameController.instance.currentMoveSpeedDisplay.text = "Move Speed " + currentMoveSpeed;
         gameController.instance.currentMightDisplay.text = "Might " + currentMight;
+
+        gameController.instance.AssignChosenCharacterUI(characterData);
     }
 
     void Update()
@@ -227,6 +229,9 @@ public class PlayerStats : MonoBehaviour
     {
         if (!gameController.instance.isGameOver)
         {
+            gameController.instance.AssignLevelReachedUI(level);
+            gameController.instance.AssignChosenWeaponsAndPassiveItemsUI(inventory.weaponUISlots
+                , inventory.passiveItemUISlots);
             gameController.instance.GameOver();
             Debug.Log("player is dead");
         }

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57574b7a5eed7984b8b0642687f104a4, type: 3}
   m_Name: cameraman_1
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 1cae6ef88a50cd449a2a15d4328a5d01, type: 3}
+  name: Cameraman
   startingWeapon: {fileID: 6203698368743740466, guid: 160c92f7fb0e34841bb7b8baadbc0d4e, type: 3}
   maxhealth: 170
   recovery: 1.5
