@@ -22,4 +22,4 @@ MonoBehaviour:
   name: Tornado
   description: Tornado that spins around player that deals damage to every enemy
     collides
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6ded9b81e1a8ad84fa7320b712ed2887, type: 3}

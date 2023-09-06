@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 4524906889682281520, guid: 133d6abd98bb1984a8a7e64cbf54d438, type: 3}
   name: 'Electric Circle '
   description: Creates an electric ball that circles around the player
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5ad0a504576b05d49ad8d2d3aebac41c, type: 3}

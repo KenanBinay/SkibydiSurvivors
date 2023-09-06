@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Thunderbolt level 2
   description: Increases damage by 20
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: b50da901f479f514f893b118342ab257, type: 3}

@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 7056322739514485517, guid: 2a34af72b9eeebc479d13813e138aeec, type: 3}
   name: Aura Spikes
   description: Creates a aura around the player that damages anything that collides
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 791c74199182b63409c21ff5fda6df3e, type: 3}

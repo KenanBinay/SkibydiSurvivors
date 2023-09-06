@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Ripples Level 2
   description: Increases damage by 3
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2d60460bf140c7e479b3d5993479c8aa, type: 3}

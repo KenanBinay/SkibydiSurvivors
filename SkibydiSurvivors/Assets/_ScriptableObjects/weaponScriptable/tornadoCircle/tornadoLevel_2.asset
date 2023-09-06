@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Tornado Level 2
   description: Increases damage by 4
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: f20e33b66391ded43a19980d181313ee, type: 3}

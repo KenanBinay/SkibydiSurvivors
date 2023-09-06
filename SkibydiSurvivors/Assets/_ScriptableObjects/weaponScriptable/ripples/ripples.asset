@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 341094316359236993, guid: 0d0ca203ff3ef8c4897fd4059e23b1e1, type: 3}
   name: Ripples
   description: Deals damage to every enemy inside
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 44a46bcc1ddc2474985a86fdca1cd75f, type: 3}
