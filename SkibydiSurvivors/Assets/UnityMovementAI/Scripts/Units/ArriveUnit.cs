@@ -13,7 +13,7 @@ namespace UnityMovementAI
         void Start()
         {
             steeringBasics = GetComponent<SteeringBasics>();
-            target = GameObject.Find("_Character").transform;
+            target = gameController.instance.playerObject.transform;
         }
 
         void FixedUpdate()

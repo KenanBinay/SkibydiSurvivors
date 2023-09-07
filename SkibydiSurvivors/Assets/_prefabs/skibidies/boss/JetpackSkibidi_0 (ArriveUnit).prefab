@@ -39,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 5584641167041042921}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7485298277372998601
 MeshFilter:
@@ -213,6 +213,8 @@ MonoBehaviour:
   returning: 0
   minDist: 0.7
   maxDist: 45
+  _mesh: {fileID: 4379981715903417211, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
+  material: {fileID: 3974383185098806130, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
 --- !u!114 &-6657209297570770934
 MonoBehaviour:
   m_ObjectHideFlags: 0

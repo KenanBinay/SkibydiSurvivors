@@ -54,7 +54,6 @@ public class gameController : MonoBehaviour
     // Reference to hte player's game object
     public GameObject playerObject;
 
-
     private void Awake()
     {
         //Warning check to see if there is another singleton of this kind in the game

@@ -16,7 +16,10 @@ public class PlayerCollector : MonoBehaviour
 
     private void Update()
     {
-        Scan(transform.position, player.CurrentMagnet);
+        if (!gameController.instance.choosingUpgrade)
+        {
+            Scan(transform.position, player.CurrentMagnet);
+        }
     }
 
     public void Scan(Vector3 scan_pos, float BlastRadius)
@@ -33,7 +36,8 @@ public class PlayerCollector : MonoBehaviour
                     Vector3 forceDirection = (transform.position - hitcol.transform.position).normalized;
                     rb.AddForce(forceDirection * pullSpeed);
 
-                    collectable.Collect();
+                    collectable.Collect();        
+                    break;
                 }
             }
             if (gameController.instance.choosingUpgrade)

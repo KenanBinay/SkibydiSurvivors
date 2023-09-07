@@ -10,7 +10,7 @@ public class characterController : MonoBehaviour
     [SerializeField]
     private CharacterScriptableObject CharacterData;
 
-    [SerializeField] FixedJoystick joystick;
+    [SerializeField] FloatingJoystick joystick;
 
     public CharacterController controller;
     public GameObject character;

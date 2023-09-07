@@ -98,14 +98,14 @@ public class TerrainControllerSimple : MonoBehaviour {
 
         terrainTiles.Add(new Vector2(xIndex, yIndex), terrain);
 
-        GenerateMeshSimple gm = terrain.GetComponent<GenerateMeshSimple>();
+     /*   GenerateMeshSimple gm = terrain.GetComponent<GenerateMeshSimple>();
         gm.TerrainSize = terrainSize;
         gm.Gradient = gradient;
         gm.NoiseScale = noiseScale;
         gm.CellSize = cellSize;
         gm.NoiseOffset = NoiseOffset(xIndex, yIndex);
         gm.Generate();
-
+     */
      //   navSurface.BakeSurface();
 
         return terrain;

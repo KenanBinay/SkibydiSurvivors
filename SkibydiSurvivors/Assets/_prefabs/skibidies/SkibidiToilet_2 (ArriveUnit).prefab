@@ -552,7 +552,7 @@ Transform:
   - {fileID: 3715862167690026513}
   - {fileID: 4378733564100398107}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7275468503368934620
 MeshFilter:
@@ -726,6 +726,8 @@ MonoBehaviour:
   returning: 0
   minDist: 0.7
   maxDist: 45
+  _mesh: {fileID: -7070831255929112694, guid: 412021aae9dab6e4a9be9170f6469cce, type: 3}
+  material: {fileID: -33264764165835482, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
 --- !u!95 &4445988249390468295
 Animator:
   serializedVersion: 5

@@ -1,11 +1,4 @@
-using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Linq;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UIElements;
 
 public class enemyController : MonoBehaviour
 {
@@ -38,6 +31,12 @@ public class enemyController : MonoBehaviour
 
     PlayerStats player;
 
+    [SerializeField] private Mesh _mesh;
+    [SerializeField] private Material material;
+    RenderParams _rp;
+
+    private Matrix4x4 _matrices;
+
     private void Start()
     {
         enemyHealth = enemyScriptableObject.health;
@@ -50,6 +49,9 @@ public class enemyController : MonoBehaviour
         player = GameObject.Find("_Inventory&PlayerStats").GetComponent<PlayerStats>();
 
         minSqrDist = minDist * minDist;
+
+        _rp = new RenderParams(material);
+        _matrices = new Matrix4x4();
     }
 
     public void SetTarget(Transform player)
@@ -100,6 +102,8 @@ public class enemyController : MonoBehaviour
             ReturnEnemy();
         }
         else returning = false;
+
+        Graphics.RenderMesh(_rp, _mesh, 0, _matrices);
     }
 
     void Move()
