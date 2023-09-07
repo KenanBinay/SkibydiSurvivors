@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -115,6 +116,9 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
+    [Header("UI")]
+    public Image healthBar;
+
     public GameObject spinach, wings;
 
     private void Awake()
@@ -166,6 +170,8 @@ public class PlayerStats : MonoBehaviour
         gameController.instance.currentMightDisplay.text = "Might " + currentMight;
 
         gameController.instance.AssignChosenCharacterUI(characterData);
+
+        UpdateHealthBar();
     }
 
     void Update()
@@ -224,7 +230,15 @@ public class PlayerStats : MonoBehaviour
             {
                 Kill();
             }
+
+            UpdateHealthBar();
         }
+    }
+
+    void UpdateHealthBar()
+    {
+        //Update the health bar
+        healthBar.fillAmount = currentHealth / characterData.MaxHealth;
     }
 
     public void Kill()

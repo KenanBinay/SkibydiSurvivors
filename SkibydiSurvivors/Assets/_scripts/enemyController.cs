@@ -30,7 +30,7 @@ public class enemyController : MonoBehaviour
     private float minSqrDist;
     private float sqrDist;
 
-    float invincibilityDuration = 0.5f;
+    float invincibilityDuration = 0.2f;
     float invincibilityTimer;
     bool isInvincible;
 
