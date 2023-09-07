@@ -131,7 +131,7 @@ TextureImporter:
         width: 142
         height: 140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
         width: 115
         height: 134
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,6 +160,132 @@ TextureImporter:
       bones: []
       spriteID: 9d6bfe439771b75429790cf76b2b3c47
       internalID: 573673328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gems_2
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 416
+        width: 106
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe6509b27ff89544ab6d82697543d34
+      internalID: 1552927285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gems_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 415
+        width: 90
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4b4e9baee06874a93a2d28d75a13d0
+      internalID: -532292893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gems_4
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 37
+        width: 130
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1c10cf084392b429c295aa0e559227
+      internalID: 1692457556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gems_5
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 41
+        width: 142
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956311da1dd6038418f1b8c863c0b00c
+      internalID: -1132616393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gems_6
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 221
+        width: 112
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd856696bbbaafd458eef69bc16ad564
+      internalID: -1429638923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gems_7
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 397
+        width: 91
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39a0a86eab8c4e4a9bccb0f3a12aa66
+      internalID: -1512552829
       vertices: []
       indices: 
       edges: []
@@ -177,6 +303,12 @@ TextureImporter:
     nameFileIdTable:
       gems_0: -1441094091
       gems_1: 573673328
+      gems_2: 1552927285
+      gems_3: -532292893
+      gems_4: 1692457556
+      gems_5: -1132616393
+      gems_6: -1429638923
+      gems_7: -1512552829
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

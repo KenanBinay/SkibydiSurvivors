@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -118,6 +119,8 @@ public class PlayerStats : MonoBehaviour
 
     [Header("UI")]
     public Image healthBar;
+    public Image expBar;
+    public TextMeshProUGUI levelText;
 
     public GameObject spinach, wings;
 
@@ -172,6 +175,8 @@ public class PlayerStats : MonoBehaviour
         gameController.instance.AssignChosenCharacterUI(characterData);
 
         UpdateHealthBar();
+        UpdateExpBar();
+        UpdateLevelText();
     }
 
     void Update()
@@ -193,6 +198,8 @@ public class PlayerStats : MonoBehaviour
         experience += amount;
 
         LevelUpChecker();
+
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -213,8 +220,22 @@ public class PlayerStats : MonoBehaviour
             }
             experienceCap += experienceCapIncrease;
 
+            UpdateLevelText();
+
             gameController.instance.StartLevelUp();
         }
+    }
+
+    void UpdateExpBar()
+    {
+        // Update exp bar fill amount
+        expBar.fillAmount = (float)experience / experienceCap;
+    }
+
+    void UpdateLevelText()
+    {
+        // Update level text
+        levelText.text = "LV " + level.ToString();
     }
 
     public void TakeDamage(float dmg)
@@ -276,6 +297,8 @@ public class PlayerStats : MonoBehaviour
             {
                 CurrentHealth = characterData.MaxHealth;
             }
+
+            UpdateHealthBar();
         }
     }
 

@@ -6,8 +6,6 @@ using UnityEngine;
 public class TerrainControllerSimple : MonoBehaviour {
 
     [SerializeField]
-    private GameObject terrainTilePrefab = null;
-    [SerializeField]
     private GameObject[] terrainPrefabs;
     [SerializeField]
     private Vector3 terrainSize = new Vector3(20, 1, 20);
@@ -22,8 +20,6 @@ public class TerrainControllerSimple : MonoBehaviour {
     [SerializeField]
     private Transform playerTransform;
     [SerializeField]
-    private NavigationBaker navSurface;
-    [SerializeField]
     private Transform Enviroment;
 
     private Vector2 startOffset;
@@ -31,10 +27,7 @@ public class TerrainControllerSimple : MonoBehaviour {
     private Vector2[] previousCenterTiles;
     private List<GameObject> previousTileObjects = new List<GameObject>();
 
-    bool navmeshBaked;
-
-    private void Start() {
-        navSurface = GetComponent<NavigationBaker>();
+    private void Start() {  
         InitialLoad();
     }
 
