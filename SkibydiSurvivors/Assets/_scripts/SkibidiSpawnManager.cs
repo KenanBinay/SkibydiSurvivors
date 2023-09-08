@@ -37,6 +37,7 @@ public class SkibidiSpawnManager : MonoBehaviour
     public int maxEnemiesAllowed;
     public bool maxEnemiesReached = false;
     private bool waveStarted = false;
+    private bool allEnemiesDestroyed = false;
 
     [Header("Spawn Positions")]
     public List<Transform> relativeSpawnPoints;
@@ -51,17 +52,12 @@ public class SkibidiSpawnManager : MonoBehaviour
 
     private void Update()
     {
-        if (!waveStarted && currentWaveCount < waves.Count 
+        if (!waveStarted && currentWaveCount < waves.Count
             && waves[currentWaveCount].waveQuota == currentWaveQuota)
         {
             StartCoroutine(BeginNextWave());
             waveStarted = true; // set waveStarted to true to prevent the coroutine from starting multiple times
         }
-
-        /* if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0)
-         {
-             StartCoroutine(BeginNextWave());
-         }*/
 
         spawnTimer += Time.deltaTime;
 

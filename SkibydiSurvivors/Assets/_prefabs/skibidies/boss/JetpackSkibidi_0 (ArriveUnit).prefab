@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f58141e9f357e448fd2fa6f1afc1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyScriptableObject: {fileID: 11400000, guid: 8258a5e80ab76e047b7a6ce185c12c1d, type: 2}
   maxVelocity: 2
   maxAcceleration: 10
   turnSpeed: 20

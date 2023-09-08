@@ -16,20 +16,21 @@ public class characterController : MonoBehaviour
     public GameObject character;
     public Animator playerAnimator;
 
+    private GameObject autoShootingWeapon;
+
     Vector3 _moveVector, movementDirection;
 
     public float rotationSpeed, idleRotationSpeed, maxAngle = 90;
     public static bool idle;
     public bool useAutoShooting;
 
-    float movementSpeed, health;
+    float movementSpeed;
 
     void Start()
     {
         playerAnimator = controller.GetComponentInChildren<Animator>();
 
         movementSpeed = CharacterData.MoveSpeed;
-        health = CharacterData.MaxHealth;
     }
 
     void Update()
@@ -45,6 +46,13 @@ public class characterController : MonoBehaviour
         _moveVector.z = joystick.Vertical * movementSpeed * Time.deltaTime;
 
         playerAnimator.SetFloat("vertical", movementDirection.sqrMagnitude);
+
+        if (autoShootingWeapon == null)
+        {
+            autoShootingWeapon = GameObject.Find("autoShooting(Clone)");
+
+            if (autoShootingWeapon != null) useAutoShooting = true;
+        }
 
         Move();
     }

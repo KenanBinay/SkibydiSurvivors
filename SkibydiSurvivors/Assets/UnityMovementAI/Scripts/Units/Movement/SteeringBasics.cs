@@ -8,6 +8,9 @@ namespace UnityMovementAI
     {
         [Header("General")]
 
+        [SerializeField]
+        EnemyScriptableObject enemyScriptableObject;
+
         public float maxVelocity = 3.5f;
 
         public float maxAcceleration = 10f;
@@ -46,9 +49,10 @@ namespace UnityMovementAI
 
         MovementAIRigidbody rb;
 
-
         void Awake()
         {
+            maxVelocity = enemyScriptableObject.speed;
+
             rb = GetComponent<MovementAIRigidbody>();
         }
 
