@@ -16,7 +16,7 @@ public class PlayerCollector : MonoBehaviour
 
     private void Update()
     {
-        if (!gameController.instance.choosingUpgrade)
+        if (!gameController.instance.isGameOver)
         {
             Scan(transform.position, player.CurrentMagnet);
         }
@@ -36,13 +36,9 @@ public class PlayerCollector : MonoBehaviour
                     Vector3 forceDirection = (transform.position - hitcol.transform.position).normalized;
                     rb.AddForce(forceDirection * pullSpeed);
 
-                    collectable.Collect();        
+                    collectable.Collect();
                     break;
                 }
-            }
-            if (gameController.instance.choosingUpgrade)
-            {
-                break;
             }
         }
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820905e754ba25145ae631587bf93202, type: 3}
   m_Name: Skibidi_1
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
   attackDamage: 1
   xp: 1
   speed: 3

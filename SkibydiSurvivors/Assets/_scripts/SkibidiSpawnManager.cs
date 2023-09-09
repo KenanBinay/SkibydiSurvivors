@@ -36,8 +36,7 @@ public class SkibidiSpawnManager : MonoBehaviour
     public int enemiesAlive;
     public int maxEnemiesAllowed;
     public bool maxEnemiesReached = false;
-    private bool waveStarted = false;
-    private bool allEnemiesDestroyed = false;
+    private bool isWaveActive = false;
 
     [Header("Spawn Positions")]
     public List<Transform> relativeSpawnPoints;
@@ -52,11 +51,10 @@ public class SkibidiSpawnManager : MonoBehaviour
 
     private void Update()
     {
-        if (!waveStarted && currentWaveCount < waves.Count
-            && waves[currentWaveCount].waveQuota == currentWaveQuota)
+        if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0
+            && !isWaveActive)
         {
             StartCoroutine(BeginNextWave());
-            waveStarted = true; // set waveStarted to true to prevent the coroutine from starting multiple times
         }
 
         spawnTimer += Time.deltaTime;
@@ -70,13 +68,15 @@ public class SkibidiSpawnManager : MonoBehaviour
 
     IEnumerator BeginNextWave()
     {
+        isWaveActive = true; // set waveStarted to true to prevent the coroutine from starting multiple times
+
         yield return new WaitForSeconds(waveInterval);
 
         if (currentWaveCount < waves.Count - 1)
         {
+            isWaveActive = false;
             currentWaveCount++;
             CalculateWaveQuota();
-            waveStarted = false;
         }
     }
 
@@ -99,13 +99,8 @@ public class SkibidiSpawnManager : MonoBehaviour
             foreach (var enemyGroup in waves[currentWaveCount].enemyGroups)
             {
                 if (enemyGroup.spawnCount < enemyGroup.enemyCount)
-                {
-                    if (enemiesAlive >= maxEnemiesAllowed)
-                    {
-                        maxEnemiesReached = true;
-                        return;
-                    }
-
+                {       
+                    //Spawn the enemy at a random position close to the player
                     GameObject enemy = Instantiate(enemyGroup.enemyPrefab, player.position +
                         relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position
                         , Quaternion.identity, transform);
@@ -116,19 +111,25 @@ public class SkibidiSpawnManager : MonoBehaviour
                     enemyGroup.spawnCount++;
                     waves[currentWaveCount].spawnCount++;
                     enemiesAlive++;
+
+                    if (enemiesAlive >= maxEnemiesAllowed)
+                    {
+                        maxEnemiesReached = true;
+                        return;
+                    }
                 }
             }
-        }
-
-        if (enemiesAlive < maxEnemiesAllowed)
-        {
-            maxEnemiesReached = false;
         }
     }
 
     public void OnEnemyKilled()
     {
         enemiesAlive--;
+
+        if (enemiesAlive < maxEnemiesAllowed)
+        {
+            maxEnemiesReached = false;
+        }
     }
 
     void firstWave()

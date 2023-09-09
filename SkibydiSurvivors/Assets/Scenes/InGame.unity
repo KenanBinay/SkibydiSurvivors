@@ -382,7 +382,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32760431}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2586,7 +2586,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433539863}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2836,7 +2836,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472456178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3844,6 +3844,7 @@ MonoBehaviour:
   chosenCharacterImage: {fileID: 62226022}
   chosenCharacterName: {fileID: 526895617}
   levelReachedDisplay: {fileID: 1416144705}
+  timeSurvivedDisplay: {fileID: 743602758}
   chosenWeaponsUI:
   - {fileID: 558720855}
   - {fileID: 252323173}
@@ -7406,7 +7407,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052325100}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -7482,7 +7483,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057322131}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -7843,7 +7844,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097124077}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -8161,7 +8162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145171143}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -9489,7 +9490,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439797032}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -10610,7 +10611,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741185010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -10870,7 +10871,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832061825}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -10946,7 +10947,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866808133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -11043,24 +11044,24 @@ MonoBehaviour:
       spawnCount: 1
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     waveQuota: 0
-    spawnInterval: 1
+    spawnInterval: 0.5
     spawnCount: 0
   - waveName: Wave 3
     enemyGroups:
-    - enemyName: skibidi_0
-      enemyCount: 80
-      spawnCount: 0
-      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     - enemyName: skibidi_1
       enemyCount: 40
-      spawnCount: 1
+      spawnCount: 0
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
+    - enemyName: skibidi_0
+      enemyCount: 60
+      spawnCount: 1
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     - enemyName: bossSkibidi_0
-      enemyCount: 1
+      enemyCount: 3
       spawnCount: 2
       enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
-    spawnInterval: 1
+    spawnInterval: 0.5
     spawnCount: 0
   - waveName: Wave 4
     enemyGroups:
@@ -11073,15 +11074,15 @@ MonoBehaviour:
       spawnCount: 1
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     - enemyName: bossSkibidi_0
-      enemyCount: 2
+      enemyCount: 4
       spawnCount: 2
       enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     - enemyName: bossSkibidi_1
-      enemyCount: 2
+      enemyCount: 3
       spawnCount: 3
       enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
     waveQuota: 0
-    spawnInterval: 1
+    spawnInterval: 0.5
     spawnCount: 0
   - waveName: Wave 5
     enemyGroups:
@@ -11090,7 +11091,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     - enemyName: skibidi_1
-      enemyCount: 100
+      enemyCount: 60
       spawnCount: 1
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     - enemyName: bossSkibidi_0
@@ -11104,10 +11105,31 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
+  - waveName: Wave 6
+    enemyGroups:
+    - enemyName: skibidi_0
+      enemyCount: 55
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
+    - enemyName: skibidi_1
+      enemyCount: 30
+      spawnCount: 1
+      enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
+    - enemyName: bossSkibidi_0
+      enemyCount: 15
+      spawnCount: 2
+      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
+    - enemyName: bossSkibidi_1
+      enemyCount: 5
+      spawnCount: 3
+      enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnCount: 0
   currentWaveCount: 0
-  waveInterval: 100
+  waveInterval: 50
   enemiesAlive: 0
-  maxEnemiesAllowed: 150
+  maxEnemiesAllowed: 110
   maxEnemiesReached: 0
   relativeSpawnPoints:
   - {fileID: 1028754099}
@@ -11451,7 +11473,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907283334}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -11693,7 +11715,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953071200}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -12328,7 +12350,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033592865}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

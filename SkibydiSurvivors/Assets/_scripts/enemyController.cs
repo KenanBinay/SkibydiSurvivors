@@ -64,7 +64,7 @@ public class enemyController : MonoBehaviour
         if (!isInvincible)
         {
             enemyHealth -= amount;
-
+            blinkTimer = blinkDuration;
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
 
@@ -72,8 +72,6 @@ public class enemyController : MonoBehaviour
             {
                 Die();
             }
-
-            blinkTimer = blinkDuration;
         }
     }
 
