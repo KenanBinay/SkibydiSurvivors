@@ -477,6 +477,9 @@ MonoBehaviour:
   - name: Blue gem
     itemPrefab: {fileID: 9013476318719632713, guid: 2fbd2cb63628cb84baa0c0fb28c3e7f4, type: 3}
     dropRate: 100
+  - name: Red gem
+    itemPrefab: {fileID: 9013476318719632713, guid: c7ea48d690f772d4aa50a207ddfed940, type: 3}
+    dropRate: 30
 --- !u!1 &6692794416740709636
 GameObject:
   m_ObjectHideFlags: 0

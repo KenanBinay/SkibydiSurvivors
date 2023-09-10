@@ -2162,31 +2162,34 @@ MonoBehaviour:
   levelRanges:
   - startLevel: 1
     endLevel: 2
-    experienceCapIncrease: 1000
+    experienceCapIncrease: 500
   - startLevel: 2
     endLevel: 3
-    experienceCapIncrease: 4000
+    experienceCapIncrease: 1000
   - startLevel: 3
     endLevel: 4
-    experienceCapIncrease: 8000
+    experienceCapIncrease: 2000
   - startLevel: 4
     endLevel: 5
-    experienceCapIncrease: 16000
+    experienceCapIncrease: 4000
   - startLevel: 5
     endLevel: 6
-    experienceCapIncrease: 32000
+    experienceCapIncrease: 8000
   - startLevel: 6
     endLevel: 7
-    experienceCapIncrease: 64000
+    experienceCapIncrease: 16000
   - startLevel: 7
     endLevel: 8
-    experienceCapIncrease: 128000
+    experienceCapIncrease: 32000
   - startLevel: 8
     endLevel: 9
-    experienceCapIncrease: 256000
+    experienceCapIncrease: 64000
   - startLevel: 9
     endLevel: 10
-    experienceCapIncrease: 2147483647
+    experienceCapIncrease: 128000
+  - startLevel: 10
+    endLevel: 11
+    experienceCapIncrease: -2147483648
 --- !u!1 &376831587
 GameObject:
   m_ObjectHideFlags: 3
@@ -11127,9 +11130,9 @@ MonoBehaviour:
     spawnInterval: 0.5
     spawnCount: 0
   currentWaveCount: 0
-  waveInterval: 50
+  waveInterval: 30
   enemiesAlive: 0
-  maxEnemiesAllowed: 110
+  maxEnemiesAllowed: 60
   maxEnemiesReached: 0
   relativeSpawnPoints:
   - {fileID: 1028754099}

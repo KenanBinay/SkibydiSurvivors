@@ -511,6 +511,7 @@
 "Assets/_scripts/Passive Items/PassiveItemScriptableObject.cs"
 "Assets/_scripts/Passive Items/SpinachPassiveItem.cs"
 "Assets/_scripts/Passive Items/WingsPassiveItem.cs"
+"Assets/_scripts/Pick-ups/BobbingAnimation.cs"
 "Assets/_scripts/Pick-ups/ExperienceGem.cs"
 "Assets/_scripts/Pick-ups/HealthPotion.cs"
 "Assets/_scripts/Pick-ups/Pickup.cs"
