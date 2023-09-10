@@ -8,6 +8,7 @@ public class PlayerCollector : MonoBehaviour
     PlayerStats player;
 
     public float pullSpeed;
+    public static bool collecting = false;
 
     private void Start()
     {
@@ -37,7 +38,12 @@ public class PlayerCollector : MonoBehaviour
                     rb.AddForce(forceDirection * pullSpeed);
 
                     collectable.Collect();
+                    collecting = true;
                     break;
+                }
+                else
+                {
+                    collecting = false;
                 }
             }
         }

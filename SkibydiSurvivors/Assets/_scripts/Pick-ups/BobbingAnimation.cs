@@ -16,6 +16,10 @@ public class BobbingAnimation : MonoBehaviour
 
     void Update()
     {
-        transform.position = initalPosition + direction * Mathf.Sin(Time.time * frequency) * magnitude;
+        if (!PlayerCollector.collecting)
+        {
+            transform.position = initalPosition + direction * Mathf.Sin(Time.time * frequency) 
+                * magnitude;
+        }
     }
 }
