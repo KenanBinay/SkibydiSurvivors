@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.2949986, g: 0.39420825, b: 0.39834204, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: f7654ef4b380948438e6f206a9f99a2b, type: 2}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10243831, g: 0.44816202, b: 0.78719026, a: 1}
+  m_IndirectSpecularColor: {r: 0.14932707, g: 0.6341036, b: 1.109506, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2165,28 +2165,28 @@ MonoBehaviour:
     experienceCapIncrease: 500
   - startLevel: 2
     endLevel: 3
-    experienceCapIncrease: 1000
+    experienceCapIncrease: 1500
   - startLevel: 3
     endLevel: 4
-    experienceCapIncrease: 2000
+    experienceCapIncrease: 4500
   - startLevel: 4
     endLevel: 5
-    experienceCapIncrease: 4000
+    experienceCapIncrease: 9000
   - startLevel: 5
     endLevel: 6
-    experienceCapIncrease: 8000
+    experienceCapIncrease: 18000
   - startLevel: 6
     endLevel: 7
-    experienceCapIncrease: 16000
+    experienceCapIncrease: 25000
   - startLevel: 7
     endLevel: 8
-    experienceCapIncrease: 32000
+    experienceCapIncrease: 50000
   - startLevel: 8
     endLevel: 9
-    experienceCapIncrease: 64000
+    experienceCapIncrease: 100000
   - startLevel: 9
     endLevel: 10
-    experienceCapIncrease: 128000
+    experienceCapIncrease: 200000
   - startLevel: 10
     endLevel: 11
     experienceCapIncrease: -2147483648
@@ -4622,7 +4622,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: menu
+          m_StringArgument: TitleScreen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &709638862
@@ -6337,7 +6337,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: menu
+          m_StringArgument: TitleScreen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &890857229
@@ -11069,7 +11069,7 @@ MonoBehaviour:
   - waveName: Wave 4
     enemyGroups:
     - enemyName: skibidi_0
-      enemyCount: 50
+      enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     - enemyName: skibidi_1
@@ -11102,20 +11102,20 @@ MonoBehaviour:
       spawnCount: 2
       enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     - enemyName: bossSkibidi_1
-      enemyCount: 5
+      enemyCount: 2
       spawnCount: 3
       enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
     waveQuota: 0
-    spawnInterval: 1
+    spawnInterval: 0.5
     spawnCount: 0
   - waveName: Wave 6
     enemyGroups:
     - enemyName: skibidi_0
-      enemyCount: 55
+      enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     - enemyName: skibidi_1
-      enemyCount: 30
+      enemyCount: 10
       spawnCount: 1
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     - enemyName: bossSkibidi_0
@@ -11126,6 +11126,40 @@ MonoBehaviour:
       enemyCount: 5
       spawnCount: 3
       enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnCount: 0
+  - waveName: Wave 7
+    enemyGroups:
+    - enemyName: skibidi_0
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
+    - enemyName: bossSkibidi_0
+      enemyCount: 30
+      spawnCount: 2
+      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
+    - enemyName: bossSkibidi_1
+      enemyCount: 10
+      spawnCount: 3
+      enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnCount: 0
+  - waveName: Wave 8
+    enemyGroups:
+    - enemyName: skibidi_0
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
+    - enemyName: skibidi_1
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
+    - enemyName: bossSkibidi_0
+      enemyCount: 40
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
