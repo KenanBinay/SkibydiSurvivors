@@ -1,10 +1,13 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class enemyController : MonoBehaviour
 {
     [SerializeField]
     EnemyScriptableObject enemyScriptableObject;
-    float blinkTimer, speed, damage, xpAmount, enemyHealth;
+    float speed, damage, enemyHealth;
 
     public static Transform target;
     SkibidiSpawnManager enemySpawner;
@@ -37,16 +40,23 @@ public class enemyController : MonoBehaviour
 
     private Matrix4x4 _matrices;
 
+    float flashTime = .15f;
+    public Color[] colors;
+ 
     private void Start()
     {
         enemyHealth = enemyScriptableObject.health;
-        xpAmount = enemyScriptableObject.xp;
         damage = enemyScriptableObject.attackDamage;
         speed = enemyScriptableObject.speed;
 
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         enemySpawner = FindObjectOfType<SkibidiSpawnManager>();
         player = GameObject.Find("_Inventory&PlayerStats").GetComponent<PlayerStats>();
+
+        for (int i = 0; i < skinnedMeshRenderer.materials.Length; i++)
+        {
+            colors[i] = skinnedMeshRenderer.materials[i].color;
+        }
 
         minSqrDist = minDist * minDist;
 
@@ -64,9 +74,10 @@ public class enemyController : MonoBehaviour
         if (!isInvincible)
         {
             enemyHealth -= amount;
-            blinkTimer = blinkDuration;
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
+
+            StartCoroutine(EFlash());
 
             if (enemyHealth <= 0)
             {
@@ -84,14 +95,6 @@ public class enemyController : MonoBehaviour
         else if (isInvincible)
         {
             isInvincible = false;
-        }
-
-        blinkTimer -= Time.deltaTime;
-        float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
-        float intensity = (lerp * blinkIntesity) + 1f;
-        foreach (var materials in skinnedMeshRenderer.materials)
-        {
-            materials.color = Color.white * intensity;
         }
 
         if (!returning && target != null && Vector3.Distance(transform.position, target.position) >= despawnDistance)
@@ -135,6 +138,21 @@ public class enemyController : MonoBehaviour
     {
         transform.position = target.position + enemySpawner.relativeSpawnPoints[Random.Range(0
             , enemySpawner.relativeSpawnPoints.Count)].position;
+    }
+
+    IEnumerator EFlash()
+    {
+        for (int i = 0; i < skinnedMeshRenderer.materials.Length; i++)
+        {
+            skinnedMeshRenderer.materials[i].color = Color.white * 10;
+        }
+
+        yield return new WaitForSeconds(flashTime);
+
+        for (int i = 0; i < skinnedMeshRenderer.materials.Length; i++)
+        {
+            skinnedMeshRenderer.materials[i].color = colors[i];
+        }
     }
 
     private void OnTriggerStay(Collider other)

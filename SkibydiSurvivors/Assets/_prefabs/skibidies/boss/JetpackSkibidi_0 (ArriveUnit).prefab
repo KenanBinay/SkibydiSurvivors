@@ -216,6 +216,22 @@ MonoBehaviour:
   maxDist: 45
   _mesh: {fileID: 4379981715903417211, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
   material: {fileID: -33264764165835482, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
+  materials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  colors:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &-6657209297570770934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,8 +311,8 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: -2435443552014781318, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
   - {fileID: 3974383185098806130, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
-  - {fileID: -2435443552014781318, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
   - {fileID: 8105642925133166948, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
+  - {fileID: -2435443552014781318, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
   - {fileID: -33264764165835482, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
   - {fileID: 4469689313787342544, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
   - {fileID: 8889140713865251142, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}

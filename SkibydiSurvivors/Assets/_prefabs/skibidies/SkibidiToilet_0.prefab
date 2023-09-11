@@ -440,6 +440,22 @@ MonoBehaviour:
   maxDist: 45
   _mesh: {fileID: -7070831255929112694, guid: 412021aae9dab6e4a9be9170f6469cce, type: 3}
   material: {fileID: -33264764165835482, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
+  materials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  colors:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &5458807804467736367
 Animator:
   serializedVersion: 5
@@ -563,7 +579,6 @@ SkinnedMeshRenderer:
   - {fileID: 2100000, guid: 92d49042a04f67e4db40b4be96edb67f, type: 2}
   - {fileID: 2100000, guid: 913f2ca01e668dc44abd325046f22d37, type: 2}
   - {fileID: 2100000, guid: d9d3d10258ff5fc4daf9440c122a8650, type: 2}
-  - {fileID: 2100000, guid: 2f2e96736ca0cd547af3da6a9a191ec5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
