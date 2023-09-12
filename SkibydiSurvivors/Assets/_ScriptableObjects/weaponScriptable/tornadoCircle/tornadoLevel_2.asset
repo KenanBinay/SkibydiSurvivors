@@ -18,7 +18,7 @@ MonoBehaviour:
   coolDownDuration: 0
   pierce: 0
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 1366881222299925854, guid: bc3c62458a7d70840a07be50365d33a2, type: 3}
   name: Tornado Level 2
   description: Increases damage by 4
   icon: {fileID: 21300000, guid: f20e33b66391ded43a19980d181313ee, type: 3}

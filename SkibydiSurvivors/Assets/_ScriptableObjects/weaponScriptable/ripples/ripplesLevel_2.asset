@@ -18,7 +18,7 @@ MonoBehaviour:
   coolDownDuration: 0
   pierce: 0
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 341094316359236993, guid: 895e212b777928248bf0754d79840ef6, type: 3}
   name: Ripples Level 2
   description: Increases damage by 3
   icon: {fileID: 21300000, guid: 2d60460bf140c7e479b3d5993479c8aa, type: 3}

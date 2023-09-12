@@ -18,7 +18,7 @@ MonoBehaviour:
   coolDownDuration: 0
   pierce: 0
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 4524906889682281520, guid: db8488c28bcd88241a77b4428ffb7e2a, type: 3}
   name: Electric Circle Level 2
   description: Increases damage by 3
   icon: {fileID: 21300000, guid: e0c73acdd0ba2244abb8111c655b8cf6, type: 3}

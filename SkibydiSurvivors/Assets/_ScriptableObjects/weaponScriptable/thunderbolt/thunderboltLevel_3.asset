@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6cb7eaadb55a1c4d84b29e0268859b3, type: 3}
-  m_Name: gunLevel_2
+  m_Name: thunderboltLevel_3
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6203698368743740466, guid: 12942135e956b064fa50e5827f389e7b, type: 3}
-  damage: 4
+  prefab: {fileID: 2376571545434131263, guid: ea8c844dfead100468f0e93a2d5ef08f, type: 3}
+  damage: 30
   speed: 0
   coolDownDuration: 0
   pierce: 0
-  level: 2
-  nextLevelPrefab: {fileID: 6203698368743740466, guid: e164db83d5b332d42b27d811d8997929, type: 3}
-  name: Gun Level 2
-  description: Increases damage by 4
-  icon: {fileID: 21300000, guid: 3429969fa3bee89408686674b114c9e6, type: 3}
+  level: 3
+  nextLevelPrefab: {fileID: 0}
+  name: Thunderbolt level 3
+  description: Increases damage by 30
+  icon: {fileID: 21300000, guid: b0c04cf145b20c94ea6e76b5af9bfa03, type: 3}

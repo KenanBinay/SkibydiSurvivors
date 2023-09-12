@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6cb7eaadb55a1c4d84b29e0268859b3, type: 3}
-  m_Name: gunLevel_2
+  m_Name: electricCircleLevel_3
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6203698368743740466, guid: 12942135e956b064fa50e5827f389e7b, type: 3}
-  damage: 4
+  prefab: {fileID: 4524906889682281520, guid: db8488c28bcd88241a77b4428ffb7e2a, type: 3}
+  damage: 6
   speed: 0
   coolDownDuration: 0
   pierce: 0
-  level: 2
-  nextLevelPrefab: {fileID: 6203698368743740466, guid: e164db83d5b332d42b27d811d8997929, type: 3}
-  name: Gun Level 2
-  description: Increases damage by 4
-  icon: {fileID: 21300000, guid: 3429969fa3bee89408686674b114c9e6, type: 3}
+  level: 3
+  nextLevelPrefab: {fileID: 0}
+  name: Electric Circle Level 3
+  description: Increases damage by 6
+  icon: {fileID: 21300000, guid: 48d3a02ba72aa40499ad3876e09275f6, type: 3}

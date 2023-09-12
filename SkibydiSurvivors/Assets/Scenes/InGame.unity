@@ -2171,24 +2171,42 @@ MonoBehaviour:
     experienceCapIncrease: 4500
   - startLevel: 4
     endLevel: 5
-    experienceCapIncrease: 9000
+    experienceCapIncrease: 6000
   - startLevel: 5
     endLevel: 6
-    experienceCapIncrease: 18000
+    experienceCapIncrease: 10000
   - startLevel: 6
     endLevel: 7
-    experienceCapIncrease: 25000
+    experienceCapIncrease: 18000
   - startLevel: 7
     endLevel: 8
-    experienceCapIncrease: 50000
+    experienceCapIncrease: 25000
   - startLevel: 8
     endLevel: 9
-    experienceCapIncrease: 100000
+    experienceCapIncrease: 38000
   - startLevel: 9
     endLevel: 10
-    experienceCapIncrease: 200000
+    experienceCapIncrease: 45000
   - startLevel: 10
     endLevel: 11
+    experienceCapIncrease: 60000
+  - startLevel: 11
+    endLevel: 12
+    experienceCapIncrease: 75000
+  - startLevel: 12
+    endLevel: 13
+    experienceCapIncrease: 90000
+  - startLevel: 13
+    endLevel: 14
+    experienceCapIncrease: 120000
+  - startLevel: 14
+    endLevel: 15
+    experienceCapIncrease: 180000
+  - startLevel: 15
+    endLevel: 16
+    experienceCapIncrease: 240000
+  - startLevel: 16
+    endLevel: 17
     experienceCapIncrease: -2147483648
 --- !u!1 &376831587
 GameObject:
@@ -11240,6 +11258,19 @@ MonoBehaviour:
       enemyCount: 30
       spawnCount: 0
       enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnCount: 0
+  - waveName: Wave 14
+    enemyGroups:
+    - enemyName: skibidi_2
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
+    - enemyName: skibidi_1
+      enemyCount: 30
+      spawnCount: 0
+      enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0

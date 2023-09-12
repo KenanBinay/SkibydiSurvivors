@@ -18,7 +18,7 @@ MonoBehaviour:
   coolDownDuration: 0
   pierce: 0
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 7056322739514485517, guid: 16b95fe688d481b4a866ae0e1f6fa215, type: 3}
   name: Aura Spikes Level 2
   description: Increases damage by 3
   icon: {fileID: 21300000, guid: 5ff522790f6d48447aa0e3df624d0362, type: 3}
