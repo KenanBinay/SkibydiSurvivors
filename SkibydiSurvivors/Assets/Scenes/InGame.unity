@@ -11274,6 +11274,28 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
+  - waveName: Wave 15
+    enemyGroups:
+    - enemyName: bossSkibidi_0
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
+    - enemyName: bossSkibidi_1
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnCount: 0
+  - waveName: Wave 14
+    enemyGroups:
+    - enemyName: bossSkibidi_2
+      enemyCount: 1
+      spawnCount: 0
+      enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnCount: 0
   currentWaveCount: 0
   waveInterval: 30
   enemiesAlive: 0
