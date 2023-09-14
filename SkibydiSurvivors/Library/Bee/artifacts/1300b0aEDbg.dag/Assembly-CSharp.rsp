@@ -498,6 +498,7 @@
 "Assets/_scripts/enemyController.cs"
 "Assets/_scripts/EnemyScriptableObject.cs"
 "Assets/_scripts/FieldOfView.cs"
+"Assets/_scripts/FloatingText.cs"
 "Assets/_scripts/fps.cs"
 "Assets/_scripts/gameController.cs"
 "Assets/_scripts/GenerateMeshSimple.cs"

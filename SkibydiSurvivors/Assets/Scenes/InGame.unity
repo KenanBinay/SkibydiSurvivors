@@ -11116,7 +11116,7 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: skibidi_0
-      enemyCount: 60
+      enemyCount: 100
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     waveQuota: 0
@@ -11125,13 +11125,9 @@ MonoBehaviour:
   - waveName: Wave 2
     enemyGroups:
     - enemyName: skibidi_1
-      enemyCount: 30
+      enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
-    - enemyName: skibidi_2
-      enemyCount: 30
-      spawnCount: 1
-      enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11146,7 +11142,7 @@ MonoBehaviour:
       spawnCount: 1
       enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     - enemyName: bossSkibidi_0
-      enemyCount: 3
+      enemyCount: 1
       spawnCount: 2
       enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
@@ -11183,10 +11179,6 @@ MonoBehaviour:
       enemyCount: 5
       spawnCount: 2
       enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
-    - enemyName: bossSkibidi_1
-      enemyCount: 1
-      spawnCount: 3
-      enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11258,6 +11250,19 @@ MonoBehaviour:
   - waveName: Wave 11
     enemyGroups:
     - enemyName: skibidi_1
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
+    - enemyName: skibidi_2
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnCount: 0
+  - waveName: Wave 12
+    enemyGroups:
+    - enemyName: skibidi_1
       enemyCount: 40
       spawnCount: 0
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
@@ -11268,7 +11273,7 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
-  - waveName: Wave 12
+  - waveName: Wave 13
     enemyGroups:
     - enemyName: skibidi_1
       enemyCount: 40
@@ -11281,7 +11286,7 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
-  - waveName: Wave 13
+  - waveName: Wave 14
     enemyGroups:
     - enemyName: bossSkibidi_0
       enemyCount: 30
@@ -11294,7 +11299,7 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
-  - waveName: Wave 14
+  - waveName: Wave 15
     enemyGroups:
     - enemyName: skibidi_2
       enemyCount: 60
@@ -11307,20 +11312,20 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
-  - waveName: Wave 15
+  - waveName: Wave 16
     enemyGroups:
     - enemyName: bossSkibidi_0
-      enemyCount: 60
+      enemyCount: 30
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     - enemyName: bossSkibidi_1
-      enemyCount: 60
+      enemyCount: 30
       spawnCount: 0
       enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
-  - waveName: Wave 14
+  - waveName: Wave 17
     enemyGroups:
     - enemyName: bossSkibidi_2
       enemyCount: 1
@@ -13548,6 +13553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyScriptableObject: {fileID: 11400000, guid: 00ec5fd43223816458e0c06bafeb307f, type: 2}
+  FloatingTextPrefab: {fileID: 0}
   skinnedMeshRenderer: {fileID: 0}
   despawnDistance: 16
   rotationSpeed: 150
@@ -13582,6 +13588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyScriptableObject: {fileID: 11400000, guid: a762e115808886e45af66468758cef47, type: 2}
+  FloatingTextPrefab: {fileID: 0}
   skinnedMeshRenderer: {fileID: 0}
   despawnDistance: 16
   rotationSpeed: 150
@@ -14113,7 +14120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &3655140355771930249
 SphereCollider:
   m_ObjectHideFlags: 0

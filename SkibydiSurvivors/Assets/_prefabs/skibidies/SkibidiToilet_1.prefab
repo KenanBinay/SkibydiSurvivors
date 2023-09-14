@@ -666,6 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyScriptableObject: {fileID: 11400000, guid: 2ad066419bef19b458254d5f324b3357, type: 2}
+  FloatingTextPrefab: {fileID: 8857981573829602661, guid: 95d89ae2c07022048bae411bdecece51, type: 3}
   skinnedMeshRenderer: {fileID: 0}
   despawnDistance: 16
   rotationSpeed: 150

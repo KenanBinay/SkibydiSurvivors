@@ -1,7 +1,9 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Pool;
 
 public class enemyController : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class enemyController : MonoBehaviour
     float speed, damage, enemyHealth;
 
     public static Transform target;
+    public FloatingText FloatingTextPrefab;
     SkibidiSpawnManager enemySpawner;
 
     public SkinnedMeshRenderer skinnedMeshRenderer;
@@ -42,7 +45,9 @@ public class enemyController : MonoBehaviour
 
     float flashTime = .15f;
     public Color[] colors;
- 
+
+    private ObjectPool<FloatingText> _textPool;
+
     private void Start()
     {
         enemyHealth = enemyScriptableObject.health;
@@ -62,11 +67,27 @@ public class enemyController : MonoBehaviour
 
         _rp = new RenderParams(material);
         _matrices = new Matrix4x4();
+
+        _textPool = new ObjectPool<FloatingText>(CreateFloatingText, null, OnPutBackInPool
+            , defaultCapacity: 500);
+    }
+
+    private FloatingText CreateFloatingText()
+    {
+        var go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity
+            , transform);
+
+        return go;
     }
 
     public void SetTarget(Transform player)
     {
         target = player;
+    }
+
+    private void OnPutBackInPool(FloatingText obj)
+    {
+        obj.gameObject.SetActive(false);
     }
 
     public void TakeDamage(float amount)
@@ -79,11 +100,24 @@ public class enemyController : MonoBehaviour
 
             StartCoroutine(EFlash());
 
+            if (FloatingTextPrefab)
+            {
+                ShowFloatingText(amount);
+            }
+
             if (enemyHealth <= 0)
             {
                 Die();
             }
         }
+    }
+
+    void ShowFloatingText(float damageAmount)
+    {
+        //    var go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+        var go = _textPool.Get();
+        go.GetComponent<TextMeshPro>().text = damageAmount.ToString();
+        go.Init(_textPool);
     }
 
     private void Update()
