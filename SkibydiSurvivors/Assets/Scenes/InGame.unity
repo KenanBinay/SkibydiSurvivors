@@ -11141,10 +11141,6 @@ MonoBehaviour:
       enemyCount: 60
       spawnCount: 1
       enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
-    - enemyName: bossSkibidi_0
-      enemyCount: 1
-      spawnCount: 2
-      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11159,7 +11155,7 @@ MonoBehaviour:
       spawnCount: 1
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     - enemyName: bossSkibidi_0
-      enemyCount: 4
+      enemyCount: 1
       spawnCount: 2
       enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
@@ -11176,7 +11172,7 @@ MonoBehaviour:
       spawnCount: 1
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     - enemyName: bossSkibidi_0
-      enemyCount: 5
+      enemyCount: 3
       spawnCount: 2
       enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
@@ -11188,6 +11184,10 @@ MonoBehaviour:
       enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
+    - enemyName: skibidi_2
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11202,7 +11202,7 @@ MonoBehaviour:
       spawnCount: 1
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     - enemyName: bossSkibidi_1
-      enemyCount: 4
+      enemyCount: 1
       spawnCount: 3
       enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
     waveQuota: 0
@@ -11227,10 +11227,6 @@ MonoBehaviour:
       enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
-    - enemyName: bossSkibidi_0
-      enemyCount: 30
-      spawnCount: 2
-      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11244,6 +11240,10 @@ MonoBehaviour:
       enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
+    - enemyName: bossSkibidi_1
+      enemyCount: 15
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11263,13 +11263,13 @@ MonoBehaviour:
   - waveName: Wave 12
     enemyGroups:
     - enemyName: skibidi_1
-      enemyCount: 40
+      enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
-    - enemyName: bossSkibidi_0
-      enemyCount: 15
+    - enemyName: skibidi_2
+      enemyCount: 60
       spawnCount: 0
-      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11283,17 +11283,21 @@ MonoBehaviour:
       enemyCount: 40
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
+    - enemyName: skibidi_2
+      enemyCount: 40
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
   - waveName: Wave 14
     enemyGroups:
     - enemyName: bossSkibidi_0
-      enemyCount: 30
+      enemyCount: 15
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     - enemyName: bossSkibidi_1
-      enemyCount: 30
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
     waveQuota: 0
@@ -11314,23 +11318,32 @@ MonoBehaviour:
     spawnCount: 0
   - waveName: Wave 16
     enemyGroups:
-    - enemyName: bossSkibidi_0
-      enemyCount: 30
+    - enemyName: Skibidi_0
+      enemyCount: 60
       spawnCount: 0
-      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
-    - enemyName: bossSkibidi_1
-      enemyCount: 30
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
+    - enemyName: Skibidi_2
+      enemyCount: 60
       spawnCount: 0
-      enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
   - waveName: Wave 17
     enemyGroups:
     - enemyName: bossSkibidi_2
-      enemyCount: 1
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnCount: 0
+  - waveName: Wave 18
+    enemyGroups:
+    - enemyName: skibidi_2
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -13562,6 +13575,7 @@ MonoBehaviour:
   returning: 0
   minDist: 0.7
   maxDist: 45
+  invincibilityDuration: 0.2
   _mesh: {fileID: 7801268769451431954, guid: bf7d6a328f7ee734ea475d42a82cdddc, type: 3}
   material: {fileID: 5994301547260910558, guid: bf7d6a328f7ee734ea475d42a82cdddc, type: 3}
   colors:
@@ -13597,6 +13611,7 @@ MonoBehaviour:
   returning: 0
   minDist: 0.7
   maxDist: 45
+  invincibilityDuration: 0.2
   _mesh: {fileID: -3814186039088165082, guid: 5223d21c83cd0e845b1cc83f2807c909, type: 3}
   material: {fileID: 4039946914208775091, guid: 5223d21c83cd0e845b1cc83f2807c909, type: 3}
   colors:

@@ -387,6 +387,7 @@ MonoBehaviour:
   returning: 0
   minDist: 0.7
   maxDist: 45
+  invincibilityDuration: 0.2
   _mesh: {fileID: -7070831255929112694, guid: 412021aae9dab6e4a9be9170f6469cce, type: 3}
   material: {fileID: -33264764165835482, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
   colors:
@@ -400,6 +401,7 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
+  changeSpeed: 6.03
 --- !u!95 &5458807804467736367
 Animator:
   serializedVersion: 5

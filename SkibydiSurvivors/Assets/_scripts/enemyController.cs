@@ -141,25 +141,6 @@ public class enemyController : MonoBehaviour
         Graphics.RenderMesh(_rp, _mesh, 0, _matrices);
     }
 
-    void Move()
-    {
-        sqrDist = Vector3.Distance(transform.position, target.position);
-        Vector3 direction = target.position - transform.position;
-        direction = new Vector3(direction.x, 0, direction.z);
-
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-        Quaternion lookAt = Quaternion.RotateTowards(
-        transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-        transform.rotation = lookAt;
-
-        // modify desiredVelocity if within range
-        if (sqrDist > minSqrDist)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position
-              , speed * Time.deltaTime);
-        }
-    }
-
     void Die()
     {
         SkibidiSpawnManager es = FindObjectOfType<SkibidiSpawnManager>();
