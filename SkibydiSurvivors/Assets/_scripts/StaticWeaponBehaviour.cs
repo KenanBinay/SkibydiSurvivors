@@ -70,7 +70,6 @@ public class StaticWeaponBehaviour : MonoBehaviour
                     {
                         Vector3 closespoint = hitcol.ClosestPoint(explosion_position);
                         hitcol.GetComponent<enemyController>().TakeDamage(GetCurrentDamage());
-                        Debug.Log("damage: " + GetCurrentDamage());
                     }
                 }
             }

@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 6018671610972980897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1120063194840768109}
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f58141e9f357e448fd2fa6f1afc1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyScriptableObject: {fileID: 11400000, guid: b69bb2e941a7edc489fe9e6e442df821, type: 2}
+  enemyScriptableObject: {fileID: 11400000, guid: 0f560eec92fb32d42acd30f427ed7e71, type: 2}
   maxVelocity: 2
   maxAcceleration: 10
   turnSpeed: 20
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440707a3288fdea4b89790477e80922d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyScriptableObject: {fileID: 11400000, guid: b69bb2e941a7edc489fe9e6e442df821, type: 2}
+  enemyScriptableObject: {fileID: 11400000, guid: 0f560eec92fb32d42acd30f427ed7e71, type: 2}
   FloatingTextPrefab: {fileID: 9038286608306521677, guid: 95d89ae2c07022048bae411bdecece51, type: 3}
   skinnedMeshRenderer: {fileID: 0}
   despawnDistance: 16

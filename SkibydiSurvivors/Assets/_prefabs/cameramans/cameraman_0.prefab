@@ -1124,7 +1124,7 @@ Transform:
   - {fileID: 8297267827762798192}
   - {fileID: 1136403975935995260}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6388416567635779132
 Animator:
@@ -1985,7 +1985,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5900896666891852825}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08fa3143ba224df489e3591e9d43e32b, type: 3}
   m_Name: 

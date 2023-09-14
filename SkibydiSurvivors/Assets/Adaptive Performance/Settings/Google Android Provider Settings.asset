@@ -168,16 +168,16 @@ MonoBehaviour:
   m_scalerProfileList:
   - m_AdaptiveFramerate:
       m_Name: Adaptive Framerate
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 2
       m_Target: 7
       m_MaxLevel: 45
-      m_MinBound: 15
+      m_MinBound: 29
       m_MaxBound: 60
     m_AdaptiveResolution:
       m_Name: Adaptive Resolution
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 0
       m_Target: 6
@@ -186,7 +186,7 @@ MonoBehaviour:
       m_MaxBound: 1
     m_AdaptiveBatching:
       m_Name: Adaptive Batching
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 1
       m_Target: 1
@@ -213,7 +213,7 @@ MonoBehaviour:
       m_MaxBound: 1
     m_AdaptiveMSAA:
       m_Name: Adaptive MSAA
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 1
       m_Target: 6
@@ -258,7 +258,7 @@ MonoBehaviour:
       m_MaxBound: 1
     m_AdaptiveSorting:
       m_Name: Adaptive Sorting
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 1
       m_Target: 1
@@ -267,7 +267,7 @@ MonoBehaviour:
       m_MaxBound: 1
     m_AdaptiveTransparency:
       m_Name: Adaptive Transparency
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 2
       m_Target: 2
@@ -276,7 +276,7 @@ MonoBehaviour:
       m_MaxBound: 1
     m_AdaptiveViewDistance:
       m_Name: Adaptive View Distance
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 2
       m_Target: 2
@@ -285,7 +285,7 @@ MonoBehaviour:
       m_MaxBound: 1000
     m_AdaptivePhysics:
       m_Name: Adaptive Physics
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 0
       m_Target: 1
@@ -294,7 +294,7 @@ MonoBehaviour:
       m_MaxBound: 1
     m_AdaptiveDecals:
       m_Name: Adaptive Decals
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 1
       m_Target: 2
@@ -303,7 +303,7 @@ MonoBehaviour:
       m_MaxBound: 1
     m_AdaptiveLayerCulling:
       m_Name: Adaptive Layer Culling
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 1
       m_Target: 1
@@ -313,4 +313,4 @@ MonoBehaviour:
     m_Name: Default Scaler Profile
   m_DefaultScalerProfilerIndex: 0
   k_AssetVersion: 2
-  m_GoogleProviderLogging: 0
+  m_GoogleProviderLogging: 1

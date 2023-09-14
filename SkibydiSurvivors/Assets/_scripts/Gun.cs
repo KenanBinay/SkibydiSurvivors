@@ -28,7 +28,7 @@ public class Gun : MonoBehaviour
 
     private void Awake()
     {
-        bulletStack = GameObject.Find("_BulletContainer").transform;
+       // bulletStack = GameObject.Find("_BulletContainer").transform;
         Animator = GetComponent<Animator>();
     }
 
