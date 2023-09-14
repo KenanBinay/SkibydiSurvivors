@@ -36,6 +36,7 @@ public class StaticWeaponBehaviour : MonoBehaviour
     }
     public float GetCurrentDamage()
     {
+        damage = weaponData.Damage;
         return damage *= FindObjectOfType<PlayerStats>().CurrentMight;
     }
 
@@ -69,6 +70,7 @@ public class StaticWeaponBehaviour : MonoBehaviour
                     {
                         Vector3 closespoint = hitcol.ClosestPoint(explosion_position);
                         hitcol.GetComponent<enemyController>().TakeDamage(GetCurrentDamage());
+                        Debug.Log("damage: " + GetCurrentDamage());
                     }
                 }
             }
@@ -77,9 +79,12 @@ public class StaticWeaponBehaviour : MonoBehaviour
 
     IEnumerator delayedExplode(float seconds)
     {
-        weapon.SetActive(true);
-        Explode(transform.position, viewRadius);
-        CoroutineCall = true;
+        if (!CoroutineCall)
+        {
+            weapon.SetActive(true);
+            Explode(transform.position, viewRadius);
+            CoroutineCall = true;
+        }
 
         yield return new WaitForSeconds(seconds);
 

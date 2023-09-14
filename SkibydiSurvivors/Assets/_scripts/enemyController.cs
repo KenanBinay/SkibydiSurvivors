@@ -29,7 +29,7 @@ public class enemyController : MonoBehaviour
     private float minSqrDist;
     private float sqrDist;
 
-    float invincibilityDuration = 0.2f;
+    public float invincibilityDuration = 0.2f;
     float invincibilityTimer;
     bool isInvincible;
 
@@ -94,16 +94,16 @@ public class enemyController : MonoBehaviour
     {
         if (!isInvincible)
         {
-            enemyHealth -= amount;
-            invincibilityTimer = invincibilityDuration;
-            isInvincible = true;
-
-            StartCoroutine(EFlash());
-
             if (FloatingTextPrefab)
             {
                 ShowFloatingText(amount);
             }
+
+            StartCoroutine(EFlash());
+
+            enemyHealth -= amount;
+            invincibilityTimer = invincibilityDuration;
+            isInvincible = true;
 
             if (enemyHealth <= 0)
             {

@@ -65,6 +65,7 @@ public class GunShootController : MonoBehaviour
 
     public float GetCurrentDamage()
     {
+        damage = CharacterData.Damage;
         return damage *= FindObjectOfType<PlayerStats>().CurrentMight;
     }
 
@@ -74,7 +75,7 @@ public class GunShootController : MonoBehaviour
 
         if (enemyController != null)
         {
-            enemyController.TakeDamage(damage);
+            enemyController.TakeDamage(GetCurrentDamage());
         }
 
         yield return new WaitForSeconds(ShootDelay);

@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyScriptableObject: {fileID: 11400000, guid: 8258a5e80ab76e047b7a6ce185c12c1d, type: 2}
-  FloatingTextPrefab: {fileID: 8857981573829602661, guid: 95d89ae2c07022048bae411bdecece51, type: 3}
+  FloatingTextPrefab: {fileID: 9038286608306521677, guid: 95d89ae2c07022048bae411bdecece51, type: 3}
   skinnedMeshRenderer: {fileID: 0}
   despawnDistance: 16
   rotationSpeed: 150
@@ -163,6 +163,7 @@ MonoBehaviour:
   returning: 0
   minDist: 0.7
   maxDist: 45
+  invincibilityDuration: 0.2
   _mesh: {fileID: 4379981715903417211, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
   material: {fileID: -33264764165835482, guid: 7c455497c6ef9ea4ebee95c5210fb80c, type: 3}
   colors:
