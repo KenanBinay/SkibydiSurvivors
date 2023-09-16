@@ -668,7 +668,7 @@ MonoBehaviour:
   enemyScriptableObject: {fileID: 11400000, guid: 2ad066419bef19b458254d5f324b3357, type: 2}
   FloatingTextPrefab: {fileID: 9038286608306521677, guid: 95d89ae2c07022048bae411bdecece51, type: 3}
   skinnedMeshRenderer: {fileID: 0}
-  despawnDistance: 16
+  despawnDistance: 14
   rotationSpeed: 150
   blinkIntesity: 10
   blinkDuration: 0.05

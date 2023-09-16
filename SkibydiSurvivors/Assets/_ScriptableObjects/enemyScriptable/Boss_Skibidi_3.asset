@@ -15,4 +15,4 @@ MonoBehaviour:
   health: 8000
   attackDamage: 45
   xp: 6
-  speed: 2
+  speed: 2.5

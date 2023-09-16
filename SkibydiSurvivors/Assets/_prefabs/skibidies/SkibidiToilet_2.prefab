@@ -380,7 +380,7 @@ MonoBehaviour:
   enemyScriptableObject: {fileID: 11400000, guid: 0f560eec92fb32d42acd30f427ed7e71, type: 2}
   FloatingTextPrefab: {fileID: 9038286608306521677, guid: 95d89ae2c07022048bae411bdecece51, type: 3}
   skinnedMeshRenderer: {fileID: 0}
-  despawnDistance: 16
+  despawnDistance: 14
   rotationSpeed: 150
   blinkIntesity: 10
   blinkDuration: 0.05
@@ -437,7 +437,7 @@ MonoBehaviour:
   drops:
   - name: Blue gem
     itemPrefab: {fileID: 9013476318719632713, guid: 2fbd2cb63628cb84baa0c0fb28c3e7f4, type: 3}
-    dropRate: 60
+    dropRate: 90
 --- !u!1 &6692794416740709636
 GameObject:
   m_ObjectHideFlags: 0
