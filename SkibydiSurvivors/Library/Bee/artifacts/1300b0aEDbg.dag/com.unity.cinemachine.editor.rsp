@@ -131,7 +131,6 @@
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -define:UNITY_EDITOR_ONLY_COMPILATION
--r:"Assets/ExternalDependencyManager/Editor/1.2.177/Google.IOSResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.177/Google.JarResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.177/Google.PackageManagerResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.177/Google.VersionHandlerImpl.dll"
