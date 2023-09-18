@@ -9,13 +9,14 @@ public class enemyController : MonoBehaviour
 {
     [SerializeField]
     EnemyScriptableObject enemyScriptableObject;
-    float speed, damage, enemyHealth;
+    float damage, enemyHealth;
 
     public static Transform target;
     public FloatingText FloatingTextPrefab;
     SkibidiSpawnManager enemySpawner;
 
     public SkinnedMeshRenderer skinnedMeshRenderer;
+    public MeshRenderer meshRenderer;
 
     public float despawnDistance = 20f, rotationSpeed;
     public float blinkIntesity;
@@ -26,14 +27,9 @@ public class enemyController : MonoBehaviour
     public float minDist = 4.0f;
     public float maxDist = 45.0f;
 
-    private float minSqrDist;
-    private float sqrDist;
-
     public float invincibilityDuration = 0.2f;
     float invincibilityTimer;
     bool isInvincible;
-
-    private Vector3 desiredVelocity, _moveVector;
 
     PlayerStats player;
 
@@ -52,9 +48,13 @@ public class enemyController : MonoBehaviour
     {
         enemyHealth = enemyScriptableObject.health;
         damage = enemyScriptableObject.attackDamage;
-        speed = enemyScriptableObject.speed;
 
-        skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        if (GetComponentInChildren<SkinnedMeshRenderer>())
+            skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+
+        if (GetComponentInChildren<MeshRenderer>())
+            meshRenderer = GetComponentInChildren<MeshRenderer>();
+
         enemySpawner = FindObjectOfType<SkibidiSpawnManager>();
         player = GameObject.Find("_Inventory&PlayerStats").GetComponent<PlayerStats>();
 
@@ -62,8 +62,6 @@ public class enemyController : MonoBehaviour
         {
             colors[i] = skinnedMeshRenderer.materials[i].color;
         }
-
-        minSqrDist = minDist * minDist;
 
         _rp = new RenderParams(material);
         _matrices = new Matrix4x4();
