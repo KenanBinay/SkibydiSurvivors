@@ -11250,10 +11250,6 @@ MonoBehaviour:
       enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
-    - enemyName: skibidi_2
-      enemyCount: 10
-      spawnCount: 0
-      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11303,7 +11299,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     - enemyName: skibidi_2
-      enemyCount: 30
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
     waveQuota: 0
@@ -11315,10 +11311,10 @@ MonoBehaviour:
       enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
-    - enemyName: skibidi_2
+    - enemyName: skibidi_0
       enemyCount: 60
       spawnCount: 0
-      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11346,10 +11342,10 @@ MonoBehaviour:
     spawnCount: 0
   - waveName: Wave 14
     enemyGroups:
-    - enemyName: bossSkibidi_0
-      enemyCount: 15
+    - enemyName: Skibidi_0
+      enemyCount: 50
       spawnCount: 0
-      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11411,16 +11407,16 @@ MonoBehaviour:
     - enemyName: bossSkibidi_1
       enemyCount: 5
       spawnCount: 0
-      enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
-    spawnInterval: 0.5
+    spawnInterval: 1
     spawnCount: 0
   - waveName: Wave 21
     enemyGroups:
-    - enemyName: bossSkibidi_0
-      enemyCount: 20
+    - enemyName: Skibidi_2
+      enemyCount: 60
       spawnCount: 0
-      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11442,16 +11438,20 @@ MonoBehaviour:
     - enemyName: bossSkibidi_1
       enemyCount: 20
       spawnCount: 0
-      enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
     waveQuota: 0
-    spawnInterval: 0.5
+    spawnInterval: 1
     spawnCount: 0
   - waveName: Wave 24
     enemyGroups:
-    - enemyName: bossSkibidi_0
+    - enemyName: Skibidi_2
       enemyCount: 50
       spawnCount: 0
-      enemyPrefab: {fileID: 6018671610972980897, guid: 16ecf29959c0831468bb26f8fbd10638, type: 3}
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
+    - enemyName: Skibidi_1
+      enemyCount: 50
+      spawnCount: 0
+      enemyPrefab: {fileID: 7677067914436951805, guid: 72b6975ef8d0ccf40a859418d0bf2243, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
@@ -11501,10 +11501,23 @@ MonoBehaviour:
       enemyCount: 60
       spawnCount: 0
       enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
+    - enemyName: skibidi_0
+      enemyCount: 60
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 702a5881f2113e04b9b16d287efc2736, type: 3}
     waveQuota: 0
     spawnInterval: 0.5
     spawnCount: 0
   - waveName: Wave 30
+    enemyGroups:
+    - enemyName: Skibidi_2
+      enemyCount: 50
+      spawnCount: 0
+      enemyPrefab: {fileID: 6018671610972980897, guid: 272b694c7b83abb4da31e98433af1569, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnCount: 0
+  - waveName: Wave 31
     enemyGroups:
     - enemyName: bossSkibidi_0
       enemyCount: 30
@@ -11515,7 +11528,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 1713887421435023292, guid: dc416ed10efc74b4da660b39dd3fb36b, type: 3}
     waveQuota: 0
-    spawnInterval: 0.5
+    spawnInterval: 1.5
     spawnCount: 0
   currentWaveCount: 0
   waveInterval: 30
