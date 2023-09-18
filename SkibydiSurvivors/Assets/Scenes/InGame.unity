@@ -332,8 +332,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 846185228}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3992,6 +3991,7 @@ GameObject:
   - component: {fileID: 570783205}
   - component: {fileID: 570783207}
   - component: {fileID: 570783208}
+  - component: {fileID: 570783209}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4145,6 +4145,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c267f09de2cfea54b9b5609978992549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &570783209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570783202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aed08937e3ecb5488f46807aa610d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumb: 0100000002000000
+  x: 0
 --- !u!1 &575430853
 GameObject:
   m_ObjectHideFlags: 0
@@ -6119,50 +6133,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &846185227
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 846185228}
-  - component: {fileID: 846185229}
-  m_Layer: 0
-  m_Name: NavMesh Surface
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &846185228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846185227}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 32280878}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &846185229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846185227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &846279362
 GameObject:
   m_ObjectHideFlags: 0
@@ -13603,6 +13573,7 @@ MonoBehaviour:
   enemyScriptableObject: {fileID: 11400000, guid: a762e115808886e45af66468758cef47, type: 2}
   FloatingTextPrefab: {fileID: 0}
   skinnedMeshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 0}
   despawnDistance: 16
   rotationSpeed: 150
   blinkIntesity: 10

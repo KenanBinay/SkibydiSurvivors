@@ -88,7 +88,11 @@ public class gameController : MonoBehaviour
                     Time.timeScale = 0f;
                     Debug.Log("GAME IS OVER");
                     DisplayResults();
+
+                    AdController.instance.x = AdController.instance.randomNumb
+                      [Random.Range(0, AdController.instance.randomNumb.Length)];
                 }
+                if (Time.timeScale != 0) Time.timeScale = 0f;
                 break;
             case GameState.LevelUp:
                 if (!choosingUpgrade)
@@ -97,7 +101,11 @@ public class gameController : MonoBehaviour
                     Time.timeScale = 0f;
                     Debug.Log("Upgrades shown");
                     levelUpScreen.SetActive(true);
+
+                    AdController.instance.x = AdController.instance.randomNumb
+                        [Random.Range(0, AdController.instance.randomNumb.Length)];
                 }
+                if (Time.timeScale != 0) Time.timeScale = 0f;
                 break;
 
             default:
@@ -143,18 +151,6 @@ public class gameController : MonoBehaviour
     void DisplayResults()
     {
         resultsScreen.SetActive(true);
-    }
-
-    void CheckForPauseAndResume()
-    {
-        if (currentState == GameState.Paused)
-        {
-            ResumeGame();
-        }
-        else
-        {
-            PauseGame();
-        }
     }
 
     void DisableScreens()

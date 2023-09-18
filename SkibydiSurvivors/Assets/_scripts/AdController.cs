@@ -6,26 +6,39 @@ using GoogleMobileAds.Api;
 
 public class AdController : MonoBehaviour
 {
+    public static AdController instance;
+
     private InterstitialAd adInterstitial;
     private RewardedAd adRewarded;
     private BannerView bannerView;
     string idInterstitial, idRewarded, idBanner;
-    string appId = "ca-app-pub-9421503984483424~7002227357";
 
     public static bool rewardedGiven, interstitialGiven, x2Reward, fuelOffer;
 
+    public int[] randomNumb = { 1, 2 };
+    public int x;
+
     void Start()
     {
-        idInterstitial = "ca-app-pub-9421503984483424/9436819008";
-        idRewarded = "ca-app-pub-9421503984483424/3742292473";
-        idBanner = "ca-app-pub-9421503984483424/6639084408";
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("EXTRA " + this + " DELETED");
+        }
+
+        idInterstitial = "ca-app-pub-9421503984483424/1113586405";
+        idRewarded = "ca-app-pub-9421503984483424/3769338209";
+        idBanner = "ca-app-pub-9421503984483424/7453146939";
 
         MobileAds.Initialize(initStatus =>
         {
             loadRewardedAd(); loadInterstitialAd();
         });
 
-        this.bannerView = new BannerView(idBanner, AdSize.Banner, AdPosition.Top);
+        this.bannerView = new BannerView(idBanner, AdSize.Banner, AdPosition.Bottom);
 
         var request = new AdRequest();
 
@@ -34,22 +47,20 @@ public class AdController : MonoBehaviour
 
         if (PlayerPrefs.GetInt("adsRemoved", 0) == 1)
             Debug.Log("ADS BLOCKED NO ADS");
-
     }
 
-    private void Update()
+    void Update()
     {
-      /*  if (gameController.GameState.GameOver
-            && PlayerPrefs.GetInt("adsRemoved", 0) == 0)
+        if (PlayerPrefs.GetInt("adsRemoved", 0) == 0)
         {
-            if (gameController.interstitialAd_randomNumb == 1 && !interstitialGiven) showInterstitial();
+            if (gameController.instance.isGameOver || gameController.instance.choosingUpgrade)
+            {
+                if (x == 1 && !interstitialGiven)
+                {
+                    showInterstitial();
+                }
+            }
         }
-        if (gameController.GameState.LevelUp
-            && PlayerPrefs.GetInt("adsRemoved", 0) == 0)
-        {
-            if (gameController.interstitialAd_randomNumb == 2 && !interstitialGiven) showInterstitial();
-        }
-      */
     }
 
     private void loadRewardedAd()
@@ -123,6 +134,7 @@ public class AdController : MonoBehaviour
         {
             Debug.Log("Showing interstitial ad.");
             interstitialGiven = true;
+            Time.timeScale = 0f;
 
             adInterstitial.Show();
         }
@@ -137,23 +149,6 @@ public class AdController : MonoBehaviour
         if (this.adRewarded.CanShowAd())
         {
             x2Reward = true;
-
-            adRewarded.Show((Reward reward) =>
-            {
-
-            });
-        }
-        else
-        {
-            Debug.LogError("Rewarded ad is not ready yet.");
-        }
-    }
-
-    public void refuelRewardedAd()
-    {
-        if (this.adRewarded.CanShowAd())
-        {
-            fuelOffer = true;
 
             adRewarded.Show((Reward reward) =>
             {

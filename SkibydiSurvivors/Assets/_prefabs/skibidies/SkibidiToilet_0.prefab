@@ -329,7 +329,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!114 &1792535531988582879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +380,7 @@ MonoBehaviour:
   enemyScriptableObject: {fileID: 11400000, guid: b69bb2e941a7edc489fe9e6e442df821, type: 2}
   FloatingTextPrefab: {fileID: 9038286608306521677, guid: 95d89ae2c07022048bae411bdecece51, type: 3}
   skinnedMeshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 0}
   despawnDistance: 14
   rotationSpeed: 150
   blinkIntesity: 10
