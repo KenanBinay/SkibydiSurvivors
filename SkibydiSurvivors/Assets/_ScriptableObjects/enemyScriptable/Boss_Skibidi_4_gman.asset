@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 820905e754ba25145ae631587bf93202, type: 3}
-  m_Name: Boss_Skibidi_3
+  m_Name: Boss_Skibidi_4_gman
   m_EditorClassIdentifier: 
-  health: 8000
-  attackDamage: 35
+  health: 50000
+  attackDamage: 70
   xp: 6
-  speed: 2.5
+  speed: 3

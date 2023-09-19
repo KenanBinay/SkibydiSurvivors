@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9114338281464263726}
   - component: {fileID: -6657209297570770934}
   m_Layer: 3
-  m_Name: JetpackSkibidi_0 (ArriveUnit)
+  m_Name: JetpackSkibidi_0
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

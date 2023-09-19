@@ -5035,12 +5035,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: Blue gem
-    itemPrefab: {fileID: 9013476318719632713, guid: 2fbd2cb63628cb84baa0c0fb28c3e7f4, type: 3}
-    dropRate: 100
   - name: Red gem
     itemPrefab: {fileID: 9013476318719632713, guid: c7ea48d690f772d4aa50a207ddfed940, type: 3}
-    dropRate: 30
+    dropRate: 80
+  - name: orange gem
+    itemPrefab: {fileID: 9013476318719632713, guid: 6b62dab6ce63fe842ae53fe6781f0ad1, type: 3}
+    dropRate: 20
 --- !u!95 &4503014856384272287
 Animator:
   serializedVersion: 5
