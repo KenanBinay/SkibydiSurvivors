@@ -88,9 +88,6 @@ public class gameController : MonoBehaviour
                     Time.timeScale = 0f;
                     Debug.Log("GAME IS OVER");
                     DisplayResults();
-
-                    AdController.instance.x = AdController.instance.randomNumb
-                      [Random.Range(0, AdController.instance.randomNumb.Length)];
                 }
                 if (Time.timeScale != 0) Time.timeScale = 0f;
                 break;
@@ -101,9 +98,6 @@ public class gameController : MonoBehaviour
                     Time.timeScale = 0f;
                     Debug.Log("Upgrades shown");
                     levelUpScreen.SetActive(true);
-
-                    AdController.instance.x = AdController.instance.randomNumb
-                        [Random.Range(0, AdController.instance.randomNumb.Length)];
                 }
                 if (Time.timeScale != 0) Time.timeScale = 0f;
                 break;

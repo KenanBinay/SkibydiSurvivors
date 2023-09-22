@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds;
 using GoogleMobileAds.Api;
+using Unity.VisualScripting;
 
 public class AdController : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class AdController : MonoBehaviour
 
     public static bool rewardedGiven, interstitialGiven, x2Reward, fuelOffer;
 
-    public int[] randomNumb = { 1, 2 };
+    public int[] randomNumb = { 1, 2};
     public int x;
 
     void Start()
@@ -55,11 +56,33 @@ public class AdController : MonoBehaviour
         {
             if (gameController.instance.isGameOver || gameController.instance.choosingUpgrade)
             {
-                if (x == 1 && !interstitialGiven)
+                if (!interstitialGiven)
                 {
-                    showInterstitial();
+                    showAd();
                 }
             }
+            else
+            {
+                if (!adInterstitial.CanShowAd())
+                {
+                    loadInterstitialAd();
+                }
+            }
+        }
+    }
+
+    void showAd()
+    {
+        x = randomNumb[Random.Range(0, randomNumb.Length)];
+        Debug.Log("x: " + x);
+
+        if (x == 1)
+        {
+            showInterstitial();
+        }
+        else 
+        {
+            interstitialGiven = true;
         }
     }
 
@@ -126,6 +149,8 @@ public class AdController : MonoBehaviour
 
                 adInterstitial = ad;
             });
+
+        interstitialGiven = false;
     }
 
     public void showInterstitial()
@@ -134,7 +159,6 @@ public class AdController : MonoBehaviour
         {
             Debug.Log("Showing interstitial ad.");
             interstitialGiven = true;
-            Time.timeScale = 0f;
 
             adInterstitial.Show();
         }
