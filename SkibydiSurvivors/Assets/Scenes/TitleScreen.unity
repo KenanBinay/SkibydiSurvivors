@@ -1619,7 +1619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noAds_icon: {fileID: 881262926}
-  noAds_id: com.skibidiToilet.noads
+  noAds_id: com.skibiditoilet.noads
   shopOffer_buttons: []
   offers_id: []
 --- !u!23 &94444567067238067
