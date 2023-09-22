@@ -26,7 +26,7 @@ public class IAPManager : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetInt("adsRemoved", 0);
+  //      PlayerPrefs.SetInt("adsRemoved", 0);
         if (PlayerPrefs.GetInt("adsRemoved", 0) == 1)
         {
             noAds_bought = true;
@@ -36,7 +36,7 @@ public class IAPManager : MonoBehaviour
             Debug.Log(noAds_id + " purchased");
         }
 
-        Initialize(OnSuccess, OnError);
+      //  Initialize(OnSuccess, OnError);
     }
 
     public void OnPurchaseComplete(UnityEngine.Purchasing.Product product)
