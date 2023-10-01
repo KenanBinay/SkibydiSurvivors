@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: binay
-  productName: Skibidi Survivor
+  productName: Skibidi Survivors
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -134,10 +134,7 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1
-  preloadedAssets:
-  - {fileID: 4658504875674737618, guid: b0829ab2f102bb54595f1d366e8df1f7, type: 2}
-  - {fileID: 11400000, guid: 1a10ea30f1583354fa9cb1fd5206fe11, type: 2}
-  - {fileID: 11400000, guid: c318b49bac051684bbce4e8b75bb7645, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -157,13 +154,13 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.binay.SkibidiSurvivor
+    Android: com.binay.toilet.skibidi
   buildNumber:
     Standalone: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
-  AndroidBundleVersionCode: 5
+  overrideDefaultApplicationIdentifier: 1
+  AndroidBundleVersionCode: 9
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 33
   AndroidPreferredInstallLocation: 1
@@ -277,7 +274,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 281a48f044c7b6842a7f25e9cf2fc758, type: 3}
+      m_Icon: {fileID: 2800000, guid: 91b08e1db3a32cc46897bbf0670d6a6a, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -850,7 +847,7 @@ PlayerSettings:
   cloudProjectId: d2843c0f-4897-4aee-8b27-49ba4699b124
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Skibidi Survivor
+  projectName: Skibidi Toilet - Cameraman War
   organizationId: kenanbinay226
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

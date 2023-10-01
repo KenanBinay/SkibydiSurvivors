@@ -58,9 +58,19 @@ public class enemyController : MonoBehaviour
         enemySpawner = FindObjectOfType<SkibidiSpawnManager>();
         player = GameObject.Find("_Inventory&PlayerStats").GetComponent<PlayerStats>();
 
-        for (int i = 0; i < skinnedMeshRenderer.materials.Length; i++)
+        if (skinnedMeshRenderer != null)
         {
-            colors[i] = skinnedMeshRenderer.materials[i].color;
+            for (int i = 0; i < skinnedMeshRenderer.materials.Length; i++)
+            {
+                colors[i] = skinnedMeshRenderer.materials[i].color;
+            }
+        }
+        if (meshRenderer != null)
+        {
+            for (int i = 0; i < meshRenderer.materials.Length; i++)
+            {
+                colors[i] = meshRenderer.materials[i].color;
+            }
         }
 
         _rp = new RenderParams(material);
@@ -155,16 +165,36 @@ public class enemyController : MonoBehaviour
 
     IEnumerator EFlash()
     {
-        for (int i = 0; i < skinnedMeshRenderer.materials.Length; i++)
+        if (skinnedMeshRenderer != null)
         {
-            skinnedMeshRenderer.materials[i].color = Color.white * 10;
+            for (int i = 0; i < skinnedMeshRenderer.materials.Length; i++)
+            {
+                skinnedMeshRenderer.materials[i].color = Color.white * 10;
+            }
+        }
+        if (meshRenderer != null)
+        {
+            for (int i = 0; i < meshRenderer.materials.Length; i++)
+            {
+                meshRenderer.materials[i].color = Color.white * 10;
+            }
         }
 
         yield return new WaitForSeconds(flashTime);
 
-        for (int i = 0; i < skinnedMeshRenderer.materials.Length; i++)
+        if (skinnedMeshRenderer != null)
         {
-            skinnedMeshRenderer.materials[i].color = colors[i];
+            for (int i = 0; i < skinnedMeshRenderer.materials.Length; i++)
+            {
+                skinnedMeshRenderer.materials[i].color = colors[i];
+            }
+        }
+        if (meshRenderer != null)
+        {
+            for (int i = 0; i < meshRenderer.materials.Length; i++)
+            {
+                meshRenderer.materials[i].color = colors[i];
+            }
         }
     }
 

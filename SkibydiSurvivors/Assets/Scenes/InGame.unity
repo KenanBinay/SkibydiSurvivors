@@ -2223,6 +2223,8 @@ MonoBehaviour:
   levelText: {fileID: 415739598}
   spinach: {fileID: 5679099404373390575, guid: 4ba492254a77d4349bd0c49c550d2082, type: 3}
   wings: {fileID: 8911832898051696615, guid: 78a11dc6973882b43bb6dfcecd652867, type: 3}
+  _Character: {fileID: 1041882301}
+  damageEffect: {fileID: 6025071742830916158, guid: 90232072b61fd9443802b1a2cb57feda, type: 3}
   invincibilityDuration: 0.2
   levelRanges:
   - startLevel: 1
@@ -13920,6 +13922,10 @@ PrefabInstance:
       propertyPath: fovStartPoint
       value: 
       objectReference: {fileID: 1041882301}
+    - target: {fileID: 1107199000328555417, guid: 1600d4fd7fb58604bad45dbda82399f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1367498089424095186, guid: 1600d4fd7fb58604bad45dbda82399f8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -13999,6 +14005,10 @@ PrefabInstance:
     - target: {fileID: 3497247553737813992, guid: 1600d4fd7fb58604bad45dbda82399f8, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588706535522739008, guid: 1600d4fd7fb58604bad45dbda82399f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4423951991496931089, guid: 1600d4fd7fb58604bad45dbda82399f8, type: 3}
       propertyPath: m_Name

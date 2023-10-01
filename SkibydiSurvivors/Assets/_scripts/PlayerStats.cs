@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -122,7 +119,9 @@ public class PlayerStats : MonoBehaviour
     public Image expBar;
     public TextMeshProUGUI levelText;
 
-    public GameObject spinach, wings;
+    public GameObject spinach, wings, _Character;
+
+    public ParticleSystem damageEffect;
 
     private void Awake()
     {
@@ -139,9 +138,9 @@ public class PlayerStats : MonoBehaviour
 
         if (characterData.StartingWeapon != null) SpawnWeapon(characterData.StartingWeapon);
         else { Debug.LogWarning("NO STARTING WEAPON ADDED"); }
-
-     //   SpawnPassiveItem(spinach);
-     //   SpawnPassiveItem(wings);
+ 
+        //   SpawnPassiveItem(spinach);
+        //   SpawnPassiveItem(wings);
     }
 
     [System.Serializable]
@@ -243,6 +242,12 @@ public class PlayerStats : MonoBehaviour
         if (!isInvincible)
         {
             CurrentHealth -= dmg;
+
+            // If there is a damage effect assigned, play it
+            var spawnPos = new Vector3(_Character.transform.position.x, 1
+               , _Character.transform.position.z);
+            if (damageEffect) Instantiate(damageEffect, spawnPos
+                , Quaternion.identity);
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
