@@ -74,7 +74,6 @@ public class AdController : MonoBehaviour
     void showAd()
     {
         x = randomNumb[Random.Range(0, randomNumb.Length)];
-        Debug.Log("x: " + x);
 
         if (x == 1)
         {
