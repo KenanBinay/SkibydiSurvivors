@@ -47,6 +47,7 @@ public class gunAimController : MonoBehaviour
             enemy = FieldOfView.nearestTarget;
             enemy_gameObject = enemy.gameObject;
         }
+        if (fovStartPoint == null) fovStartPoint = GameObject.FindGameObjectWithTag("Player");
 
         if (leftArm || rightArm)
         {

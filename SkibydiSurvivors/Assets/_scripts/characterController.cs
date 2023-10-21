@@ -8,7 +8,7 @@ using UnityEngine.TextCore.Text;
 public class characterController : MonoBehaviour
 {
     [SerializeField]
-    private CharacterScriptableObject CharacterData;
+    private CharacterScriptableObject characterData;
 
     [SerializeField] FloatingJoystick joystick;
 
@@ -30,7 +30,8 @@ public class characterController : MonoBehaviour
     {
         playerAnimator = controller.GetComponentInChildren<Animator>();
 
-        movementSpeed = CharacterData.MoveSpeed;
+        characterData = CharacterSelector.GetData();
+        movementSpeed = characterData.MoveSpeed;
     }
 
     void Update()

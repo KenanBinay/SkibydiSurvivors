@@ -1116,11 +1116,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3782061416118322616}
   - {fileID: 8252215549606108696}
   - {fileID: 3739766609077033783}
   - {fileID: 1822893920584834729}
   - {fileID: 7632393575130468871}
-  - {fileID: 3782061416118322616}
   - {fileID: 8297267827762798192}
   - {fileID: 1136403975935995260}
   m_Father: {fileID: 0}
@@ -1454,7 +1454,7 @@ GameObject:
   - component: {fileID: 6060064656448271232}
   - component: {fileID: 4096594325380959185}
   m_Layer: 0
-  m_Name: gun_0
+  m_Name: gun_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2137,7 +2137,7 @@ GameObject:
   - component: {fileID: 5627054166927272560}
   - component: {fileID: 718738168056531743}
   m_Layer: 0
-  m_Name: gun_0
+  m_Name: gun_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

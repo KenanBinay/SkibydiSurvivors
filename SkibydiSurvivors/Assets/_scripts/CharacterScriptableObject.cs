@@ -40,4 +40,13 @@ public class CharacterScriptableObject : ScriptableObject
     [SerializeField]
     float magnet;
     public float Magnet { get => magnet; private set => magnet = value; }
+
+    [SerializeField]
+    float characterNumb;
+    public float CharacterNumb { get => characterNumb; private set => characterNumb = value; }
+
+    [SerializeField]
+    GameObject cameramanPrefab;
+    public GameObject CameramanPrefab { get => cameramanPrefab; private set => cameramanPrefab = value; }
+
 }

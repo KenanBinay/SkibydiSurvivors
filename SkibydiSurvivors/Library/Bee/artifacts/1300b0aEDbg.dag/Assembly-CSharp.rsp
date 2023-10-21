@@ -509,6 +509,7 @@
 "Assets/_scripts/characterController.cs"
 "Assets/_scripts/CharacterScriptableObject.cs"
 "Assets/_scripts/CharacterSelector.cs"
+"Assets/_scripts/CharacterSpawnController.cs"
 "Assets/_scripts/DropRateManager.cs"
 "Assets/_scripts/enemyController.cs"
 "Assets/_scripts/EnemyScriptableObject.cs"

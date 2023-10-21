@@ -126,7 +126,7 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         characterData = CharacterSelector.GetData(); // getting data from selected character 
-        CharacterSelector.instance.DestroySingleton();
+      //  CharacterSelector.instance.DestroySingleton();
 
         inventory = GetComponent<InventoryManager>();
 
@@ -138,7 +138,7 @@ public class PlayerStats : MonoBehaviour
 
         if (characterData.StartingWeapon != null) SpawnWeapon(characterData.StartingWeapon);
         else { Debug.LogWarning("NO STARTING WEAPON ADDED"); }
- 
+
         //   SpawnPassiveItem(spinach);
         //   SpawnPassiveItem(wings);
     }
