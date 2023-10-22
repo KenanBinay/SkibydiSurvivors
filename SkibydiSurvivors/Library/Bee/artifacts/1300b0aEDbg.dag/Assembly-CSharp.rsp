@@ -525,6 +525,7 @@
 "Assets/_scripts/IAPManager.cs"
 "Assets/_scripts/Interfaces/ICollectable.cs"
 "Assets/_scripts/InventoryManager.cs"
+"Assets/_scripts/MenuController.cs"
 "Assets/_scripts/Passive Items/PassiveItem.cs"
 "Assets/_scripts/Passive Items/PassiveItemScriptableObject.cs"
 "Assets/_scripts/Passive Items/SpinachPassiveItem.cs"
