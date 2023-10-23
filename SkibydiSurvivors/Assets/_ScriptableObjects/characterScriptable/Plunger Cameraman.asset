@@ -21,5 +21,5 @@ MonoBehaviour:
   might: 1.5
   projectileSpeed: 0
   magnet: 2
-  characterNumb: 0
+  characterNumb: 1
   cameramanPrefab: {fileID: 7797510652643930225, guid: 6f2411ecbd741d94eaf68124a1dcce25, type: 3}

@@ -91,6 +91,8 @@ public class MenuController : MonoBehaviour
 
     public void UpdateToken()
     {
+        Time.timeScale = 1f;
+
         currentToken = PlayerPrefs.GetInt("token");
         TokenVal_text.text = currentToken.ToString();
     }

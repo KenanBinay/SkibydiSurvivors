@@ -83,15 +83,15 @@ public class CharacterSelector : MonoBehaviour
         int tokenCost = int.Parse(split[1]);
         int isVip = int.Parse(split[2]);
 
-        characterData[selectedCharacter] = characterData[selectedCharacter];
         selectedCameraman = selectedCharacter;
         tokenCostUnlock = tokenCost;
+
+        cameramanName = characterData[selectedCharacter].name; // Getting name of selected character
 
         //getting cameraman save value by using playerprefs 
         if (selectedCameraman == 0) cameramanSave = 1;
         else
-        {
-            cameramanName = characterData[selectedCharacter].name;
+        {         
             cameramanSave = PlayerPrefs.GetInt(cameramanName);
         }
 
@@ -118,8 +118,6 @@ public class CharacterSelector : MonoBehaviour
 
             Debug.Log("cameraman is not unlocked");
         }
-
-        Debug.Log("Selected: " + cameramanName);
     }
 
     public void DestroySingleton()
@@ -163,6 +161,8 @@ public class CharacterSelector : MonoBehaviour
     IEnumerator CameramanSelected()
     {
         CameramanUnlock_UI.SetActive(false);
+
+        Debug.Log("Selected: " + cameramanName);
 
         yield return new WaitForSeconds(0.2f);
 
