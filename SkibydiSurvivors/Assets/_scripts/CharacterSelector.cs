@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class CharacterSelector : MonoBehaviour
 {
@@ -16,13 +17,17 @@ public class CharacterSelector : MonoBehaviour
     public TextMeshProUGUI cameramanMagnetDisplay;
     public TextMeshProUGUI cameramanMoveSpeedDisplay;
     public TextMeshProUGUI cameramanMightDisplay;
+    public TextMeshProUGUI cameramanTokenDisplay;
     public Image cameramanImg;
 
     [Header("Cameraman Unlock UI")]
     [SerializeField]
     private GameObject CameramanUnlock_UI;
 
-    int cameramanSave;
+    [SerializeField]
+    private GameObject CharacterSlots;
+
+    int cameramanSave, tokenCostUnlock;
     string cameramanName;
 
     public CharacterScriptableObject[] characterData;
@@ -46,6 +51,30 @@ public class CharacterSelector : MonoBehaviour
         return instance.characterData[selectedCameraman];
     }
 
+    public void LoadCharacters()
+    {
+        for (int a = 0; a < characterData.Length; a++)
+        {
+            GameObject Selected = CharacterSlots.transform.transform.Find("Cameraman_" + a)
+                .gameObject;
+            GameObject lockedUI = Selected.transform.GetChild(2).gameObject;
+
+            cameramanName = characterData[a].name;
+            cameramanSave = PlayerPrefs.GetInt(cameramanName);
+
+            if (cameramanSave == 1)
+            {
+                lockedUI.SetActive(false);
+            }
+            else
+            {
+
+            }
+
+            Debug.Log("Loaded Character: " + cameramanName);
+        }
+    }
+
     public void SelectCharacter(string numbers = "0,0,0")
     {
         //getting charcter number & tokenCost
@@ -56,8 +85,9 @@ public class CharacterSelector : MonoBehaviour
 
         characterData[selectedCharacter] = characterData[selectedCharacter];
         selectedCameraman = selectedCharacter;
+        tokenCostUnlock = tokenCost;
 
-        //getting cameraman save value
+        //getting cameraman save value by using playerprefs 
         if (selectedCameraman == 0) cameramanSave = 1;
         else
         {
@@ -80,15 +110,16 @@ public class CharacterSelector : MonoBehaviour
                 + characterData[selectedCharacter].MoveSpeed.ToString();
             cameramanMightDisplay.text = "Might "
                 + characterData[selectedCharacter].Might.ToString();
+            cameramanTokenDisplay.text = tokenCostUnlock.ToString();
 
             cameramanImg.sprite = characterData[selectedCharacter].Icon;
 
             CameramanUnlock_UI.SetActive(true);
 
-            Debug.Log("missile is not unlocked");
+            Debug.Log("cameraman is not unlocked");
         }
 
-        Debug.Log("Selected: " + characterData[selectedCharacter].name);
+        Debug.Log("Selected: " + cameramanName);
     }
 
     public void DestroySingleton()
@@ -101,6 +132,32 @@ public class CharacterSelector : MonoBehaviour
     {
         SceneManager.LoadScene(name);
         Time.timeScale = 1f;
+    }
+
+    public void UnlockSelectedCameraman()
+    {
+        int token = MenuController.currentToken;
+        GameObject Selected = CharacterSlots.transform.GetChild(selectedCameraman).gameObject;
+        GameObject lockedUI = Selected.transform.GetChild(2).gameObject;
+
+        if (token >= tokenCostUnlock)
+        {
+            Debug.Log("Unlocked via token " + tokenCostUnlock);
+            token -= tokenCostUnlock;
+            PlayerPrefs.SetInt("token", token);
+            Debug.Log("Remaining token " + token);
+
+            PlayerPrefs.SetInt(cameramanName, 1);
+
+            lockedUI.SetActive(false);
+            CameramanUnlock_UI.SetActive(false);
+        }
+        else
+        {
+
+
+            Debug.Log("Not enought Tokens ");
+        }
     }
 
     IEnumerator CameramanSelected()
