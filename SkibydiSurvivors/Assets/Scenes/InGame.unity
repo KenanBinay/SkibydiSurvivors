@@ -4172,6 +4172,7 @@ MonoBehaviour:
   chosenCharacterName: {fileID: 526895617}
   levelReachedDisplay: {fileID: 1416144705}
   timeSurvivedDisplay: {fileID: 743602758}
+  earnedTokenDisplay: {fileID: 52749368}
   chosenWeaponsUI:
   - {fileID: 558720855}
   - {fileID: 252323173}
@@ -4191,6 +4192,7 @@ MonoBehaviour:
   isGameOver: 0
   choosingUpgrade: 0
   playerObject: {fileID: 369340461}
+  earnedToken: 0
 --- !u!4 &570783204
 Transform:
   m_ObjectHideFlags: 0

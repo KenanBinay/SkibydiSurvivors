@@ -38,12 +38,13 @@ public class gameController : MonoBehaviour
     public TextMeshProUGUI chosenCharacterName;
     public TextMeshProUGUI levelReachedDisplay;
     public TextMeshProUGUI timeSurvivedDisplay;
+    public TextMeshProUGUI earnedTokenDisplay;
     public List<Image> chosenWeaponsUI = new List<Image>(6);
     public List<Image> chosenPassiveItemsUI = new List<Image>(6);
 
     [Header("Stopwatch")]
     public float timeLimit; // in seconds
-    float stopwatchtime;
+    float stopwatchtime, time;
     public TextMeshProUGUI stopwatchDisplay;
 
     // Flag to check if the game is over
@@ -54,6 +55,8 @@ public class gameController : MonoBehaviour
 
     // Reference to hte player's game object
     public GameObject playerObject;
+
+    public int earnedToken;
 
     private void Awake()
     {
@@ -86,7 +89,7 @@ public class gameController : MonoBehaviour
                 {
                     isGameOver = true;
                     Time.timeScale = 0f;
-                    Debug.Log("GAME IS OVER");
+                    Debug.Log("GAME IS OVER | Earned Token Total " + earnedToken);
                     DisplayResults();
                 }
                 if (Time.timeScale != 0) Time.timeScale = 0f;
@@ -105,6 +108,19 @@ public class gameController : MonoBehaviour
             default:
                 Debug.LogWarning("STATE DOES NOT EXIST");
                 break;
+        }
+
+        if (!isGameOver)
+        {
+            time += Time.deltaTime;
+
+            if (time >= 180)
+            {
+                    earnedToken += 10;
+                    Debug.Log("Earned Coin: " + earnedToken);
+
+                time = 0;
+            }
         }
     }
 
@@ -145,11 +161,19 @@ public class gameController : MonoBehaviour
     void DisplayResults()
     {
         resultsScreen.SetActive(true);
+        earnedTokenDisplay.text = earnedToken.ToString();
+
+        int tokens = PlayerPrefs.GetInt("token");
+        tokens += earnedToken;
+
+        PlayerPrefs.SetInt("token", tokens);
     }
 
     void DisableScreens()
     {
         Time.timeScale = 1f;
+        earnedToken = 0;
+
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
         levelUpScreen.SetActive(false);
@@ -172,7 +196,7 @@ public class gameController : MonoBehaviour
         int minutes = Mathf.FloorToInt(stopwatchtime / 60);
         int seconds = Mathf.FloorToInt(stopwatchtime % 60);
 
-        stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);  
     }
 
     public void AssignChosenCharacterUI(CharacterScriptableObject chosenCharacterData)
