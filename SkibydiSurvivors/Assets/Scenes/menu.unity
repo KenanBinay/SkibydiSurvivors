@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.skibiditoilet.noads
+  productId: com.toiletsurvivors.noads
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -2139,7 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.skibiditoilet.offer3
+  productId: com.toiletsurvivors.offer3
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -3640,7 +3640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &711072512
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4105,7 +4105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.skibiditoilet.offer2
+  productId: com.toiletsurvivors.offer2
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -7353,17 +7353,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noAds_icon: {fileID: 1603319584}
-  noAds_id: com.skibiditoilet.noads
+  noAds_id: com.toiletsurvivors.noads
   shopOffer_buttons:
   - {fileID: 1375282522}
   - {fileID: 1240542518}
   - {fileID: 731274924}
   - {fileID: 437959012}
   offers_id:
-  - com.skibiditoilet.offer0
-  - com.skibiditoilet.offer1
-  - com.skibiditoilet.offer2
-  - com.skibiditoilet.offer3
+  - com.toiletsurvivors.offer0
+  - com.toiletsurvivors.offer1
+  - com.toiletsurvivors.offer2
+  - com.toiletsurvivors.offer3
 --- !u!1 &1145662552
 GameObject:
   m_ObjectHideFlags: 0
@@ -7662,7 +7662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.skibiditoilet.offer1
+  productId: com.toiletsurvivors.offer1
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -8412,7 +8412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.skibiditoilet.offer0
+  productId: com.toiletsurvivors.offer0
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
